@@ -1,0 +1,12 @@
+applications:
+- path: .
+  memory: 128M
+  instances: 1
+  domain: mybluemix.net
+  name: phoenix_sample
+  host: phoenix_sample
+  disk_quota: 1024M
+  command: mix phoenix.server
+  buildpack:  https://github.com/gogolok/cloudfoundry-buildpack-elixir
+#  services:
+#  - mhl_db
