@@ -1,0 +1,24 @@
+  <!-- PageHeader.html -->
+  <%= render PhoenixSample.CommonView, "page_header.html", conn: @conn %>
+  <!-- //PageHeader.html -->
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+
+<h2>Show team</h2>
+
+<ul>
+
+  <li>
+    <strong>Team name:</strong>
+    <%= @team.team_name %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: team_path(@conn, :edit, @team) %>
+<%= link "Back", to: team_path(@conn, :index) %>
+
+    </section>
+    <!-- /.content -->
+

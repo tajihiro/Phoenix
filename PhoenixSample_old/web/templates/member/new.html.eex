@@ -1,0 +1,20 @@
+  <!-- PageHeader.html -->
+  <%= render PhoenixSample.CommonView, "page_header.html", conn: @conn %>
+  <!-- //PageHeader.html -->
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+
+<h2>New member</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        teams: @teams,
+                        action: member_path(@conn, :create) %>
+
+<%= link "Back", to: member_path(@conn, :index) %>
+
+
+
+    </section>
+    <!-- /.content -->
+

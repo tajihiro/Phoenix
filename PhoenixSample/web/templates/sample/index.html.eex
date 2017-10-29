@@ -1,6 +1,0 @@
-<h3>Phoenix Sample Index Page</h3>
-<div>こんにちは。</div>
-
-<div><a href="<%= page_path(@conn, :index) %>">TOP</a>
-<div><a href="<%= sample_path(@conn, :index) %>">リンク</a>
-<div><a href="<%= @outer_url %>">外部リンク</a>

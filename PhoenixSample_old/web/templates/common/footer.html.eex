@@ -1,0 +1,9 @@
+  <!-- Main Footer -->
+  <footer class="main-footer">
+    <!-- To the right -->
+    <div class="pull-right hidden-xs">
+      Produced by Blowfish
+    </div>
+    <!-- Default to the left -->
+    <strong>Copyright &copy; 2017 <a href="http://www.blowfish.co.jp">Blowfish</a>.</strong> All rights reserved.
+  </footer>

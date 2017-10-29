@@ -1,0 +1,8 @@
+<h1>Index</h1>
+<div>
+  <%= link "こちら", to: page_path(@conn, :main) %>
+
+  <%= link to: page_path(@conn, :main), class: "logo" do %>
+    <span class="logo"><b>リンク</b></span>
+  <% end %>
+</div>

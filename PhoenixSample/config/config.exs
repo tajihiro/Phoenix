@@ -10,10 +10,10 @@ config :phoenix_sample,
   ecto_repos: [PhoenixSample.Repo]
 
 # Configures the endpoint
-config :phoenix_sample, PhoenixSample.Endpoint,
+config :phoenix_sample, PhoenixSampleWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "AwSazhV/NSwaSbVAs3TevT8TKfHgc2pTwl8KCWYBXtpHoB5RarvDcgaOfN7nRyRe",
-  render_errors: [view: PhoenixSample.ErrorView, accepts: ~w(html json)],
+  secret_key_base: "cbrR+aJot9r2hgMkmuNmsFxEg9lOA4/s8C2paDu6hcXutaORQMFmo4vd0Kl2Gm35",
+  render_errors: [view: PhoenixSampleWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: PhoenixSample.PubSub,
            adapter: Phoenix.PubSub.PG2]
 

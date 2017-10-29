@@ -1,6 +1,0 @@
-<h3>Phoenix Sample Show Page</h3>
-<div><%= @init %></div>
-<div>こんにちは。<%= @message %></div>
-<div><%= @name %>さん。</div>
-<div><a href="<%= page_path(@conn, :index) %>">TOP</a>
-<div><a href="<%= sample_path(@conn, :index) %>">リンク</a>

@@ -1,0 +1,4 @@
+<h1>Main</h1>
+<div>
+  <%= link "戻る", to: page_path(@conn, :index) %>
+</div>

@@ -1,0 +1,12 @@
+    <!-- PageHeader.html -->
+  <%= render PhoenixSample.CommonView, "page_header.html", conn: @conn %>
+  <!-- //PageHeader.html -->
+
+    <!-- Main content -->
+    <section class="content container-fluid">
+
+<h2><%= gettext "Welcome to %{name}", name: "Phoenix!" %></h2>
+
+      </section>
+    <!-- /.content -->
+
