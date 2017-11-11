@@ -1,0 +1,28 @@
+<h2>Show Sales</h2>
+
+<ul>
+
+  <li>
+    <strong>Price:</strong>
+    <%= @sales.price %>
+  </li>
+
+  <li>
+    <strong>Unit:</strong>
+    <%= @sales.unit %>
+  </li>
+
+  <li>
+    <strong>Amount:</strong>
+    <%= @sales.amount %>
+  </li>
+
+  <li>
+    <strong>Memo:</strong>
+    <%= @sales.memo %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: sales_path(@conn, :edit, @sales) %></span>
+<span><%= link "Back", to: sales_path(@conn, :index) %></span>

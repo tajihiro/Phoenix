@@ -1,0 +1,4 @@
+<div><%= link "Group", to: group_path(@conn, :index)%></div>
+<div><%= link "Item", to: item_path(@conn, :index)%></div>
+<div><%= link "Price", to: price_path(@conn, :index)%></div>
+<div><%= link "Sales", to: sales_path(@conn, :index)%></div>
