@@ -15,18 +15,24 @@ defmodule BlowCasherWeb.GroupController do
   end
 
   def create(conn, %{"group" => group_params}) do
+    # group_id 生成処理
+    crypto_id = create_crypto_id()
+    delete_flg = 0
+    group_params = Map.merge(%{"crypto_id" => crypto_id, "delete_flg" => delete_flg}, group_params)
+
     case Casher.create_group(group_params) do
       {:ok, group} ->
         conn
-        |> put_flash(:info, "Group created successfully.")
-        |> redirect(to: group_path(conn, :show, group))
+        |> put_flash(:info, "イベントが作成されました。")
+        |> redirect(to: group_path(conn, :show, crypto_id))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
   end
 
-  def show(conn, %{"id" => id}) do
-    group = Casher.get_group!(id)
+  def show(conn, %{"crypto_id" => crypto_id}) do
+#    group = Casher.get_group!(id)
+    group = BlowCasher.Repo.get_by!(Group, crypto_id: crypto_id)
     render(conn, "show.html", group: group)
   end
 
@@ -56,5 +62,11 @@ defmodule BlowCasherWeb.GroupController do
     conn
     |> put_flash(:info, "Group deleted successfully.")
     |> redirect(to: group_path(conn, :index))
+  end
+
+  # ランダム文字列生成
+  defp create_crypto_id() do
+    length = 20
+    :crypto.strong_rand_bytes(length) |> Base.encode64 |> binary_part(0, length)
   end
 end

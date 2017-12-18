@@ -5,8 +5,9 @@ defmodule BlowCasher.Casher.Group do
 
 
   schema "groups" do
+    field :crypto_id, :string
+    field :group_name, :string
     field :delete_flg, :integer
-    field :group_id, :string
 
     timestamps()
   end
@@ -14,7 +15,7 @@ defmodule BlowCasher.Casher.Group do
   @doc false
   def changeset(%Group{} = group, attrs) do
     group
-    |> cast(attrs, [:group_id, :delete_flg])
-    |> validate_required([:group_id, :delete_flg])
+    |> cast(attrs, [:crypto_id, :group_name, :delete_flg])
+    |> validate_required([:crypto_id, :group_name, :delete_flg])
   end
 end

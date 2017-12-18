@@ -1,4 +1,4 @@
-<h2>New Item</h2>
+<h2>商品登録</h2>
 
 <%= render "form.html", Map.put(assigns, :action, item_path(@conn, :create)) %>
 

@@ -1,18 +1,31 @@
-<h2>Show Group</h2>
+<h2>イベントが作成されました。</h2>
 
 <ul>
 
+    <li>
+        <strong>ID:</strong>
+        <%= @group.id %>
+    </li>
+    <li>
+        <strong>CRYPTO_ID:</strong>
+        <%= @group.crypto_id %>
+    </li>
   <li>
-    <strong>Group:</strong>
-    <%= @group.group_id %>
+    <strong>イベント名:</strong>
+    <%= @group.group_name %>
   </li>
-
-  <li>
-    <strong>Delete flg:</strong>
-    <%= @group.delete_flg %>
-  </li>
-
 </ul>
 
-<span><%= link "Edit", to: group_path(@conn, :edit, @group) %></span>
-<span><%= link "Back", to: group_path(@conn, :index) %></span>
+<span>
+<%= link "商品登録", to: item_path(@conn, :new, @group.crypto_id),
+                    class: "btn btn-default btn-xs",
+                    data: [ ajax: "false"] %>
+</span>
+
+
+<span>
+<%= link "はじめる", to: page_path(@conn, :index, @group.crypto_id),
+                    class: "btn btn-default btn-xs",
+                    data: [ ajax: "false"] %>
+</span>
+

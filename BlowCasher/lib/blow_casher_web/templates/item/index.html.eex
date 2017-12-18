@@ -5,7 +5,6 @@
     <tr>
       <th>Item name</th>
 
-      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -13,11 +12,6 @@
     <tr>
       <td><%= item.item_name %></td>
 
-      <td class="text-right">
-        <span><%= link "Show", to: item_path(@conn, :show, item), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Edit", to: item_path(@conn, :edit, item), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Delete", to: item_path(@conn, :delete, item), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
-      </td>
     </tr>
 <% end %>
   </tbody>

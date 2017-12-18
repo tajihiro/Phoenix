@@ -1,13 +1,22 @@
-<h2>Show Item</h2>
+<h2>商品名</h2>
 
 <ul>
 
   <li>
-    <strong>Item name:</strong>
+    <strong>CRYPTO ID:</strong>
+    <%= @item.crypto_id %>
+  </li>
+
+  <li>
+    <strong>商品名:</strong>
     <%= @item.item_name %>
   </li>
 
 </ul>
 
-<span><%= link "Edit", to: item_path(@conn, :edit, @item) %></span>
-<span><%= link "Back", to: item_path(@conn, :index) %></span>
+<span><%= link "更新", to: item_path(@conn, :edit, @item) %></span>
+<span>
+  <%= link "商品一覧", to: item_path(@conn, :index,
+                          [crypto_id: @item.crypto_id]),
+                          data: [ajax: "false"] %>
+</span>

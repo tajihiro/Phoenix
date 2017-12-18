@@ -3,8 +3,9 @@ defmodule BlowCasher.Repo.Migrations.CreateGroups do
 
   def change do
     create table(:groups) do
-      add :group_id, :string, size: 20, null: false
-      add :delete_flg, :integer, size: 1, null: false
+      add :crypto_id, :string, size: 20, null: false
+      add :group_name, :string, size: 60, null: false
+      add :delete_flg, :integer, size: 1, null: false, default: 0
 
       timestamps()
     end

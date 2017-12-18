@@ -3,8 +3,8 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Group</th>
-      <th>Delete flg</th>
+      <th>ID</th>
+      <th>イベント名</th>
 
       <th></th>
     </tr>
@@ -13,7 +13,8 @@
 <%= for group <- @groups do %>
     <tr>
       <td><%= group.group_id %></td>
-      <td><%= group.delete_flg %></td>
+      <td><%= group.crypto_id %></td>
+      <td><%= group.group_name %></td>
 
       <td class="text-right">
         <span><%= link "Show", to: group_path(@conn, :show, group), class: "btn btn-default btn-xs" %></span>

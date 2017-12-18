@@ -3,14 +3,19 @@ defmodule BlowCasherWeb.ItemController do
 
   alias BlowCasher.Casher
   alias BlowCasher.Casher.Item
+  alias BlowCasher.Casher.Group
 
   def index(conn, _params) do
+    IO.puts("DEBUG")
     items = Casher.list_items()
     render(conn, "index.html", items: items)
   end
 
-  def new(conn, _params) do
-    changeset = Casher.change_item(%Item{})
+  def new(conn, %{"crypto_id" => crypto_id}) do
+    # Group取得処理
+    group = BlowCasher.Repo.get_by!(Group, crypto_id: crypto_id)
+
+    changeset = Casher.change_item(%Item{group_id: group.id, crypto_id: crypto_id})
     render(conn, "new.html", changeset: changeset)
   end
 
