@@ -11,6 +11,11 @@ defmodule BlowCasherWeb.ItemController do
     render(conn, "index.html", items: items)
   end
 
+#  def index(conn, %{"crypto_id" => crypto_id}) do
+#    items = BlowCasher.Repo.get_by!(Item, crypto_id: crypto_id)
+#    render(conn, "index.html", items: items)
+#  end
+
   def new(conn, %{"crypto_id" => crypto_id}) do
     # Group取得処理
     group = BlowCasher.Repo.get_by!(Group, crypto_id: crypto_id)

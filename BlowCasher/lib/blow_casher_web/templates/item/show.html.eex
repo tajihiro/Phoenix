@@ -16,7 +16,5 @@
 
 <span><%= link "更新", to: item_path(@conn, :edit, @item) %></span>
 <span>
-  <%= link "商品一覧", to: item_path(@conn, :index,
-                          [crypto_id: @item.crypto_id]),
-                          data: [ajax: "false"] %>
+  <%= link "商品一覧", to: item_path(@conn, :index), data: [ajax: "false"] %>
 </span>
