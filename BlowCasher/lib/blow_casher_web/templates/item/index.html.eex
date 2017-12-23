@@ -1,20 +1,28 @@
-<h2>Listing Items</h2>
+<h2>商品一覧 <%= @crypto_id %></h2>
 
 <table class="table">
   <thead>
     <tr>
-      <th>Item name</th>
+        <th>商品名</th>
 
     </tr>
   </thead>
   <tbody>
-<%= for item <- @items do %>
-    <tr>
-      <td><%= item.item_name %></td>
+  <tr>
+      <td>ID</td>
+      <td>crypto_id</td>
+      <td>item_name</td>
 
-    </tr>
-<% end %>
+  </tr>
+  <%= for item <- @items do %>
+  <tr>
+    <td><%= item.id %></td>
+    <td><%= item.crypto_id %></td>
+    <td><%= item.item_name %></td>
+
+  </tr>
+  <% end %>
+
   </tbody>
 </table>
 
-<span><%= link "New Item", to: item_path(@conn, :new) %></span>

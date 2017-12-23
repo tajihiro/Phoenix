@@ -117,6 +117,14 @@ defmodule BlowCasher.Casher do
     Repo.all(Item)
   end
 
+
+  def list_items_by_crypto_id(crypto_id) do
+    Repo.all(from item in "items",
+             where: item.crypto_id == ^crypto_id,
+             select: [:id, :group_id, :crypto_id, :item_name])
+  end
+
+
   @doc """
   Gets a single item.
 

@@ -12,7 +12,7 @@
   <tbody>
 <%= for group <- @groups do %>
     <tr>
-      <td><%= group.group_id %></td>
+      <td><%= group.id %></td>
       <td><%= group.crypto_id %></td>
       <td><%= group.group_name %></td>
 
