@@ -9,12 +9,14 @@
 
 <div class="ui-corner-all custom-corners">
     <form>
+
         <select name="select-native-1" id="select-native-1">
             <option value="1">焼きそば</option>
             <option value="2">カレー</option>
             <option value="3">焼き鳥</option>
             <option value="4">ジュース</option>
         </select>
+
         <div class="ui-body ui-body-a">
             <h1>定価：150円</h1>
         </div>

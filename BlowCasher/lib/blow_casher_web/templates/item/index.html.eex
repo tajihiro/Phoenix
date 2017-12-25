@@ -26,3 +26,15 @@
   </tbody>
 </table>
 
+<span>
+<%= link "商品登録", to: item_path(@conn, :new, @crypto_id),
+                    class: "btn btn-default btn-xs",
+                    data: [ ajax: "false"] %>
+</span>
+<span>
+<%= link "はじめる", to: page_path(@conn, :index, @crypto_id),
+                    class: "btn btn-default btn-xs",
+                    data: [ ajax: "false"] %>
+</span>
+
+

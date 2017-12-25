@@ -2,10 +2,6 @@
     <%= link "イベントを新規作成", to: group_path(@conn, :new), data: ["ajax": "false"] %>
 </div>
 
-<div><%= link "Group", to: group_path(@conn, :index), class: "ui-btn", data: ["ajax": "false"] %></div>
-<div><%= link "Item", to: item_path(@conn, :index, "xx"), class: "ui-btn", data: ["ajax": "false"] %></div>
-<div><%= link "Price", to: price_path(@conn, :index), class: "ui-btn", data: ["ajax": "false"] %></div>
-<div><%= link "Sales", to: sales_path(@conn, :index), class: "ui-btn", data: ["ajax": "false"] %></div>
 
 
 

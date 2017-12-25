@@ -11,9 +11,10 @@ defmodule BlowCasherWeb.ItemController do
 #      render(conn, "index.html", items: items)
 #  end
 
-  def index(conn, %{"crypto_id" => crypto_id}) do
-#    crypto_id = _params["crypto_id"]
+  def index(conn, _params) do
+    crypto_id = _params["crypto_id"]
     items = Casher.list_items_by_crypto_id(crypto_id)
+#    items = Casher.list_items()
 
     render(conn, "index.html", items: items, crypto_id: crypto_id)
   end
@@ -31,16 +32,24 @@ defmodule BlowCasherWeb.ItemController do
       {:ok, item} ->
         conn
         |> put_flash(:info, "Item created successfully.")
-        |> redirect(to: item_path(conn, :show, item))
+        |> redirect(to: item_path(conn, :show, item.crypto_id))
+#        |> redirect(to: item_path(conn, :show, item))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
   end
 
-  def show(conn, %{"id" => id}) do
-    item = Casher.get_item!(id)
+  def show(conn, %{"crypto_id" => crypto_id}) do
+    item = Casher.get_item!(crypto_id)
     render(conn, "show.html", item: item)
   end
+
+
+
+#  def show(conn, %{"id" => id}) do
+#    item = Casher.get_item!(id)
+#    render(conn, "show.html", item: item)
+#  end
 
   def edit(conn, %{"id" => id}) do
     item = Casher.get_item!(id)
