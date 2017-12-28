@@ -8,19 +8,12 @@
 </div>
 
 <div class="ui-corner-all custom-corners">
-    <form>
-
-        <select name="select-native-1" id="select-native-1">
-            <option value="1">焼きそば</option>
-            <option value="2">カレー</option>
-            <option value="3">焼き鳥</option>
-            <option value="4">ジュース</option>
-        </select>
-
+        <%= form_for @conn, page_path(@conn, :index, @group.crypto_id), fn f -> %>
+            <%= select f, :item_id, Enum.map(@items, &{&1.item_name, &1.id}) %>
         <div class="ui-body ui-body-a">
             <h1>定価：150円</h1>
         </div>
-    </form>
+        <% end %>
     </div>
 </div>
 
