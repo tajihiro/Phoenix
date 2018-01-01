@@ -119,9 +119,15 @@ defmodule BlowCasher.Casher do
 
 
   def list_items_by_crypto_id(crypto_id) do
-    Repo.all(from item in "items",
-             where: item.crypto_id == ^crypto_id,
-             select: [:id, :group_id, :crypto_id, :item_name])
+    Repo.all(from i in "items",
+             left_join: p in "prices",
+                    on: i.id == p.item_id,
+                 where: i.crypto_id == ^crypto_id,
+                select: %{id: i.id,
+                          group_id: i.group_id,
+                          crypto_id: i.crypto_id,
+                          item_name: i.item_name,
+                          price: p.price })
   end
 
 
@@ -221,6 +227,7 @@ defmodule BlowCasher.Casher do
     Repo.all(Price)
   end
 
+
   @doc """
   Gets a single price.
 
@@ -236,6 +243,24 @@ defmodule BlowCasher.Casher do
 
   """
   def get_price!(id), do: Repo.get!(Price, id)
+
+
+  def get_current_price!(item_id) do
+    Repo.one!(from p in "prices",
+              where: p.item_id == ^item_id,
+           order_by: [p.id],
+             select: %{id: max(p.id), price: p.price})
+  end
+
+
+  def get_current_price_by_crypto_id!(crypto_id) do
+    Repo.one!(from i in "items",
+             left_join: p in "prices",
+                    on: i.id == p.item_id,
+                 where: i.crypto_id == ^crypto_id,
+              order_by: [p.id],
+                select: %{id: max(p.id), price: p.price})
+  end
 
   @doc """
   Creates a price.
