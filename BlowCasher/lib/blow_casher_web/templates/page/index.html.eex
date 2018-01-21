@@ -45,15 +45,16 @@
             <div class="ui-block-a"><input id="btn09" type="button" value="9"></div>
             <div class="ui-block-b"><input id="btn10" type="button" value="10"></div>
             <div class="ui-block-c">
-                <a href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-b">
-                    訂正
-                </a>
+                <input id="btnAlt" type="button" value="訂正"  data-theme="b">
+                <div style="display: none">
+                    <a id="hiddenBtn" href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop" ></a>
+                </div>
             </div>
             <div class="ui-block-d">
-                <a href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-b">
-                    確定
-                </a>
-            </div>
+                <input id="btnEnt" type="button" value="確定" data-theme="b">
+                <div style="display: none">
+                    <a id="hiddenBtn" href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop" ></a>
+                </div>
         </fieldset>
 
     </div>
@@ -63,7 +64,7 @@
 
 <div data-role="popup" id="popupDialog" data-overlay-theme="b" data-theme="b" data-dismissible="false" style="max-width:400px;">
     <div role="main" class="ui-content">
-    <h2 class="ui-title" style="text-align: left">とうもろこし</h2>
+    <h2 id="item" class="ui-title" style="text-align: left">とうもろこし</h2>
     <h3 class="ui-title" style="text-align: center">1,200円 × 3 = 3,600円</h3>
         <p></p>
     <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">キャンセル</a>
@@ -76,7 +77,17 @@
         $('select').change(function() {
           this.form.submit();
         });
+
         $('#btnEnt').click(function() {
+            $('#hiddenBtn').click();
+
+            // this.form.action = '/sales'
+            // this.form.method = 'POST'
+            // this.form.submit();
+        });
+        $('#btnAlt').click(function() {
+            $('#hiddenBtn').click();
+
             // this.form.action = '/sales'
             // this.form.method = 'POST'
             // this.form.submit();
