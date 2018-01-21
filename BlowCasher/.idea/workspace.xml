@@ -49,51 +49,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="page_controller.ex" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/controllers/page_controller.ex">
+      <file leaf-file-name="index.html.eex" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/templates/page/index.html.eex">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="47" lean-forward="false" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="casher.ex" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/blow_casher/casher/casher.ex">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="121" column="31" lean-forward="true" selection-start-line="121" selection-start-column="31" selection-end-line="121" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="group_controller.ex" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/controllers/group_controller.ex">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="35" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="item_controller.ex" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/controllers/item_controller.ex">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="163">
-              <caret line="54" column="22" lean-forward="true" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="items" pinned="false" current-in-tab="true">
-        <entry file="das://table:/cead958e/bbb51d95-66e0-446e-bf01-ec1938ae2a99/blowcasher_db.items">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
+            <state relative-caret-position="134">
+              <caret line="69" column="126" lean-forward="false" selection-start-line="69" selection-start-column="126" selection-end-line="69" selection-end-column="126" />
+              <folding>
+                <element signature="n#style#0;n#div#4;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h2#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h3#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -159,11 +124,11 @@
         <option value="$PROJECT_DIR$/lib/blow_casher/casher/price.ex" />
         <option value="$PROJECT_DIR$/lib/blow_casher/casher/item.ex" />
         <option value="$PROJECT_DIR$/lib/blow_casher_web/controllers/price_controller.ex" />
-        <option value="$PROJECT_DIR$/lib/blow_casher_web/templates/page/index.html.eex" />
         <option value="$PROJECT_DIR$/priv/repo/migrations/20171111105951_create_items.exs" />
         <option value="$PROJECT_DIR$/priv/repo/migrations/20171111110005_create_prices.exs" />
         <option value="$PROJECT_DIR$/lib/blow_casher_web/controllers/page_controller.ex" />
         <option value="$PROJECT_DIR$/lib/blow_casher/casher/casher.ex" />
+        <option value="$PROJECT_DIR$/lib/blow_casher_web/templates/page/index.html.eex" />
       </list>
     </option>
   </component>
@@ -214,19 +179,6 @@
               <item name="BlowCasher" type="b2602c69:ProjectViewProjectNode" />
               <item name="BlowCasher" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="blow_casher" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BlowCasher" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlowCasher" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="blow_casher" type="462c0819:PsiDirectoryNode" />
-              <item name="casher" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BlowCasher" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlowCasher" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="blow_casher_web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -234,7 +186,15 @@
               <item name="BlowCasher" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="blow_casher_web" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BlowCasher" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BlowCasher" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="blow_casher_web" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BlowCasher" type="b2602c69:ProjectViewProjectNode" />
@@ -280,7 +240,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Elixir Mix.mix phx.server">
+  <component name="RunManager" selected="Elixir Mix.mix phx.routes">
     <configuration name="mix clean" type="MixRunConfigurationType" factoryName="Elixir Mix" show_console_on_std_err="false" show_console_on_std_out="false">
       <option name="passParentEnvs" value="false" />
       <option name="programParameters" value="clean" />
@@ -387,12 +347,12 @@
       <workItem from="1514164786150" duration="3341000" />
       <workItem from="1514204456232" duration="3749000" />
       <workItem from="1514598939214" duration="23617000" />
-      <workItem from="1516501182089" duration="13808000" />
+      <workItem from="1516501182089" duration="21438000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86026000" />
+    <option name="totallyTimeSpent" value="93656000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -780,10 +740,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/templates/page/index.html.eex">
+    <entry file="das://table:/cead958e/bbb51d95-66e0-446e-bf01-ec1938ae2a99/blowcasher_db.items">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/controllers/item_controller.ex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="24" lean-forward="true" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="29" />
+        <state relative-caret-position="163">
+          <caret line="54" column="22" lean-forward="true" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
           <folding />
         </state>
       </provider>
@@ -796,10 +763,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/controllers/item_controller.ex">
+    <entry file="file://$PROJECT_DIR$/lib/blow_casher/casher/casher.ex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="54" column="22" lean-forward="true" selection-start-line="54" selection-start-column="22" selection-end-line="54" selection-end-column="22" />
+        <state relative-caret-position="237">
+          <caret line="121" column="31" lean-forward="true" selection-start-line="121" selection-start-column="31" selection-end-line="121" selection-end-column="31" />
           <folding />
         </state>
       </provider>
@@ -812,18 +779,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/blow_casher/casher/casher.ex">
+    <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/templates/page/index.html.eex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="121" column="31" lean-forward="true" selection-start-line="121" selection-start-column="31" selection-end-line="121" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/cead958e/bbb51d95-66e0-446e-bf01-ec1938ae2a99/blowcasher_db.items">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+        <state relative-caret-position="134">
+          <caret line="69" column="126" lean-forward="false" selection-start-line="69" selection-start-column="126" selection-end-line="69" selection-end-column="126" />
+          <folding>
+            <element signature="n#style#0;n#div#4;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h2#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
