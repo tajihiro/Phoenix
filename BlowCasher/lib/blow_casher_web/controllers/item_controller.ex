@@ -13,10 +13,11 @@ defmodule BlowCasherWeb.ItemController do
 
   def index(conn, _params) do
     crypto_id = _params["crypto_id"]
+    group = BlowCasher.Repo.get_by!(Group, crypto_id: crypto_id)
     items = Casher.list_items_by_crypto_id(crypto_id)
 #    items = Casher.list_items()
 
-    render(conn, "index.html", items: items, crypto_id: crypto_id)
+    render(conn, "index.html", group: group, crypto_id: crypto_id, items: items)
   end
 
   def new(conn, %{"crypto_id" => crypto_id}) do
@@ -28,15 +29,26 @@ defmodule BlowCasherWeb.ItemController do
   end
 
   def create(conn, %{"item" => item_params}) do
-    case Casher.create_item(item_params) do
-      {:ok, item} ->
-        conn
-        |> put_flash(:info, "Item created successfully.")
-        |> redirect(to: item_path(conn, :show, item.crypto_id))
-#        |> redirect(to: item_path(conn, :show, item))
-      {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "new.html", changeset: changeset)
-    end
+    # Transaction for create Item & Price
+#    BlowCasher.Repo.transaction(fn ->
+        with {:ok, item} <- Casher.create_item(item_params),
+             {:ok, price} <- Casher.create_price(%{price: item_params["price"], item_id: item.id}) do
+                conn
+                |> put_flash(:info, "Item created successfully.")
+                |> redirect(to: item_path(conn, :show, item.crypto_id))
+                |> redirect(to: item_path(conn, :show, item))
+        end
+#          case Casher.create_item(item_params) do
+#            {:ok, item} ->
+#              conn
+#              |> put_flash(:info, "Item created successfully.")
+#              |> redirect(to: item_path(conn, :show, item.crypto_id))
+#              |> redirect(to: item_path(conn, :show, item))
+#            {:error, %Ecto.Changeset{} = changeset} ->
+#              render(conn, "new.html", changeset: changeset)
+#          end
+#    end)
+
   end
 
   def show(conn, %{"crypto_id" => crypto_id}) do

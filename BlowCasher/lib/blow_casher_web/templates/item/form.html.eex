@@ -8,8 +8,11 @@
   <div class="form-group">
     <%= label f, "商品名", class: "control-label" %>
     <%= text_input f, :item_name, class: "form-control" %>
-      <%= hidden_input f, :group_id, class: "form-control" %>
-      <%= hidden_input f, :crypto_id, class: "form-control" %>
+
+    <%= label f, "金額", class: "control-label" %>
+    <%= text_input f, :price, class: "form-control" %>
+    <%= hidden_input f, :group_id, class: "form-control" %>
+    <%= hidden_input f, :crypto_id, class: "form-control" %>
     <%= error_tag f, :item_name %>
   </div>
 
