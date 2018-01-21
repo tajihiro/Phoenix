@@ -897,90 +897,94 @@
     <table id="225" parent="2" name="items">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="226" parent="2" name="prices">
+    <table id="226" parent="2" name="sales">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="227" parent="2" name="sales">
+    <table id="227" parent="2" name="schema_migrations">
       <Engine>InnoDB</Engine>
     </table>
-    <table id="228" parent="2" name="schema_migrations">
-      <Engine>InnoDB</Engine>
-    </table>
-    <column id="229" parent="224" name="id">
+    <column id="228" parent="224" name="id">
       <Position>1</Position>
       <DataType>bigint(20) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="230" parent="224" name="crypto_id">
+    <column id="229" parent="224" name="crypto_id">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="231" parent="224" name="group_name">
+    <column id="230" parent="224" name="group_name">
       <Position>3</Position>
       <DataType>varchar(60)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="232" parent="224" name="delete_flg">
+    <column id="231" parent="224" name="delete_flg">
       <Position>4</Position>
       <DataType>int(1)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="233" parent="224" name="inserted_at">
+    <column id="232" parent="224" name="inserted_at">
       <Position>5</Position>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="234" parent="224" name="updated_at">
+    <column id="233" parent="224" name="updated_at">
       <Position>6</Position>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="235" parent="224" name="PRIMARY">
+    <key id="234" parent="224" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="236" parent="225" name="id">
+    <column id="235" parent="225" name="id">
       <Position>1</Position>
       <DataType>bigint(20) unsigned|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="237" parent="225" name="item_name">
+    <column id="236" parent="225" name="item_name">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="238" parent="225" name="group_id">
+    <column id="237" parent="225" name="group_id">
       <Position>3</Position>
       <DataType>bigint(20) unsigned|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="239" parent="225" name="crypto_id">
+    <column id="238" parent="225" name="crypto_id">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="240" parent="225" name="inserted_at">
+    <column id="239" parent="225" name="price">
       <Position>5</Position>
+      <DataType>decimal(10)|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="240" parent="225" name="inserted_at">
+      <Position>6</Position>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="241" parent="225" name="updated_at">
-      <Position>6</Position>
+      <Position>7</Position>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
@@ -1013,114 +1017,69 @@
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="247" parent="226" name="item_id">
-      <Position>3</Position>
-      <DataType>bigint(20) unsigned|0</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="248" parent="226" name="inserted_at">
-      <Position>4</Position>
-      <DataType>datetime|0</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="249" parent="226" name="updated_at">
-      <Position>5</Position>
-      <DataType>datetime|0</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="250" parent="226" name="prices_item_id_index">
-      <ColNames>item_id</ColNames>
-    </index>
-    <key id="251" parent="226" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="252" parent="226" name="prices_item_id_fkey">
-      <ColNames>item_id</ColNames>
-      <RefSchemaName>blowcasher_db</RefSchemaName>
-      <RefTableName>items</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <column id="253" parent="227" name="id">
-      <Position>1</Position>
-      <DataType>bigint(20) unsigned|0</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="254" parent="227" name="price">
-      <Position>2</Position>
-      <DataType>decimal(10)|0</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>&apos;0&apos;</DefaultExpression>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="255" parent="227" name="unit">
+    <column id="247" parent="226" name="unit">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="256" parent="227" name="amount">
+    <column id="248" parent="226" name="amount">
       <Position>4</Position>
       <DataType>decimal(10)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="257" parent="227" name="memo">
+    <column id="249" parent="226" name="memo">
       <Position>5</Position>
       <DataType>text|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="258" parent="227" name="item_id">
+    <column id="250" parent="226" name="item_id">
       <Position>6</Position>
       <DataType>bigint(20) unsigned|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="259" parent="227" name="inserted_at">
+    <column id="251" parent="226" name="inserted_at">
       <Position>7</Position>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="260" parent="227" name="updated_at">
+    <column id="252" parent="226" name="updated_at">
       <Position>8</Position>
       <DataType>datetime|0</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="261" parent="227" name="sales_item_id_index">
+    <index id="253" parent="226" name="sales_item_id_index">
       <ColNames>item_id</ColNames>
     </index>
-    <key id="262" parent="227" name="PRIMARY">
+    <key id="254" parent="226" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="263" parent="227" name="sales_item_id_fkey">
+    <foreign-key id="255" parent="226" name="sales_item_id_fkey">
       <ColNames>item_id</ColNames>
       <RefSchemaName>blowcasher_db</RefSchemaName>
       <RefTableName>items</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="264" parent="228" name="version">
+    <column id="256" parent="227" name="version">
       <Position>1</Position>
       <DataType>bigint(20)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="265" parent="228" name="inserted_at">
+    <column id="257" parent="227" name="inserted_at">
       <Position>2</Position>
       <DataType>datetime|0</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="266" parent="228" name="PRIMARY">
+    <key id="258" parent="227" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>version</ColNames>
       <Primary>1</Primary>

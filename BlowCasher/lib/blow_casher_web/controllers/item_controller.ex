@@ -31,22 +31,22 @@ defmodule BlowCasherWeb.ItemController do
   def create(conn, %{"item" => item_params}) do
     # Transaction for create Item & Price
 #    BlowCasher.Repo.transaction(fn ->
-        with {:ok, item} <- Casher.create_item(item_params),
-             {:ok, price} <- Casher.create_price(%{price: item_params["price"], item_id: item.id}) do
-                conn
-                |> put_flash(:info, "Item created successfully.")
-                |> redirect(to: item_path(conn, :show, item.crypto_id))
-                |> redirect(to: item_path(conn, :show, item))
-        end
-#          case Casher.create_item(item_params) do
-#            {:ok, item} ->
-#              conn
-#              |> put_flash(:info, "Item created successfully.")
-#              |> redirect(to: item_path(conn, :show, item.crypto_id))
-#              |> redirect(to: item_path(conn, :show, item))
-#            {:error, %Ecto.Changeset{} = changeset} ->
-#              render(conn, "new.html", changeset: changeset)
-#          end
+#        with {:ok, item} <- Casher.create_item(item_params),
+#             {:ok, price} <- Casher.create_price(%{price: item_params["price"], item_id: item.id}) do
+#                conn
+#                |> put_flash(:info, "Item created successfully.")
+#                |> redirect(to: item_path(conn, :show, item.crypto_id))
+#                |> redirect(to: item_path(conn, :show, item))
+#        end
+          case Casher.create_item(item_params) do
+            {:ok, item} ->
+              conn
+              |> put_flash(:info, "Item created successfully.")
+              |> redirect(to: item_path(conn, :show, item.crypto_id))
+              |> redirect(to: item_path(conn, :show, item))
+            {:error, %Ecto.Changeset{} = changeset} ->
+              render(conn, "new.html", changeset: changeset)
+          end
 #    end)
 
   end

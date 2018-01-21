@@ -120,14 +120,22 @@ defmodule BlowCasher.Casher do
 
   def list_items_by_crypto_id(crypto_id) do
     Repo.all(from i in "items",
-             left_join: p in "prices",
-                    on: i.id == p.item_id,
                  where: i.crypto_id == ^crypto_id,
+                 order_by: [i.id],
                 select: %{id: i.id,
                           group_id: i.group_id,
                           crypto_id: i.crypto_id,
                           item_name: i.item_name,
-                          price: p.price })
+                          price: i.price })
+#    Repo.all(from i in "items",
+#             left_join: p in "prices",
+#                    on: i.id == p.item_id,
+#                 where: i.crypto_id == ^crypto_id,
+#                select: %{id: i.id,
+#                          group_id: i.group_id,
+#                          crypto_id: i.crypto_id,
+#                          item_name: i.item_name,
+#                          price: p.price })
   end
 
 
@@ -146,6 +154,21 @@ defmodule BlowCasher.Casher do
 
   """
   def get_item!(id), do: Repo.get!(Item, id)
+
+
+  def get_item_price!(id) do
+      Repo.one!(from i in "items",
+                where: i.id == ^id,
+                order_by: [i.id],
+                select: %{id: max(i.id), price: i.price})
+  end
+
+  def get_item_price_by_crypto_id!(crypto_id) do
+    Repo.one!(from i in "items",
+                 where: i.crypto_id == ^crypto_id,
+              order_by: [i.id],
+                select: %{id: max(i.id), price: i.price})
+  end
 
   @doc """
   Creates a item.
@@ -244,88 +267,23 @@ defmodule BlowCasher.Casher do
   """
   def get_price!(id), do: Repo.get!(Price, id)
 
+#  def get_current_price!(item_id) do
+#    Repo.one!(from p in "prices",
+#              where: p.item_id == ^item_id,
+#           order_by: [p.id],
+#             select: %{id: max(p.id), price: p.price})
+#  end
 
-  def get_current_price!(item_id) do
-    Repo.one!(from p in "prices",
-              where: p.item_id == ^item_id,
-           order_by: [p.id],
-             select: %{id: max(p.id), price: p.price})
-  end
 
+#  def get_current_price_by_crypto_id!(crypto_id) do
+#    Repo.one!(from i in "items",
+#             left_join: p in "prices",
+#                    on: i.id == p.item_id,
+#                 where: i.crypto_id == ^crypto_id,
+#              order_by: [p.id],
+#                select: %{id: max(p.id), price: p.price})
+#  end
 
-  def get_current_price_by_crypto_id!(crypto_id) do
-    Repo.one!(from i in "items",
-             left_join: p in "prices",
-                    on: i.id == p.item_id,
-                 where: i.crypto_id == ^crypto_id,
-              order_by: [p.id],
-                select: %{id: max(p.id), price: p.price})
-  end
-
-  @doc """
-  Creates a price.
-
-  ## Examples
-
-      iex> create_price(%{field: value})
-      {:ok, %Price{}}
-
-      iex> create_price(%{field: bad_value})
-      {:error, %Ecto.Changeset{}}
-
-  """
-  def create_price(attrs \\ %{}) do
-    %Price{}
-    |> Price.changeset(attrs)
-    |> Repo.insert()
-  end
-
-  @doc """
-  Updates a price.
-
-  ## Examples
-
-      iex> update_price(price, %{field: new_value})
-      {:ok, %Price{}}
-
-      iex> update_price(price, %{field: bad_value})
-      {:error, %Ecto.Changeset{}}
-
-  """
-  def update_price(%Price{} = price, attrs) do
-    price
-    |> Price.changeset(attrs)
-    |> Repo.update()
-  end
-
-  @doc """
-  Deletes a Price.
-
-  ## Examples
-
-      iex> delete_price(price)
-      {:ok, %Price{}}
-
-      iex> delete_price(price)
-      {:error, %Ecto.Changeset{}}
-
-  """
-  def delete_price(%Price{} = price) do
-    Repo.delete(price)
-  end
-
-  @doc """
-  Returns an `%Ecto.Changeset{}` for tracking price changes.
-
-  ## Examples
-
-      iex> change_price(price)
-      %Ecto.Changeset{source: %Price{}}
-
-  """
-  def change_price(%Price{} = price) do
-    Price.changeset(price, %{})
-  end
 
   alias BlowCasher.Casher.Sales
 

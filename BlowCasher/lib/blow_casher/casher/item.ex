@@ -8,6 +8,7 @@ defmodule BlowCasher.Casher.Item do
     field :item_name, :string
     field :group_id, :id
     field :crypto_id, :string
+    field :price, :decimal
 
     timestamps()
   end
@@ -15,7 +16,7 @@ defmodule BlowCasher.Casher.Item do
   @doc false
   def changeset(%Item{} = item, attrs) do
     item
-    |> cast(attrs, [:item_name, :group_id, :crypto_id])
-    |> validate_required([:item_name, :group_id, :crypto_id])
+    |> cast(attrs, [:item_name, :group_id, :crypto_id, :price])
+    |> validate_required([:item_name, :group_id, :crypto_id, :price])
   end
 end

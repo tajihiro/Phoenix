@@ -6,6 +6,7 @@ defmodule BlowCasher.Repo.Migrations.CreateItems do
       add :item_name, :string, null: false
       add :group_id, references(:groups, on_delete: :nothing)
       add :crypto_id, :string, null: false
+      add :price, :decimal, null: false, default: 0
       timestamps()
     end
 
