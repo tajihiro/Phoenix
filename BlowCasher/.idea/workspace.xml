@@ -34,12 +34,10 @@
       <file leaf-file-name="index.html.eex" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/templates/page/index.html.eex">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
-              <caret line="49" column="56" lean-forward="true" selection-start-line="49" selection-start-column="56" selection-end-line="49" selection-end-column="56" />
+            <state relative-caret-position="2101">
+              <caret line="142" column="15" lean-forward="false" selection-start-line="142" selection-start-column="15" selection-end-line="142" selection-end-column="15" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#div#2;n#fieldset#2;n#div#1;n#div#3;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#3;n#fieldset#2;n#div#1;n#div#3;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h2#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#4;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -143,39 +141,12 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="BlowCasher" type="b2602c69:ProjectViewProjectNode" />
               <item name="BlowCasher" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BlowCasher" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlowCasher" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BlowCasher" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlowCasher" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="blow_casher_web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BlowCasher" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlowCasher" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="blow_casher_web" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="BlowCasher" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BlowCasher" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="blow_casher_web" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="page" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BlowCasher" type="b2602c69:ProjectViewProjectNode" />
@@ -192,6 +163,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -330,12 +302,13 @@
       <workItem from="1514204456232" duration="3749000" />
       <workItem from="1514598939214" duration="23617000" />
       <workItem from="1516501182089" duration="21668000" />
-      <workItem from="1516540494861" duration="3995000" />
+      <workItem from="1516540494861" duration="5808000" />
+      <workItem from="1516629685966" duration="2637000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97881000" />
+    <option name="totallyTimeSpent" value="102331000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -348,9 +321,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18454936" sideWeight="0.7972973" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18669528" sideWeight="0.7972973" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980132" sideWeight="0.49713877" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980132" sideWeight="0.50572246" order="7" side_tool="true" content_ui="tabs" />
@@ -718,7 +690,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="48">
           <caret line="40" column="5" lean-forward="true" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -726,18 +697,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="41">
           <caret line="53" column="0" lean-forward="true" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/templates/page/index.html.eex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="49" column="56" lean-forward="true" selection-start-line="49" selection-start-column="56" selection-end-line="49" selection-end-column="56" />
+        <state relative-caret-position="2101">
+          <caret line="142" column="15" lean-forward="false" selection-start-line="142" selection-start-column="15" selection-end-line="142" selection-end-column="15" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#2;n#fieldset#2;n#div#1;n#div#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#3;n#fieldset#2;n#div#1;n#div#3;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h2#0;n#div#0;n#div#4;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#4;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

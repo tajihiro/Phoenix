@@ -20,6 +20,7 @@
     </div>
     <div class="ui-body ui-body-a">
         <input type="number" data-clear-btn="true" name="amount" pattern="[0-9]*" id="amount" value="0">
+        <input type="hidden" id="num" value="0">
     </div>
 </div>
 
@@ -61,30 +62,40 @@
 </div>
 <% end %>
 
-
-<div data-role="popup" id="popupDialog" data-overlay-theme="b" data-theme="b" data-dismissible="false" style="max-width:400px;">
-    <div role="main" class="ui-content">
-    <h2 id="item" class="ui-title" style="text-align: left">とうもろこし</h2>
-    <h3 class="ui-title" style="text-align: center">1,200円 × 3 = 3,600円</h3>
+<div id="popupDialog" style="max-width: 400px;" data-role="popup" data-theme="b" data-overlay-theme="b" data-dismissible="false">
+    <div data-role="header" data-theme="a">
+        <h1 id="item_name">ITEM NAME</h1>
+    </div>
+    <div class="ui-content" role="main">
+        <h3 id="content" class="ui-title">XXX円 × Y個 = X,XXX円</h3>
         <p></p>
-    <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">キャンセル</a>
-    <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back" data-transition="flow">  O   K  </a>
+        <a class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" href="#" data-rel="back">Cancel</a>
+        <a class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" href="#" data-transition="flow" data-rel="back">OK</a>
     </div>
 </div>
 
+
 <script>
     $(function(){
+        //商品選択ボックス
         $('select').change(function() {
           this.form.submit();
         });
-
+        //確定ボタン
         $('#btnEnt').click(function() {
             $('#hiddenBtn').click();
-
+            var item_name = $('[name=item_id] option:selected');
+            var num = $('#num').val();
+            var price = $('#price').val();
+            var amount = $('#amount').val();
+            //ポップアップ表示
+            $('#popupDialog h1').html(item_name);
+            $('#popupDialog #content').html(price + '円 × ' + num + '個 = ' + amount +'円');
             // this.form.action = '/sales'
             // this.form.method = 'POST'
             // this.form.submit();
         });
+        //訂正ボタン
         $('#btnAlt').click(function() {
             $('#hiddenBtn').click();
 
@@ -92,7 +103,7 @@
             // this.form.method = 'POST'
             // this.form.submit();
         });
-
+        //計算ボタン
         $('#btn01').click(function(){
             calcDisplay(1);
         });
@@ -123,16 +134,13 @@
         $('#btn10').click(function(){
             calcDisplay(10);
         });
-        $('#btnAlt').click(function(){
-
-        });
-        $('#btnEnt').click(function(){
-
-        });
+        //算出結果表示
         function calcDisplay(num){
             var price = $('#price').val();
+            $('#num').val(num);
             $('#amount').val(price * num);
         }
+        //合計クリア
         $('#amount').change(function() {
             if(this.value == ''){
                 $('#amount').val(0);
