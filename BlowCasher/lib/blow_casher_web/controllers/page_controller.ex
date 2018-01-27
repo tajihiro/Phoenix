@@ -21,4 +21,22 @@ defmodule BlowCasherWeb.PageController do
     render(conn, "index.html", [group: group, price: price, items: items])
   end
 
+  # Sales登録
+  def create(conn, _params) do
+    crypto_id = _params["crypto_id"]
+    case Casher.create_sales(_params) do
+      {:ok, sales} ->
+      conn
+        |> put_flash(:info, "Updated successfully.")
+#        |> redirect(to: page_path(conn, :index, crypto_id))
+        |> redirect(to: page_path(conn, :result, crypto_id))
+      {:error, %Ecto.Changeset{} = changeset} ->
+        render(conn, "index.html", crypto_id)
+    end
+  end
+
+  def result(conn, %{"crypto_id" => crypto_id}) do
+    render(conn, "result.html", crypto_id: crypto_id)
+  end
+
 end

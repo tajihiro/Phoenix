@@ -4,15 +4,16 @@
     </div>
 </div>
 
-<%= form_for @conn, page_path(@conn, :index, @group.crypto_id), [method: :get, id: "calcFrm"],  fn f -> %>
+<%= form_for @conn, page_path(@conn, :index, @group.crypto_id), [method: :get, id: "itemFrm"],  fn f -> %>
 <div class="ui-corner-all custom-corners">
             <%= select f, :item_id, Enum.map(@items, &{&1.item_name, &1.id}) %>
     <div class="ui-body ui-body-a">
             <h1>定価：<%= @price.price %>円</h1>
-            <input id="price" type="hidden" value="<%= @price.price %>">
+        <input name="price" id="price" type="hidden" value="<%= @price.price %>">
         </div>
     </div>
 </div>
+<% end %>
 
 <div class="ui-corner-all custom-corners">
     <div class="ui-bar ui-bar-a">
@@ -20,7 +21,7 @@
     </div>
     <div class="ui-body ui-body-a">
         <input type="number" data-clear-btn="true" name="amount" pattern="[0-9]*" id="amount" value="0">
-        <input type="hidden" id="num" value="0">
+        <input type="hidden" id="unit" value="0">
     </div>
 </div>
 
@@ -60,7 +61,7 @@
 
     </div>
 </div>
-<% end %>
+
 
 <div id="popupDialog" style="max-width: 400px;" data-role="popup" data-theme="b" data-overlay-theme="b" data-dismissible="false">
     <div data-role="header" data-theme="a">
@@ -69,9 +70,17 @@
     <div class="ui-content" role="main">
         <h3 id="content" class="ui-title">XXX円 × Y個 = X,XXX円</h3>
         <p></p>
-        <a class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" href="#" data-rel="back">Cancel</a>
-        <a class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" href="#" data-transition="flow" data-rel="back">OK</a>
+        <a id="btnCancel" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" href="#" data-rel="back">Cancel</a>
+        <a id="btnCommit" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" href="#" data-transition="flow" data-rel="back">OK</a>
     </div>
+    <%= form_for @conn, page_path(@conn, :create), [method: :post, id: "commitFrm"],  fn f -> %>
+    <input type="hidden" name="crypto_id" id="crypto_id" value="<%= @group.crypto_id %>">
+    <input type="hidden" name="item_id" id="item_id" value="0">
+    <input type="hidden" name="price" id="price" value="0">
+    <input type="hidden" name="unit" id="unit" value="0">
+    <input type="hidden" name="amount" id="amount" value="0">
+    <input type="text" name="memo" id="memo" value="MEMO">
+    <% end %>
 </div>
 
 
@@ -85,23 +94,34 @@
         $('#btnEnt').click(function() {
             $('#hiddenBtn').click();
             var item_name = $('[name=item_id] option:selected');
-            var num = $('#num').val();
+            var item_id = $('[name=item_id]').val();
+            var unit = $('#unit').val();
             var price = $('#price').val();
             var amount = $('#amount').val();
             //ポップアップ表示
             $('#popupDialog h1').html(item_name);
-            $('#popupDialog #content').html(price + '円 × ' + num + '個 = ' + amount +'円');
+            $('#popupDialog #content').html(price + '円 × ' + unit + '個 = ' + amount +'円');
+            //値設定
+            $('#commitFrm #item_id').val(item_id);
+            $('#commitFrm #price').val(price);
+            $('#commitFrm #unit').val(unit);
+            $('#commitFrm #amount').val(amount);
+        });
+        //訂正ボタン
+        $('#btnAlt').click(function() {
+            //$('#hiddenBtn').click();
             // this.form.action = '/sales'
             // this.form.method = 'POST'
             // this.form.submit();
         });
-        //訂正ボタン
-        $('#btnAlt').click(function() {
-            $('#hiddenBtn').click();
-
-            // this.form.action = '/sales'
-            // this.form.method = 'POST'
-            // this.form.submit();
+        //ダイアログOKボタン
+        $('#btnCommit').click(function(){
+            frm = $('#commitFrm');
+            frm.submit();
+        });
+        //ダイアログCancelボタン
+        $('#btnCancel').click(function(){
+            console.log("Cancel!!");
         });
         //計算ボタン
         $('#btn01').click(function(){
@@ -135,10 +155,10 @@
             calcDisplay(10);
         });
         //算出結果表示
-        function calcDisplay(num){
+        function calcDisplay(unit){
             var price = $('#price').val();
-            $('#num').val(num);
-            $('#amount').val(price * num);
+            $('#unit').val(unit);
+            $('#amount').val(price * unit);
         }
         //合計クリア
         $('#amount').change(function() {
