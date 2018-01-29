@@ -4,6 +4,7 @@ defmodule BlowCasherWeb.PageController do
   alias BlowCasher.Casher
   alias BlowCasher.Casher.Group
   alias BlowCasher.Casher.Item
+  alias BlowCasher.Casher.Sales
 
   def index(conn, %{"crypto_id" => crypto_id}) do
     group = BlowCasher.Repo.get_by!(Group, crypto_id: crypto_id)
@@ -24,19 +25,29 @@ defmodule BlowCasherWeb.PageController do
   # Sales登録
   def create(conn, _params) do
     crypto_id = _params["crypto_id"]
-    case Casher.create_sales(_params) do
+    price = _params["price"]
+    unit = _params["unit"]
+    amount = _params["amount"]
+    memo = _params["memo"]
+    item_id = _params["item_id"]
+    sales = %{price: price,
+                   unit: unit,
+                   amount: amount,
+                   memo: memo,
+                   item_id: item_id}
+    case Casher.create_sales(sales) do
       {:ok, sales} ->
       conn
         |> put_flash(:info, "Updated successfully.")
 #        |> redirect(to: page_path(conn, :index, crypto_id))
-        |> redirect(to: page_path(conn, :result, crypto_id))
+        |> redirect(to: page_path(conn, :result))
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "index.html", crypto_id)
+        render(conn, "index.html", crypto_id: crypto_id)
     end
   end
 
-  def result(conn, %{"crypto_id" => crypto_id}) do
-    render(conn, "result.html", crypto_id: crypto_id)
+  def result(conn, _) do
+    render(conn, "result.html", [])
   end
 
 end

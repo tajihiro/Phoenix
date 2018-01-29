@@ -63,6 +63,8 @@
 </div>
 
 
+<!-- Popup Dialog-->
+<%= form_for @conn, page_path(@conn, :create, @group.crypto_id), [method: :post, id: "commitFrm"],  fn f -> %>
 <div id="popupDialog" style="max-width: 400px;" data-role="popup" data-theme="b" data-overlay-theme="b" data-dismissible="false">
     <div data-role="header" data-theme="a">
         <h1 id="item_name">ITEM NAME</h1>
@@ -70,18 +72,17 @@
     <div class="ui-content" role="main">
         <h3 id="content" class="ui-title">XXX円 × Y個 = X,XXX円</h3>
         <p></p>
+        <div id="params"></div>
         <a id="btnCancel" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" href="#" data-rel="back">Cancel</a>
         <a id="btnCommit" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" href="#" data-transition="flow" data-rel="back">OK</a>
     </div>
-    <%= form_for @conn, page_path(@conn, :create), [method: :post, id: "commitFrm"],  fn f -> %>
-    <input type="hidden" name="crypto_id" id="crypto_id" value="<%= @group.crypto_id %>">
-    <input type="hidden" name="item_id" id="item_id" value="0">
-    <input type="hidden" name="price" id="price" value="0">
-    <input type="hidden" name="unit" id="unit" value="0">
-    <input type="hidden" name="amount" id="amount" value="0">
-    <input type="text" name="memo" id="memo" value="MEMO">
-    <% end %>
 </div>
+<input type="hidden" id="hidden_item_id" name="item_id">
+<input type="hidden" id="hidden_price" name="price">
+<input type="hidden" id="hidden_unit" name="unit">
+<input type="hidden" id="hidden_amount" name="amount">
+<input type="memo" id="memo" name="memo" value="MEMO">
+<% end %>
 
 
 <script>
@@ -102,10 +103,10 @@
             $('#popupDialog h1').html(item_name);
             $('#popupDialog #content').html(price + '円 × ' + unit + '個 = ' + amount +'円');
             //値設定
-            $('#commitFrm #item_id').val(item_id);
-            $('#commitFrm #price').val(price);
-            $('#commitFrm #unit').val(unit);
-            $('#commitFrm #amount').val(amount);
+            $('#commitFrm #hidden_price').val(price);
+            $('#commitFrm #hidden_unit').val(unit);
+            $('#commitFrm #hidden_amount').val(amount);
+            $('#commitFrm #hidden_item_id').val(item_id);
         });
         //訂正ボタン
         $('#btnAlt').click(function() {
