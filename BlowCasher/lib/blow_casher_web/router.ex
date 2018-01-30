@@ -17,9 +17,9 @@ defmodule BlowCasherWeb.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", IndexController, :index
-    get "/main/:crypto_id", PageController, :index
-    post "/create/:crypto_id", PageController, :create
-    get "/result", PageController, :result
+    get "/index/:crypto_id", PageController, :index
+    post "/create", PageController, :create
+#    get "/result/:crypto_id", PageController, :result
     get "/group/:crypto_id", GroupController, :show
     get "/item/:crypto_id", ItemController, :index
     get "/item/:crypto_id", ItemController, :show

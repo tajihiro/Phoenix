@@ -28,6 +28,7 @@ defmodule BlowCasherWeb.PageController do
     price = _params["price"]
     unit = _params["unit"]
     amount = _params["amount"]
+    # Need nil check.
     memo = _params["memo"]
     item_id = _params["item_id"]
     sales = %{price: price,
@@ -39,15 +40,16 @@ defmodule BlowCasherWeb.PageController do
       {:ok, sales} ->
       conn
         |> put_flash(:info, "Updated successfully.")
-#        |> redirect(to: page_path(conn, :index, crypto_id))
-        |> redirect(to: page_path(conn, :result))
+        |> redirect(to: page_path(conn, :index, crypto_id))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "index.html", crypto_id: crypto_id)
     end
   end
 
-  def result(conn, _) do
-    render(conn, "result.html", [])
-  end
+#  def result(conn, %{"crypto_id" => crypto_id}) do
+#    conn
+#     |> redirect(to: page_path(conn, :index, crypto_id))
+##    render(conn, "result.html", [])
+#  end
 
 end
