@@ -71,7 +71,6 @@
     </div>
     <div class="ui-content" role="main">
         <h3 id="content" class="ui-title">XXX円 × Y個 = X,XXX円</h3>
-        <input type="text" id="memo" name="memo" value="">
         <p></p>
         <a id="btnCancel" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" href="#" data-rel="back">Cancel</a>
         <a id="btnCommit" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" href="#" data-transition="flow" data-rel="back">OK</a>
@@ -82,7 +81,6 @@
 <input type="hidden" id="hidden_price" name="price">
 <input type="hidden" id="hidden_unit" name="unit">
 <input type="hidden" id="hidden_amount" name="amount">
-<input type="hidden" id="hidden_memo" name="memo">
 <% end %>
 
 

@@ -28,13 +28,11 @@ defmodule BlowCasherWeb.PageController do
     price = _params["price"]
     unit = _params["unit"]
     amount = _params["amount"]
-    # Need nil check.
-    memo = _params["memo"]
     item_id = _params["item_id"]
     sales = %{price: price,
                    unit: unit,
                    amount: amount,
-                   memo: memo,
+                   memo: "m",
                    item_id: item_id}
     case Casher.create_sales(sales) do
       {:ok, sales} ->
