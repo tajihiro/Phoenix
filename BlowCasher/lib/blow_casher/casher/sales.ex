@@ -18,6 +18,6 @@ defmodule BlowCasher.Casher.Sales do
   def changeset(%Sales{} = sales, attrs) do
     sales
     |> cast(attrs, [:price, :unit, :amount, :memo, :item_id])
-    |> validate_required([:price, :unit, :amount, :memo, :item_id])
+    |> validate_required([:price, :unit, :amount, :item_id])
   end
 end

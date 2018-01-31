@@ -72,6 +72,7 @@
     <div class="ui-content" role="main">
         <h3 id="content" class="ui-title">XXX円 × Y個 = X,XXX円</h3>
         <p></p>
+        <input type="text" id="memo" name="memo">
         <a id="btnCancel" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" href="#" data-rel="back">Cancel</a>
         <a id="btnCommit" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" href="#" data-transition="flow" data-rel="back">OK</a>
     </div>
@@ -80,6 +81,7 @@
 <input type="hidden" id="hidden_item_id" name="item_id">
 <input type="hidden" id="hidden_price" name="price">
 <input type="hidden" id="hidden_unit" name="unit">
+<input type="hidden" id="hidden_memo" name="memo">
 <input type="hidden" id="hidden_amount" name="amount">
 <% end %>
 
@@ -98,7 +100,6 @@
             var unit = $('#unit').val();
             var price = $('#price').val();
             var amount = $('#amount').val();
-            var memo = $('#memo').val();
             //ポップアップ表示
             $('#popupDialog h1').html(item_name);
             $('#popupDialog #content').html(price + '円 × ' + unit + '個 = ' + amount +'円');
@@ -106,7 +107,6 @@
             $('#commitFrm #hidden_price').val(price);
             $('#commitFrm #hidden_unit').val(unit);
             $('#commitFrm #hidden_amount').val(amount);
-            $('#commitFrm #hidden_memo').val(memo);
             $('#commitFrm #hidden_item_id').val(item_id);
         });
         //訂正ボタン
@@ -118,6 +118,7 @@
         });
         //ダイアログOKボタン
         $('#btnCommit').click(function(){
+            $('#commitFrm #hidden_memo').val($("#memo").val());
             frm = $('#commitFrm');
             frm.submit();
         });
