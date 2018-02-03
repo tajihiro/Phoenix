@@ -21,10 +21,10 @@
 <div>
 <%= link "商品登録", to: item_path(@conn, :new, @crypto_id),
                     class: "btn btn-default btn-xs",
-                    data: [ ajax: "false"] %>
+                    data: [ ajax: "false", role: "button"] %>
 </div>
 <div>
 <%= link "はじめる", to: page_path(@conn, :index, @crypto_id),
                     class: "btn btn-default btn-xs",
-                    data: [ ajax: "false"] %>
+                    data: [ ajax: "false", role: "button"] %>
 </div>

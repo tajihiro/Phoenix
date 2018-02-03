@@ -3,10 +3,13 @@ defmodule BlowCasherWeb.SalesController do
 
   alias BlowCasher.Casher
   alias BlowCasher.Casher.Sales
+  alias BlowCasher.Casher.Group
 
-  def index(conn, _params) do
-    sales = Casher.list_sales()
-    render(conn, "index.html", sales: sales)
+  def index(conn, %{"crypto_id" => crypto_id}) do
+    # Group取得
+    group = BlowCasher.Repo.get_by!(Group, crypto_id: crypto_id)
+    sales = Casher.list_sales_group_by_item_id(crypto_id)
+    render(conn, "index.html", sales: sales, crypto_id: crypto_id, group: group)
   end
 
   def new(conn, _params) do

@@ -300,6 +300,20 @@ defmodule BlowCasher.Casher do
     Repo.all(Sales)
   end
 
+  def list_sales_group_by_item_id(crypto_id) do
+    Repo.all(from s in "sales",
+             left_join: i in "items",
+                    on: i.id == s.item_id,
+             where: i.crypto_id == ^crypto_id,
+             group_by: [i.id],
+             select: %{id: s.id,
+                       unit: sum(s.unit),
+                       amount: sum(s.amount),
+                       item_id: s.item_id,
+                       item_name: i.item_name,
+                       price: i.price })
+  end
+
   @doc """
   Gets a single sales.
 

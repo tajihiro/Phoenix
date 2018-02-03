@@ -11,44 +11,40 @@ defmodule BlowCasherWeb.ItemController do
 #      render(conn, "index.html", items: items)
 #  end
 
+  #
+  # Item一覧表示
+  #
   def index(conn, _params) do
     crypto_id = _params["crypto_id"]
     group = BlowCasher.Repo.get_by!(Group, crypto_id: crypto_id)
     items = Casher.list_items_by_crypto_id(crypto_id)
-#    items = Casher.list_items()
-
     render(conn, "index.html", group: group, crypto_id: crypto_id, items: items)
   end
 
+  #
+  # Item登録画面表示
+  #
   def new(conn, %{"crypto_id" => crypto_id}) do
     # Group取得処理
     group = BlowCasher.Repo.get_by!(Group, crypto_id: crypto_id)
-
+    #
     changeset = Casher.change_item(%Item{group_id: group.id, crypto_id: crypto_id})
     render(conn, "new.html", [changeset: changeset, crypto_id: crypto_id, group: group])
   end
 
+  #
+  # Item登録処理
+  #
   def create(conn, %{"item" => item_params}) do
-    # Transaction for create Item & Price
-#    BlowCasher.Repo.transaction(fn ->
-#        with {:ok, item} <- Casher.create_item(item_params),
-#             {:ok, price} <- Casher.create_price(%{price: item_params["price"], item_id: item.id}) do
-#                conn
-#                |> put_flash(:info, "Item created successfully.")
-#                |> redirect(to: item_path(conn, :show, item.crypto_id))
-#                |> redirect(to: item_path(conn, :show, item))
-#        end
-          case Casher.create_item(item_params) do
-            {:ok, item} ->
-              conn
-              |> put_flash(:info, "Item created successfully.")
-              |> redirect(to: item_path(conn, :show, item.crypto_id))
-              |> redirect(to: item_path(conn, :show, item))
-            {:error, %Ecto.Changeset{} = changeset} ->
-              render(conn, "new.html", changeset: changeset)
-          end
-#    end)
-
+      case Casher.create_item(item_params) do
+        {:ok, item} ->
+          conn
+          |> put_flash(:info, "Item created successfully.")
+          |> redirect(to: item_path(conn, :show, item.crypto_id))
+          |> redirect(to: item_path(conn, :show, item))
+        {:error, %Ecto.Changeset{} = changeset} ->
+          render(conn, "new.html", changeset: changeset)
+      end
   end
 
   def show(conn, %{"crypto_id" => crypto_id}) do

@@ -1,32 +1,32 @@
-<h2>Listing Sales</h2>
+<!-- Left Menu -->
+<%= render BlowCasherWeb.LayoutView, "sidemenu.html", conn: @conn, crypto_id: @crypto_id %>
+<!--// Left Menu -->
 
+<!-- Header -->
+<%= render BlowCasherWeb.LayoutView, "header.html", group: @group %>
+<!--// Header -->
+
+<!-- Main -->
+<div role="main">
+<h2>集計結果</h2>
 <table class="table">
   <thead>
     <tr>
-      <th>Price</th>
-      <th>Unit</th>
-      <th>Amount</th>
-      <th>Memo</th>
-
-      <th></th>
+      <th>ID</th>
+      <th>商品</th>
+      <th>売上数</th>
+      <th>売上金額</th>
     </tr>
   </thead>
   <tbody>
 <%= for sales <- @sales do %>
     <tr>
-      <td><%= sales.price %></td>
+      <td><%= sales.item_id %></td>
+      <td><%= sales.item_name %></td>
       <td><%= sales.unit %></td>
       <td><%= sales.amount %></td>
-      <td><%= sales.memo %></td>
 
-      <td class="text-right">
-        <span><%= link "Show", to: sales_path(@conn, :show, sales), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Edit", to: sales_path(@conn, :edit, sales), class: "btn btn-default btn-xs" %></span>
-        <span><%= link "Delete", to: sales_path(@conn, :delete, sales), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
-      </td>
     </tr>
 <% end %>
   </tbody>
 </table>
-
-<span><%= link "New Sales", to: sales_path(@conn, :new) %></span>
