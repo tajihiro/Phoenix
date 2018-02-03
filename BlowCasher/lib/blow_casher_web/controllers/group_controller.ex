@@ -11,7 +11,7 @@ defmodule BlowCasherWeb.GroupController do
 
   def new(conn, _params) do
     changeset = Casher.change_group(%Group{})
-    render(conn, "new.html", changeset: changeset)
+    render(conn, "new.html", [changeset: changeset, group: nil])
   end
 
   def create(conn, %{"group" => group_params}) do
@@ -67,6 +67,10 @@ defmodule BlowCasherWeb.GroupController do
   # ランダム文字列生成
   defp create_crypto_id() do
     length = 20
-    :crypto.strong_rand_bytes(length) |> Base.encode64 |> binary_part(0, length)
+    :crypto.strong_rand_bytes(length)
+      |> Base.encode64
+      |> binary_part(0, length)
+      |> String.replace("%","P")
+      |> String.replace("/","S")
   end
 end

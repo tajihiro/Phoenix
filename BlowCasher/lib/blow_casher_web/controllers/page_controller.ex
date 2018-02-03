@@ -19,7 +19,7 @@ defmodule BlowCasherWeb.PageController do
 
     # 商品情報取得
     items = Casher.list_items_by_crypto_id(crypto_id)
-    render(conn, "index.html", [group: group, price: price, items: items])
+    render(conn, "index.html", [crypto_id: crypto_id, group: group, price: price, items: items])
   end
 
   # Sales登録
@@ -44,11 +44,5 @@ defmodule BlowCasherWeb.PageController do
         render(conn, "index.html", crypto_id: crypto_id)
     end
   end
-
-#  def result(conn, %{"crypto_id" => crypto_id}) do
-#    conn
-#     |> redirect(to: page_path(conn, :index, crypto_id))
-##    render(conn, "result.html", [])
-#  end
 
 end

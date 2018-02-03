@@ -1,4 +1,15 @@
-<h2>商品登録</h2>
+<!-- Left Menu -->
+<%= render BlowCasherWeb.LayoutView, "sidemenu.html", conn: @conn, crypto_id: @crypto_id %>
+<!--// Left Menu -->
+
+<!-- Header -->
+<%= render BlowCasherWeb.LayoutView, "header.html", group: @group %>
+<!--// Header -->
+
+<!-- Main -->
+<div role="main">
+    <h2>商品登録</h2>
 
 <%= render "form.html", Map.put(assigns, :action, item_path(@conn, :create)) %>
 
+</div>

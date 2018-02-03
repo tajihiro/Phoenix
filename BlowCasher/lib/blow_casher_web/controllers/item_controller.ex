@@ -25,7 +25,7 @@ defmodule BlowCasherWeb.ItemController do
     group = BlowCasher.Repo.get_by!(Group, crypto_id: crypto_id)
 
     changeset = Casher.change_item(%Item{group_id: group.id, crypto_id: crypto_id})
-    render(conn, "new.html", changeset: changeset)
+    render(conn, "new.html", [changeset: changeset, crypto_id: crypto_id, group: group])
   end
 
   def create(conn, %{"item" => item_params}) do

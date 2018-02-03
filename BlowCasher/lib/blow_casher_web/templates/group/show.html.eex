@@ -1,3 +1,7 @@
+<!-- Header -->
+<%= render BlowCasherWeb.LayoutView, "header.html", group: @group %>
+<!--// Header -->
+
 <h2>イベントが作成されました。</h2>
 
 <ul>

@@ -1,7 +1,13 @@
-<div>
-    <%= link "イベントを新規作成", to: group_path(@conn, :new), data: ["ajax": "false"] %>
-</div>
+<!-- Header -->
+<%= render BlowCasherWeb.LayoutView, "header.html", group: @group %>
+<!--// Header -->
 
+<!-- Main -->
+<div role="main">
+    <div>
+    <%= link "イベントを新規作成", to: group_path(@conn, :new), data: ["ajax": "false"] %>
+    </div>
+</div>
 
 
 

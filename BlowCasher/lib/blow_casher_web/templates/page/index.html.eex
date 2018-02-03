@@ -1,71 +1,78 @@
-<div class="ui-corner-all custom-corners">
-    <div class="ui-bar ui-bar-a">
-        <h1><%= @group.group_name %></h1>
-    </div>
-</div>
+<!-- Left Menu -->
+<%= render BlowCasherWeb.LayoutView, "sidemenu.html", conn: @conn, crypto_id: @crypto_id %>
+<!--// Left Menu -->
 
-<%= form_for @conn, page_path(@conn, :index, @group.crypto_id), [method: :get, id: "itemFrm"],  fn f -> %>
-<div class="ui-corner-all custom-corners">
-            <%= select f, :item_id, Enum.map(@items, &{&1.item_name, &1.id}) %>
-    <div class="ui-body ui-body-a">
+<!-- Header -->
+<%= render BlowCasherWeb.LayoutView, "header.html", group: @group %>
+<!--// Header -->
+
+<!-- Main -->
+<div role="main">
+    <%= form_for @conn, page_path(@conn, :index, @group.crypto_id), [method: :get, id: "itemFrm"], fn f -> %>
+    <div class="ui-corner-all custom-corners">
+        <%= select f, :item_id, Enum.map(@items, &{&1.item_name, &1.id}) %>
+        <div class="ui-body ui-body-a">
             <h1>定価：<%= @price.price %>円</h1>
-        <input name="price" id="price" type="hidden" value="<%= @price.price %>">
+            <input name="price" id="price" type="hidden" value="<%= @price.price %>">
+        </div>
+    </div>
+    <% end %>
+
+    <div class="ui-corner-all custom-corners">
+        <div class="ui-bar ui-bar-a">
+            <h3>金額</h3>
+        </div>
+        <div class="ui-body ui-body-a">
+            <input type="number" data-clear-btn="true" name="amount" pattern="[0-9]*" id="amount" value="0">
+            <input type="hidden" id="unit" value="0">
+        </div>
+    </div>
+
+    <div class="ui-corner-all custom-corners">
+        <div class="ui-bar ui-bar-a">
+            <h3>個数</h3>
+        </div>
+        <div class="ui-body ui-body-a">
+
+            <fieldset class="ui-grid-c">
+                <div class="ui-block-a"><input id="btn01" type="button" value="1"></div>
+                <div class="ui-block-b"><input id="btn02" type="button" value="2"></div>
+                <div class="ui-block-c"><input id="btn03" type="button" value="3"></div>
+                <div class="ui-block-d"><input id="btn04" type="button" value="4"></div>
+            </fieldset>
+            <fieldset class="ui-grid-c">
+                <div class="ui-block-a"><input id="btn05" type="button" value="5"></div>
+                <div class="ui-block-b"><input id="btn06" type="button" value="6"></div>
+                <div class="ui-block-c"><input id="btn07" type="button" value="7"></div>
+                <div class="ui-block-d"><input id="btn08" type="button" value="8"></div>
+            </fieldset>
+            <fieldset class="ui-grid-c">
+                <div class="ui-block-a"><input id="btn09" type="button" value="9"></div>
+                <div class="ui-block-b"><input id="btn10" type="button" value="10"></div>
+                <div class="ui-block-c">
+                    <input id="btnAlt" type="button" value="訂正" data-theme="b">
+                    <div style="display: none">
+                        <a id="hiddenBtn" href="#popupDialog" data-rel="popup" data-position-to="window"
+                           data-transition="pop"></a>
+                    </div>
+                </div>
+                <div class="ui-block-d">
+                    <input id="btnEnt" type="button" value="確定" data-theme="b">
+                    <div style="display: none">
+                        <a id="hiddenBtn" href="#popupDialog" data-rel="popup" data-position-to="window"
+                           data-transition="pop"></a>
+                    </div>
+            </fieldset>
         </div>
     </div>
 </div>
-<% end %>
-
-<div class="ui-corner-all custom-corners">
-    <div class="ui-bar ui-bar-a">
-        <h3>金額</h3>
-    </div>
-    <div class="ui-body ui-body-a">
-        <input type="number" data-clear-btn="true" name="amount" pattern="[0-9]*" id="amount" value="0">
-        <input type="hidden" id="unit" value="0">
-    </div>
-</div>
-
-<div class="ui-corner-all custom-corners">
-    <div class="ui-bar ui-bar-a">
-        <h3>個数</h3>
-    </div>
-    <div class="ui-body ui-body-a">
-
-        <fieldset class="ui-grid-c">
-            <div class="ui-block-a"><input id="btn01" type="button" value="1"></div>
-            <div class="ui-block-b"><input id="btn02" type="button" value="2"></div>
-            <div class="ui-block-c"><input id="btn03" type="button" value="3"></div>
-            <div class="ui-block-d"><input id="btn04" type="button" value="4"></div>
-        </fieldset>
-        <fieldset class="ui-grid-c">
-            <div class="ui-block-a"><input id="btn05" type="button" value="5"></div>
-            <div class="ui-block-b"><input id="btn06" type="button" value="6"></div>
-            <div class="ui-block-c"><input id="btn07" type="button" value="7"></div>
-            <div class="ui-block-d"><input id="btn08" type="button" value="8"></div>
-        </fieldset>
-        <fieldset class="ui-grid-c">
-            <div class="ui-block-a"><input id="btn09" type="button" value="9"></div>
-            <div class="ui-block-b"><input id="btn10" type="button" value="10"></div>
-            <div class="ui-block-c">
-                <input id="btnAlt" type="button" value="訂正"  data-theme="b">
-                <div style="display: none">
-                    <a id="hiddenBtn" href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop" ></a>
-                </div>
-            </div>
-            <div class="ui-block-d">
-                <input id="btnEnt" type="button" value="確定" data-theme="b">
-                <div style="display: none">
-                    <a id="hiddenBtn" href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop" ></a>
-                </div>
-        </fieldset>
-
-    </div>
-</div>
+<!--// Main -->
 
 
 <!-- Popup Dialog-->
 <%= form_for @conn, page_path(@conn, :create), [method: :post, id: "commitFrm", "data-ajax": "false"],  fn f -> %>
-<div id="popupDialog" style="max-width: 400px;" data-role="popup" data-theme="b" data-overlay-theme="b" data-dismissible="false">
+<div id="popupDialog" style="max-width: 400px;" data-role="popup" data-theme="b" data-overlay-theme="b"
+     data-dismissible="false">
     <div data-role="header" data-theme="a">
         <h1 id="item_name">ITEM NAME</h1>
     </div>
@@ -73,8 +80,10 @@
         <h3 id="content" class="ui-title">XXX円 × Y個 = X,XXX円</h3>
         <p></p>
         <input type="text" id="memo" name="memo">
-        <a id="btnCancel" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" href="#" data-rel="back">Cancel</a>
-        <a id="btnCommit" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" href="#" data-transition="flow" data-rel="back">OK</a>
+        <a id="btnCancel" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" href="#"
+           data-rel="back">Cancel</a>
+        <a id="btnCommit" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" href="#" data-transition="flow"
+           data-rel="back">OK</a>
     </div>
 </div>
 <input type="hidden" id="crypto_id" name="crypto_id" value="<%= @group.crypto_id %>">
@@ -84,16 +93,17 @@
 <input type="hidden" id="hidden_memo" name="memo">
 <input type="hidden" id="hidden_amount" name="amount">
 <% end %>
+<!--// Popup Dialog-->
 
 
 <script>
-    $(function(){
+    $(function () {
         //商品選択ボックス
-        $('select').change(function() {
-          this.form.submit();
+        $('select').change(function () {
+            this.form.submit();
         });
         //確定ボタン
-        $('#btnEnt').click(function() {
+        $('#btnEnt').click(function () {
             $('#hiddenBtn').click();
             var item_name = $('[name=item_id] option:selected');
             var item_id = $('[name=item_id]').val();
@@ -102,7 +112,7 @@
             var amount = $('#amount').val();
             //ポップアップ表示
             $('#popupDialog h1').html(item_name);
-            $('#popupDialog #content').html(price + '円 × ' + unit + '個 = ' + amount +'円');
+            $('#popupDialog #content').html(price + '円 × ' + unit + '個 = ' + amount + '円');
             //値設定
             $('#commitFrm #hidden_price').val(price);
             $('#commitFrm #hidden_unit').val(unit);
@@ -110,62 +120,64 @@
             $('#commitFrm #hidden_item_id').val(item_id);
         });
         //訂正ボタン
-        $('#btnAlt').click(function() {
+        $('#btnAlt').click(function () {
             //$('#hiddenBtn').click();
             // this.form.action = '/sales'
             // this.form.method = 'POST'
             // this.form.submit();
         });
         //ダイアログOKボタン
-        $('#btnCommit').click(function(){
+        $('#btnCommit').click(function () {
             $('#commitFrm #hidden_memo').val($("#memo").val());
             frm = $('#commitFrm');
             frm.submit();
         });
         //ダイアログCancelボタン
-        $('#btnCancel').click(function(){
+        $('#btnCancel').click(function () {
             console.log("Cancel!!");
         });
         //計算ボタン
-        $('#btn01').click(function(){
+        $('#btn01').click(function () {
             calcDisplay(1);
         });
-        $('#btn02').click(function(){
+        $('#btn02').click(function () {
             calcDisplay(2);
         });
-        $('#btn03').click(function(){
+        $('#btn03').click(function () {
             calcDisplay(3);
         });
-        $('#btn04').click(function(){
+        $('#btn04').click(function () {
             calcDisplay(4);
         });
-        $('#btn05').click(function(){
+        $('#btn05').click(function () {
             calcDisplay(5);
         });
-        $('#btn06').click(function(){
+        $('#btn06').click(function () {
             calcDisplay(6);
         });
-        $('#btn07').click(function(){
+        $('#btn07').click(function () {
             calcDisplay(7);
         });
-        $('#btn08').click(function(){
+        $('#btn08').click(function () {
             calcDisplay(8);
         });
-        $('#btn09').click(function(){
+        $('#btn09').click(function () {
             calcDisplay(9);
         });
-        $('#btn10').click(function(){
+        $('#btn10').click(function () {
             calcDisplay(10);
         });
+
         //算出結果表示
-        function calcDisplay(unit){
+        function calcDisplay(unit) {
             var price = $('#price').val();
             $('#unit').val(unit);
             $('#amount').val(price * unit);
         }
+
         //合計クリア
-        $('#amount').change(function() {
-            if(this.value == ''){
+        $('#amount').change(function () {
+            if (this.value == '') {
                 $('#amount').val(0);
             }
         });
@@ -173,7 +185,7 @@
     })
 </script>
 <style>
-    #amount{
+    #amount {
         text-align: right;
     }
 </style>

@@ -1,41 +1,30 @@
-<h1><%= @group.group_name %>(<%= @crypto_id %>)</h1>
+<!-- Left Menu -->
+<%= render BlowCasherWeb.LayoutView, "sidemenu.html", conn: @conn, crypto_id: @crypto_id %>
+<!--// Left Menu -->
+
+<!-- Header -->
+<%= render BlowCasherWeb.LayoutView, "header.html", group: @group %>
+<!--// Header -->
+
+
 <h2>商品一覧</h2>
 
-<table class="table">
-  <thead>
-    <tr>
-        <th>商品名</th>
+<ol data-role="listview">
+    <%= for item <- @items do %>
+    <li>
+        <%= item.item_name %>
+        <%= item.price %>円
+    </li>
+    <% end %>
+</ol>
 
-    </tr>
-  </thead>
-  <tbody>
-  <tr>
-      <td>ID</td>
-      <td>item_name</td>
-      <td>price</td>
-
-  </tr>
-  <%= for item <- @items do %>
-  <tr>
-    <td><%= item.id %></td>
-      <td><%= item.item_name %></td>
-      <td><%= item.price %></td>
-
-  </tr>
-  <% end %>
-
-  </tbody>
-</table>
-
-<span>
+<div>
 <%= link "商品登録", to: item_path(@conn, :new, @crypto_id),
                     class: "btn btn-default btn-xs",
                     data: [ ajax: "false"] %>
-</span>
-<span>
+</div>
+<div>
 <%= link "はじめる", to: page_path(@conn, :index, @crypto_id),
                     class: "btn btn-default btn-xs",
                     data: [ ajax: "false"] %>
-</span>
-
-
+</div>

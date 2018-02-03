@@ -1,3 +1,6 @@
+<!-- Header -->
+<%= render BlowCasherWeb.LayoutView, "header.html", group: @group %>
+<!--// Header -->
 <h2>Listing Groups</h2>
 
 <table class="table">
