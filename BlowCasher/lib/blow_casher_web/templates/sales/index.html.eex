@@ -1,5 +1,5 @@
 <!-- Left Menu -->
-<%= render BlowCasherWeb.LayoutView, "sidemenu.html", conn: @conn, crypto_id: @crypto_id %>
+<%= render BlowCasherWeb.LayoutView, "sidemenu.html", conn: @conn, crypto_id: @crypto_id, group: @group %>
 <!--// Left Menu -->
 
 <!-- Header -->
@@ -9,24 +9,19 @@
 <!-- Main -->
 <div role="main">
 <h2>集計結果</h2>
-<table class="table">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>商品</th>
-      <th>売上数</th>
-      <th>売上金額</th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for sales <- @sales do %>
-    <tr>
-      <td><%= sales.item_id %></td>
-      <td><%= sales.item_name %></td>
-      <td><%= sales.unit %></td>
-      <td><%= sales.amount %></td>
-
-    </tr>
-<% end %>
-  </tbody>
-</table>
+<ul data-role="listview">
+  <%= for sales <- @sales do %>
+  <li>
+    <div class="ui-grid-b">
+      <div class="ui-block-a">
+        <%= sales.item_name %>
+      </div>
+      <div class="ui-block-b" align="right">
+        <%= sales.unit %> 個
+      </div>
+      <div class="ui-block-c" align="right">
+        <%= sales.amount %> 円
+      </div>
+    </div>
+  </li>
+  <% end %>

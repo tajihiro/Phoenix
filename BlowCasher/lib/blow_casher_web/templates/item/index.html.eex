@@ -1,22 +1,27 @@
 <!-- Left Menu -->
-<%= render BlowCasherWeb.LayoutView, "sidemenu.html", conn: @conn, crypto_id: @crypto_id %>
+<%= render BlowCasherWeb.LayoutView, "sidemenu.html", conn: @conn, crypto_id: @crypto_id, group: @group %>
 <!--// Left Menu -->
-
 <!-- Header -->
 <%= render BlowCasherWeb.LayoutView, "header.html", group: @group %>
 <!--// Header -->
 
-
+<!-- Main -->
+<div role="main">
 <h2>商品一覧</h2>
 
-<ol data-role="listview">
+<ul data-role="listview">
     <%= for item <- @items do %>
     <li>
-        <%= item.item_name %>
-        <%= item.price %>円
+        <div class="ui-grid-a">
+            <div class="ui-block-a">
+                <%= item.item_name %>
+            </div>
+            <div class="ui-block-b" align="right">
+                <%= item.price %> 円
+            </div>
     </li>
     <% end %>
-</ol>
+</ul>
 
 <div>
 <%= link "商品登録", to: item_path(@conn, :new, @crypto_id),
@@ -27,4 +32,5 @@
 <%= link "はじめる", to: page_path(@conn, :index, @crypto_id),
                     class: "btn btn-default btn-xs",
                     data: [ ajax: "false", role: "button"] %>
+</div>
 </div>

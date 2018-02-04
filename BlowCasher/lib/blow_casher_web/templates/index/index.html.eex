@@ -4,8 +4,37 @@
 
 <!-- Main -->
 <div role="main">
-    <div>
-    <%= link "イベントを新規作成", to: group_path(@conn, :new), data: ["ajax": "false"] %>
+    <h2>簡易電卓(Blowcasher)</h2>
+    <dl title="">
+        <dt>はじめに</dt>
+        <dd>
+            このサイトは、・・・・
+        </dd>
+        <dt>使用方法</dt>
+        <dd>
+            このサイトは、・・・・
+        </dd>
+        <dt>注意事項</dt>
+        <dd>
+            このサイトは、・・・・
+        </dd>
+    </dl>
+
+    <div data-role="collapsible" data-collapsed="false" data-theme="a" data-content-theme="a">
+        <h3>使用方法</h3>
+        <p>使用方法・・・・</p>
+    </div>
+    <div data-role="collapsible" data-theme="a" data-content-theme="a">
+        <h3>注意事項</h3>
+        <p>注意事項・・・・</p>
+    </div>
+    <div data-role="collapsible" data-theme="a" data-content-theme="a">
+        <h3>注意事項</h3>
+        <p>注意事項・・・・</p>
+    </div>
+
+    <div class="ui-grid-a">
+        <%= link "イベント新規作成", to: group_path(@conn, :new), data: ["ajax": "false", "role": "button"] %>
     </div>
 </div>
 

@@ -1,5 +1,5 @@
 <!-- Left Menu -->
-<%= render BlowCasherWeb.LayoutView, "sidemenu.html", conn: @conn, crypto_id: @crypto_id %>
+<%= render BlowCasherWeb.LayoutView, "sidemenu.html", conn: @conn, crypto_id: @crypto_id, group: @group %>
 <!--// Left Menu -->
 
 <!-- Header -->
