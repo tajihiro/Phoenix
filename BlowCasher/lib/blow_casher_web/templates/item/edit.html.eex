@@ -1,5 +1,15 @@
-<h2>Edit Item</h2>
+<!-- Left Menu -->
+<%= render BlowCasherWeb.LayoutView, "sidemenu.html", conn: @conn, crypto_id: @crypto_id, group: @group %>
+<!--// Left Menu -->
 
-<%= render "form.html", Map.put(assigns, :action, item_path(@conn, :update, @item)) %>
+<!-- Header -->
+<%= render BlowCasherWeb.LayoutView, "header.html", group: @group %>
+<!--// Header -->
 
-<span><%= link "Back", to: item_path(@conn, :index) %></span>
+<!-- Main -->
+<div role="main">
+    <h2>商品更新</h2>
+
+    <%= render "form.html", Map.put(assigns, :action, item_path(@conn, :update, @item)) %>
+
+</div>

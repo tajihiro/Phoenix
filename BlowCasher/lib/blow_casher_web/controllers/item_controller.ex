@@ -5,12 +5,6 @@ defmodule BlowCasherWeb.ItemController do
   alias BlowCasher.Casher.Item
   alias BlowCasher.Casher.Group
 
-
-#  def index(conn, _params) do
-#      items = Casher.list_items()
-#      render(conn, "index.html", items: items)
-#  end
-
   #
   # Item一覧表示
   #
@@ -20,6 +14,10 @@ defmodule BlowCasherWeb.ItemController do
     items = Casher.list_items_by_crypto_id(crypto_id)
     render(conn, "index.html", group: group, crypto_id: crypto_id, items: items)
   end
+  #  def index(conn, _params) do
+  #      items = Casher.list_items()
+  #      render(conn, "index.html", items: items)
+  #  end
 
   #
   # Item登録画面表示
@@ -41,7 +39,6 @@ defmodule BlowCasherWeb.ItemController do
           conn
           |> put_flash(:info, "Item created successfully.")
           |> redirect(to: item_path(conn, :show, item.crypto_id))
-          |> redirect(to: item_path(conn, :show, item))
         {:error, %Ecto.Changeset{} = changeset} ->
           render(conn, "new.html", changeset: changeset)
       end
@@ -52,19 +49,26 @@ defmodule BlowCasherWeb.ItemController do
     render(conn, "show.html", item: item)
   end
 
-
-
 #  def show(conn, %{"id" => id}) do
 #    item = Casher.get_item!(id)
 #    render(conn, "show.html", item: item)
 #  end
 
-  def edit(conn, %{"id" => id}) do
-    item = Casher.get_item!(id)
+  #
+  # Item更新画面表示
+  #
+  def edit(conn, %{"crypto_id"=> crypto_id, "item_id" => item_id}) do
+    # Group取得処理
+    group = BlowCasher.Repo.get_by!(Group, crypto_id: crypto_id)
+
+    item = Casher.get_item!(item_id)
     changeset = Casher.change_item(item)
-    render(conn, "edit.html", item: item, changeset: changeset)
+    render(conn, "edit.html", [item: item, changeset: changeset, crypto_id: crypto_id, group: group])
   end
 
+  #
+  # Item更新処理
+  #
   def update(conn, %{"id" => id, "item" => item_params}) do
     item = Casher.get_item!(id)
 
@@ -72,18 +76,18 @@ defmodule BlowCasherWeb.ItemController do
       {:ok, item} ->
         conn
         |> put_flash(:info, "Item updated successfully.")
-        |> redirect(to: item_path(conn, :show, item))
+        |> redirect(to: item_path(conn, :index, item.crypto_id))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "edit.html", item: item, changeset: changeset)
     end
   end
 
-  def delete(conn, %{"id" => id}) do
-    item = Casher.get_item!(id)
-    {:ok, _item} = Casher.delete_item(item)
-
-    conn
-    |> put_flash(:info, "Item deleted successfully.")
-    |> redirect(to: item_path(conn, :index))
-  end
+#  def delete(conn, %{"id" => id}) do
+#    item = Casher.get_item!(id)
+#    {:ok, _item} = Casher.delete_item(item)
+#
+#    conn
+#    |> put_flash(:info, "Item deleted successfully.")
+#    |> redirect(to: item_path(conn, :index))
+#  end
 end
