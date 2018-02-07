@@ -11,7 +11,8 @@
 
 <ul data-role="listview">
     <%= for item <- @items do %>
-    <li>
+    <li data-icon="edit">
+        <%= link to: item_path(@conn, :edit, @crypto_id, item.id) do %>
         <div class="ui-grid-a">
             <div class="ui-block-a">
                 <%= item.item_name %>
@@ -19,6 +20,8 @@
             <div class="ui-block-b" align="right">
                 <%= item.price %> 円
             </div>
+        </div>
+        <% end %>
     </li>
     <% end %>
 </ul>
@@ -26,11 +29,11 @@
 <div>
 <%= link "商品登録", to: item_path(@conn, :new, @crypto_id),
                     class: "btn btn-default btn-xs",
-                    data: [ ajax: "false", role: "button"] %>
+                    data: [ ajax: "false", role: "button", icon: "plus"] %>
 </div>
 <div>
-<%= link "はじめる", to: page_path(@conn, :index, @crypto_id),
+<%= link "簡易電卓", to: page_path(@conn, :index, @crypto_id),
                     class: "btn btn-default btn-xs",
-                    data: [ ajax: "false", role: "button"] %>
+                    data: [ ajax: "false", role: "button", icon: "grid"] %>
 </div>
 </div>
