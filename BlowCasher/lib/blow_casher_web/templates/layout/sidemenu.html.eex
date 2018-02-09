@@ -1,0 +1,27 @@
+<div data-role="panel" id="left-menu" data-position="left" data-display="overlay">
+    <ul data-role="listview">
+        <li>
+            <h3><%= @group.group_name %></h3>
+        </li>
+        <li data-icon="grid">
+            <%= link "簡易電卓", to: page_path(@conn, :index, @crypto_id) %>
+        </li>
+        <li data-icon="bullets">
+            <%= link "商品一覧", to: item_path(@conn, :index, @crypto_id) %>
+        </li>
+        <li data-icon="plus">
+            <%= link "商品登録", to: item_path(@conn, :new, @crypto_id) %>
+        </li>
+        <li data-icon="info">
+            <%= link "集計", to: sales_path(@conn, :index, @crypto_id) %>
+        </li>
+        <li data-icon="action">
+            <%= link "イベント作成", to: group_path(@conn, :new) %>
+        </li>
+        <li data-icon="home">
+            <%= link "ホーム", to: index_path(@conn, :index) %>
+        </li>
+        <li data-icon="delete">
+            <a href="#" data-rel="close" >閉じる</a>
+        </li>
+</div>
