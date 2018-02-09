@@ -17,10 +17,6 @@
   </div>
 
   <div class="form-group">
-    <% if @action == :create do %>
       <%= submit "登録", class: "btn btn-primary", data: [icon: "plus"] %>
-    <% else %>
-      <%= submit "更新", class: "btn btn-primary", data: [icon: "edit"] %>
-    <% end %>
   </div>
 <% end %>

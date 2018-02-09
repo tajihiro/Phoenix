@@ -10,6 +10,6 @@
 <div role="main">
     <h2>商品登録</h2>
 
-<%= render "form.html", Map.put(assigns, :action, item_path(@conn, :create)) %>
+    <%= render "form.html", Map.put(assigns, :action, item_path(@conn, :create)) %>
 
 </div>
