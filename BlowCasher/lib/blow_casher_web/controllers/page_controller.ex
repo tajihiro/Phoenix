@@ -7,21 +7,27 @@ defmodule BlowCasherWeb.PageController do
   alias BlowCasher.Casher.Sales
 
   def index(conn, %{"crypto_id" => crypto_id}) do
-    group = BlowCasher.Repo.get_by!(Group, crypto_id: crypto_id)
+    # 商品登録チェック
+    unless Casher.has_items!(crypto_id) do
+        conn
+        |> put_flash(:info, "No Items registered.")
+        |> redirect(to: item_path(conn, :new, crypto_id))
+    else
+      group = BlowCasher.Repo.get_by!(Group, crypto_id: crypto_id)
 
-    #金額取得
-    item_id = conn.params["item_id"]
-    price =
-    case item_id do
-      nil -> Casher.get_item_price_by_crypto_id!(crypto_id)
-      _   -> Casher.get_item_price!(item_id)
-    end
+      #金額取得
+      item_id = conn.params["item_id"]
+      price =
+      case item_id do
+        nil -> Casher.get_item_price_by_crypto_id!(crypto_id)
+        _   -> Casher.get_item_price!(item_id)
+      end
 
-    # 商品情報取得
-    items = Casher.list_items_by_crypto_id(crypto_id)
-    render(conn, "index.html", [crypto_id: crypto_id, group: group, price: price, items: items])
+      # 商品情報取得
+      items = Casher.list_items_by_crypto_id(crypto_id)
+      render(conn, "index.html", [crypto_id: crypto_id, group: group, price: price, items: items])
+   end
   end
-
   # Sales登録
   def create(conn, _params) do
     crypto_id = _params["crypto_id"]

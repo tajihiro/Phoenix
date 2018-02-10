@@ -1,1 +1,5 @@
 /* This file is for your main application css. */
+.err_msg {
+    font-size: small;
+    color: red;
+}

@@ -16,6 +16,6 @@ defmodule BlowCasher.Casher.Group do
   def changeset(%Group{} = group, attrs) do
     group
     |> cast(attrs, [:crypto_id, :group_name, :delete_flg])
-    |> validate_required([:crypto_id, :group_name, :delete_flg])
+    |> validate_required([:crypto_id, :group_name, :delete_flg], [message: "※この項目は必須です。"])
   end
 end

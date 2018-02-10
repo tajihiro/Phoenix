@@ -31,9 +31,12 @@
                     class: "btn btn-default btn-xs",
                     data: [ ajax: "false", role: "button", icon: "plus"] %>
 </div>
-<div>
-<%= link "簡易電卓", to: page_path(@conn, :index, @crypto_id),
-                    class: "btn btn-default btn-xs",
-                    data: [ ajax: "false", role: "button", icon: "grid"] %>
-</div>
+
+    <%= unless Enum.empty? @items do %>
+    <div>
+    <%= link "簡易電卓", to: page_path(@conn, :index, @crypto_id),
+                        class: "btn btn-default btn-xs",
+                        data: [ ajax: "false", role: "button", icon: "grid"] %>
+    </div>
+    <% end %>
 </div>

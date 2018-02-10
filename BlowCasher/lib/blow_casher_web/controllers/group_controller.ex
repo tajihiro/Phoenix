@@ -32,7 +32,7 @@ defmodule BlowCasherWeb.GroupController do
         |> put_flash(:info, "イベントが作成されました。")
         |> redirect(to: group_path(conn, :show, crypto_id))
       {:error, %Ecto.Changeset{} = changeset} ->
-        render(conn, "new.html", changeset: changeset)
+        render(conn, "new.html", changeset: changeset, group: nil)
     end
   end
 
@@ -42,7 +42,8 @@ defmodule BlowCasherWeb.GroupController do
   def show(conn, %{"crypto_id" => crypto_id}) do
 #    group = Casher.get_group!(id)
     group = BlowCasher.Repo.get_by!(Group, crypto_id: crypto_id)
-    render(conn, "show.html", [crypto_id: crypto_id, group: group])
+    has_items = Casher.has_items!(crypto_id)
+    render(conn, "show.html", [crypto_id: crypto_id, group: group, has_items: has_items])
   end
 
 #  def edit(conn, %{"id" => id}) do

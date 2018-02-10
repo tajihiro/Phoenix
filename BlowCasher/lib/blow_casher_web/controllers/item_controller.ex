@@ -34,13 +34,16 @@ defmodule BlowCasherWeb.ItemController do
   # Item登録処理
   #
   def create(conn, %{"item" => item_params}) do
+    crypto_id = item_params["crypto_id"]
+    # Group取得処理
+    group = BlowCasher.Repo.get_by!(Group, crypto_id: crypto_id)
       case Casher.create_item(item_params) do
         {:ok, item} ->
           conn
           |> put_flash(:info, "Item created successfully.")
           |> redirect(to: item_path(conn, :show, item.crypto_id))
         {:error, %Ecto.Changeset{} = changeset} ->
-          render(conn, "new.html", changeset: changeset)
+          render(conn, "new.html", changeset: changeset, crypto_id: crypto_id, group: group)
       end
   end
 

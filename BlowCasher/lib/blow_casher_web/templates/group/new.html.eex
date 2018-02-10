@@ -5,5 +5,3 @@
 <h2>新規イベント作成</h2>
 
 <%= render "form.html", Map.put(assigns, :action, group_path(@conn, :create)) %>
-
-<span><%= link "Back", to: index_path(@conn, :index) %></span>

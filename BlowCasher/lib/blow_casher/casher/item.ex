@@ -17,6 +17,7 @@ defmodule BlowCasher.Casher.Item do
   def changeset(%Item{} = item, attrs) do
     item
     |> cast(attrs, [:item_name, :group_id, :crypto_id, :price])
-    |> validate_required([:item_name, :group_id, :crypto_id, :price])
+    |> validate_required([:item_name, :group_id, :crypto_id, :price],
+         [message: "※この項目は必須です。"])
   end
 end

@@ -2,7 +2,6 @@
     <%= if @group do %>
         <h1><%= @group.group_name %></h1>
         <a href="#left-menu" data-icon="bars" data-iconpos="notext">Menu</a>
-        <a href="#add-form" data-icon="gear" data-iconpos="notext">Add</a>
     <% else %>
         <h1>BlowCasher</h1>
     <% end %>

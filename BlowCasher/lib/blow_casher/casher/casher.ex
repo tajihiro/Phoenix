@@ -170,6 +170,16 @@ defmodule BlowCasher.Casher do
                 select: %{id: max(i.id), price: i.price})
   end
 
+  def has_items!(crypto_id) do
+    count = Repo.one!(from i in "items",
+                    where: i.crypto_id ==^crypto_id,
+                   select: count("*"))
+    case count do
+      0 -> false
+      _ -> true
+    end
+  end
+
   @doc """
   Creates a item.
 

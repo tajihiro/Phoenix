@@ -6,27 +6,33 @@
 <%= render BlowCasherWeb.LayoutView, "header.html", group: @group %>
 <!--// Header -->
 
-<h2>イベントが作成されました。</h2>
+<!-- Main -->
+<div role="main">
+    <h2>イベント</h2>
 
-<ul>
+    <ul data-role="listview">
+        <li data-icon="edit">
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <%= @group.group_name %>
+                </div>
+            </div>
+        </li>
+        <li data-icon="edit">
+            <div class="ui-grid-a">
+                <div class="ui-block-b" align="right">
+                    http://www.whoocus.com:4000/event/<%= @group.crypto_id %>
+                </div>
+            </div>
+        </li>
+    </ul>
 
-    <li>
-        <strong>ID:</strong>
-        <%= @group.id %>
-    </li>
-    <li>
-        <strong>CRYPTO_ID:</strong>
-        <%= @group.crypto_id %>
-    </li>
-  <li>
-    <strong>イベント名:</strong>
-    <%= @group.group_name %>
-  </li>
-</ul>
-<%= link "商品登録", to: item_path(@conn, :new, @group.crypto_id),
+    <%= link "商品登録", to: item_path(@conn, :new, @group.crypto_id),
                     class: "btn btn-default btn-xs",
                     data: [ ajax: "false", role: "button"] %>
-<%= link "はじめる", to: page_path(@conn, :index, @group.crypto_id),
+    <%= if @has_items do %>
+    <%= link "はじめる", to: page_path(@conn, :index, @group.crypto_id),
                     class: "btn btn-default btn-xs",
                     data: [ ajax: "false", role: "button"] %>
-
+    <% end %>
+</div>
