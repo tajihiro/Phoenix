@@ -11,7 +11,7 @@
       <div class="err_msg">
         <%= error_tag f, :price %>
       </div>
-    <%= number_input f, :price, class: "form-control", pattern: "[0-9]*", value: "0" %>
+    <%= number_input f, :price, class: "form-control", pattern: "[0-9]*" %>
     <%= hidden_input f, :group_id, class: "form-control" %>
     <%= hidden_input f, :crypto_id, class: "form-control" %>
   </div>
