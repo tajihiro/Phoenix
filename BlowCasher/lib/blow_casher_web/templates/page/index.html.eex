@@ -8,7 +8,7 @@
 
 <!-- Main -->
 <div role="main">
-    <%= form_for @conn, page_path(@conn, :index, @group.crypto_id), [method: :get, id: "itemFrm"], fn f -> %>
+    <%= form_for @conn, page_path(@conn, :index, @crypto_id), [method: :get, id: "itemFrm"], fn f -> %>
     <div class="ui-corner-all custom-corners">
         <%= select f, :item_id, Enum.map(@items, &{&1.item_name, &1.id}) %>
         <div class="ui-body ui-body-a">
@@ -104,20 +104,22 @@
         });
         //確定ボタン
         $('#btnEnt').click(function () {
-            $('#hiddenBtn').click();
-            var item_name = $('[name=item_id] option:selected');
-            var item_id = $('[name=item_id]').val();
-            var unit = $('#unit').val();
-            var price = $('#price').val();
-            var amount = $('#amount').val();
-            //ポップアップ表示
-            $('#popupDialog h1').html(item_name);
-            $('#popupDialog #content').html(price + '円 × ' + unit + '個 = ' + amount + '円');
-            //値設定
-            $('#commitFrm #hidden_price').val(price);
-            $('#commitFrm #hidden_unit').val(unit);
-            $('#commitFrm #hidden_amount').val(amount);
-            $('#commitFrm #hidden_item_id').val(item_id);
+            if($('#amount').val() != 0){
+                $('#hiddenBtn').click();
+                var item_name = $('[name=item_id] option:selected');
+                var item_id = $('[name=item_id]').val();
+                var unit = $('#unit').val();
+                var price = $('#price').val();
+                var amount = $('#amount').val();
+                //ポップアップ表示
+                $('#popupDialog h1').html(item_name);
+                $('#popupDialog #content').html(price + '円 × ' + unit + '個 = ' + amount + '円');
+                //値設定
+                $('#commitFrm #hidden_price').val(price);
+                $('#commitFrm #hidden_unit').val(unit);
+                $('#commitFrm #hidden_amount').val(amount);
+                $('#commitFrm #hidden_item_id').val(item_id);
+            }
         });
         //訂正ボタン
         $('#btnAlt').click(function () {
@@ -129,8 +131,12 @@
         //ダイアログOKボタン
         $('#btnCommit').click(function () {
             $('#commitFrm #hidden_memo').val($("#memo").val());
-            frm = $('#commitFrm');
-            frm.submit();
+            //Safariバグ対応
+            setTimeout(function(){
+                $('#commitFrm').submit();
+            }, 300);
+            // frm = $('#commitFrm');
+            // frm.submit();
         });
         //ダイアログCancelボタン
         $('#btnCancel').click(function () {

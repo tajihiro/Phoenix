@@ -18,6 +18,7 @@ defmodule BlowCasherWeb.Router do
 
     get "/", IndexController, :index
     get "/event/:crypto_id", PageController, :index
+    get "/event/:crypto_id/:item_id", PageController, :index
     post "/create", PageController, :create
     get "/group/:crypto_id", GroupController, :show
     get "/item/:crypto_id", ItemController, :index

@@ -6,7 +6,9 @@ defmodule BlowCasherWeb.PageController do
   alias BlowCasher.Casher.Item
   alias BlowCasher.Casher.Sales
 
-  def index(conn, %{"crypto_id" => crypto_id}) do
+  def index(conn, %{"crypto_id" => crypto_id} = params) do
+#  def index(conn, %{"crypto_id" => crypto_id, "item_id" => item_id}) do
+    item_id = params |> Map.get("item_id", nil)
     # 商品登録チェック
     unless Casher.has_items!(crypto_id) do
         conn
@@ -16,7 +18,6 @@ defmodule BlowCasherWeb.PageController do
       group = BlowCasher.Repo.get_by!(Group, crypto_id: crypto_id)
 
       #金額取得
-      item_id = conn.params["item_id"]
       price =
       case item_id do
         nil -> Casher.get_item_price_by_crypto_id!(crypto_id)
@@ -45,7 +46,7 @@ defmodule BlowCasherWeb.PageController do
       {:ok, sales} ->
       conn
         |> put_flash(:info, "Updated successfully.")
-        |> redirect(to: page_path(conn, :index, crypto_id))
+        |> redirect(to: page_path(conn, :index, crypto_id, item_id: item_id))
       {:error, %Ecto.Changeset{} = changeset} ->
         render(conn, "index.html", crypto_id: crypto_id)
     end
