@@ -52,16 +52,17 @@
                 <div class="ui-block-c">
                     <input id="btnAlt" type="button" value="訂正" data-theme="b">
                     <div style="display: none">
-                        <a id="hiddenBtn" href="#popupDialog" data-rel="popup" data-position-to="window"
+                        <a id="hiddenModifyBtn" href="#popupDialog" data-rel="popup" data-position-to="window"
                            data-transition="pop"></a>
                     </div>
                 </div>
                 <div class="ui-block-d">
                     <input id="btnEnt" type="button" value="確定" data-theme="b">
                     <div style="display: none">
-                        <a id="hiddenBtn" href="#popupDialog" data-rel="popup" data-position-to="window"
+                        <a id="hiddenCommitBtn" href="#popupDialog" data-rel="popup" data-position-to="window"
                            data-transition="pop"></a>
                     </div>
+                </div>
             </fieldset>
         </div>
     </div>
@@ -105,7 +106,7 @@
         //確定ボタン
         $('#btnEnt').click(function () {
             if($('#amount').val() != 0){
-                $('#hiddenBtn').click();
+                $('#hiddenCommitBtn').click();
                 var item_name = $('[name=item_id] option:selected');
                 var item_id = $('[name=item_id]').val();
                 var unit = $('#unit').val();
@@ -123,7 +124,7 @@
         });
         //訂正ボタン
         $('#btnAlt').click(function () {
-            //$('#hiddenBtn').click();
+            //$('#hiddenModifyBtn').click();
             // this.form.action = '/sales'
             // this.form.method = 'POST'
             // this.form.submit();
