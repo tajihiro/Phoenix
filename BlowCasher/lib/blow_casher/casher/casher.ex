@@ -332,6 +332,92 @@ defmodule BlowCasher.Casher do
                 select: %{total: sum(s.amount)})
   end
 
+  def get_sales_hours(item_id) do
+    query =
+      """
+      select s.item_id, i.item_name,
+            sum(case when (date_format(S.inserted_at, '%H%i') >= 0000 and date_format(S.inserted_at, '%H%i') < 0030)
+              then S.unit
+              else 0 end) as h0000,
+            sum(case when (date_format(S.inserted_at, '%H%i') >= 0030 and date_format(S.inserted_at, '%H%i') < 0100)
+              then S.unit
+                else 0 end) as h0030,
+            sum(case when (date_format(S.inserted_at, '%H%i') >= 0100 and date_format(S.inserted_at, '%H%i') < 0130)
+              then S.unit
+                else 0 end) as h0100,
+            sum(case when (date_format(S.inserted_at, '%H%i') >= 0130 and date_format(S.inserted_at, '%H%i') < 0200)
+              then S.unit
+                else 0 end) as h0130,
+            sum(case when (date_format(S.inserted_at, '%H%i') >= 0200 and date_format(S.inserted_at, '%H%i') < 0230)
+              then S.unit
+                else 0 end) as h0200,
+            sum(case when (date_format(S.inserted_at, '%H%i') >= 0230 and date_format(S.inserted_at, '%H%i') < 0300)
+              then S.unit
+                else 0 end) as h0230,
+            sum(case when (date_format(S.inserted_at, '%H%i') >= 0300 and date_format(S.inserted_at, '%H%i') < 0330)
+              then S.unit
+                else 0 end) as h0300,
+            sum(case when (date_format(S.inserted_at, '%H%i') >= 0330 and date_format(S.inserted_at, '%H%i') < 0400)
+              then S.unit
+                else 0 end) as h0330,
+            sum(case when (date_format(S.inserted_at, '%H%i') >= 0400 and date_format(S.inserted_at, '%H%i') < 0430)
+              then S.unit
+                else 0 end) as h0400,
+            sum(case when (date_format(S.inserted_at, '%H%i') >= 0430 and date_format(S.inserted_at, '%H%i') < 0500)
+              then S.unit
+                else 0 end) as h0430,
+            sum(case when (date_format(S.inserted_at, '%H%i') >= 0500 and date_format(S.inserted_at, '%H%i') < 0530)
+              then S.unit
+                else 0 end) as h0500,
+            sum(case when (date_format(S.inserted_at, '%H%i') >= 0530 and date_format(S.inserted_at, '%H%i') < 0600)
+              then S.unit
+                else 0 end) as h0530,
+            sum(case when (date_format(S.inserted_at, '%H%i') >= 0600 and date_format(S.inserted_at, '%H%i') < 0630)
+              then S.unit
+                else 0 end) as h0600,
+            sum(case when (date_format(S.inserted_at, '%H%i') >= 0630 and date_format(S.inserted_at, '%H%i') < 0700)
+              then S.unit
+                else 0 end) as h0630,
+            sum(case when (date_format(S.inserted_at, '%H%i') >= 0700 and date_format(S.inserted_at, '%H%i') < 0730)
+              then S.unit
+                else 0 end) as h0700,
+            sum(case when (date_format(S.inserted_at, '%H%i') >= 0730 and date_format(S.inserted_at, '%H%i') < 0800)
+              then S.unit
+                else 0 end) as h0730,
+            sum(case when (date_format(S.inserted_at, '%H%i') >= 0800 and date_format(S.inserted_at, '%H%i') < 0830)
+              then S.unit
+                else 0 end) as h0800,
+            sum(case when (date_format(S.inserted_at, '%H%i') >= 0830 and date_format(S.inserted_at, '%H%i') < 0900)
+              then S.unit
+                else 0 end) as h0830,
+            sum(case when (date_format(S.inserted_at, '%H%i') >= 0900 and date_format(S.inserted_at, '%H%i') < 0930)
+              then S.unit
+                else 0 end) as h0900,
+            sum(case when (date_format(S.inserted_at, '%H%i') >= 0930 and date_format(S.inserted_at, '%H%i') < 1000)
+              then S.unit
+                else 0 end) as h0930,
+            sum(case when (date_format(S.inserted_at, '%H%i') >= 1000 and date_format(S.inserted_at, '%H%i') < 1030)
+              then S.unit
+                else 0 end) as h1000,
+            sum(case when (date_format(S.inserted_at, '%H%i') >= 1030 and date_format(S.inserted_at, '%H%i') < 1100)
+              then S.unit
+                else 0 end) as h1030,
+            sum(case when (date_format(S.inserted_at, '%H%i') >= 1100 and date_format(S.inserted_at, '%H%i') < 1130)
+              then S.unit
+                else 0 end) as h1100,
+            sum(case when (date_format(S.inserted_at, '%H%i') >= 1130 and date_format(S.inserted_at, '%H%i') < 1200)
+              then S.unit
+                else 0 end) as h1130
+        from sales S
+       inner join items I
+          on I.id = S.item_id
+       where I.id = ?
+       """
+      Ecto.Adapters.SQL.query(Repo, query, [item_id])
+
+  end
+
+
   @doc """
   Gets a single sales.
 
@@ -412,4 +498,6 @@ defmodule BlowCasher.Casher do
   def change_sales(%Sales{} = sales) do
     Sales.changeset(sales, %{})
   end
+
+
 end

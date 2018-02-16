@@ -11,7 +11,8 @@
 <h2>集計結果</h2>
 <ul data-role="listview">
   <%= for sales <- @sales do %>
-  <li>
+  <li data-icon="clock">
+    <%= link to: sales_path(@conn, :show, @crypto_id, sales.item_id) do %>
     <div class="ui-grid-b">
       <div class="ui-block-a">
         <%= sales.item_name %>
@@ -23,6 +24,7 @@
         <%= Number.Delimit.number_to_delimited(sales.amount, precision: 0) %> 円
       </div>
     </div>
+    <% end %>
   </li>
   <% end %>
   <li>
@@ -36,4 +38,5 @@
       </div>
     </div>
   </li>
-  </li>
+</ul>
+</div>

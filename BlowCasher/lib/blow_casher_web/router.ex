@@ -27,6 +27,7 @@ defmodule BlowCasherWeb.Router do
 #    post "/item/create/:crypto_id", ItemController, :create
     get "/:crypto_id/item/edit/:item_id", ItemController, :edit
     get "/sales/:crypto_id", SalesController, :index
+    get "/sales/:crypto_id/:item_id", SalesController, :show
 
     resources "/groups", GroupController
     resources "/items", ItemController

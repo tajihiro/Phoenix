@@ -1,28 +1,12 @@
-<h2>Show Sales</h2>
+<!-- Left Menu -->
+<%= render BlowCasherWeb.LayoutView, "sidemenu.html", conn: @conn, crypto_id: @crypto_id, group: @group %>
+<!--// Left Menu -->
 
-<ul>
+<!-- Header -->
+<%= render BlowCasherWeb.LayoutView, "header.html", group: @group %>
+<!--// Header -->
 
-  <li>
-    <strong>Price:</strong>
-    <%= @sales.price %>
-  </li>
-
-  <li>
-    <strong>Unit:</strong>
-    <%= @sales.unit %>
-  </li>
-
-  <li>
-    <strong>Amount:</strong>
-    <%= @sales.amount %>
-  </li>
-
-  <li>
-    <strong>Memo:</strong>
-    <%= @sales.memo %>
-  </li>
-
-</ul>
-
-<span><%= link "Edit", to: sales_path(@conn, :edit, @sales) %></span>
-<span><%= link "Back", to: sales_path(@conn, :index) %></span>
+<!-- Main -->
+<div role="main">
+  <h2>時間帯別集計</h2>
+</div>

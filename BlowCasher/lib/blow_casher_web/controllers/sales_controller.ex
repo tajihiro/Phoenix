@@ -13,9 +13,9 @@ defmodule BlowCasherWeb.SalesController do
     total =
       Casher.get_total_price(crypto_id)
         |> Map.get(:total) || 0
-
     render(conn, "index.html", sales: sales, crypto_id: crypto_id, group: group, total: total)
   end
+
 
   def new(conn, _params) do
     changeset = Casher.change_sales(%Sales{})
@@ -33,9 +33,12 @@ defmodule BlowCasherWeb.SalesController do
     end
   end
 
-  def show(conn, %{"id" => id}) do
-    sales = Casher.get_sales!(id)
-    render(conn, "show.html", sales: sales)
+  def show(conn, %{"crypto_id" => crypto_id,  "item_id" => item_id}) do
+    # Group取得
+    group = BlowCasher.Repo.get_by!(Group, crypto_id: crypto_id)
+    # 時間帯Sales集計
+    result = Casher.get_sales_hours(item_id)
+    render(conn, "show.html", crypto_id: crypto_id, group: group)
   end
 
   def edit(conn, %{"id" => id}) do
