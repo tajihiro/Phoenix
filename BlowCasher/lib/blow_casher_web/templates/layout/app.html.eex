@@ -18,5 +18,9 @@
 <body>
     <div role="page">
         <%= render @view_module, @view_template, assigns %>
+    </div>
+    <p align="center">
+    <small>Produced by (株)Blowfish</small>
+    </p>
 </body>
 </html>
