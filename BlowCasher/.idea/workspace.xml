@@ -31,11 +31,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html.eex" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/templates/page/index.html.eex">
+      <file leaf-file-name="index.html.eex" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/templates/index/index.html.eex">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="185" column="0" lean-forward="false" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
+            <state relative-caret-position="90">
+              <caret line="6" column="12" lean-forward="false" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.html.eex" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/templates/layout/header.html.eex">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="16" lean-forward="false" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sidemenu.html.eex" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/templates/layout/sidemenu.html.eex">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -45,8 +65,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find> </find>
-      <find>gr</find>
       <find>crypt_</find>
       <find>group</find>
       <find>グループ</find>
@@ -74,6 +92,8 @@
       <find>endpoint</find>
       <find>btnEnt</find>
       <find>hiddenCommitBtn</find>
+      <find>電卓</find>
+      <find>簡易</find>
       <find>popupDialog</find>
     </findStrings>
     <replaceStrings>
@@ -124,22 +144,22 @@
         <option value="$PROJECT_DIR$/lib/blow_casher_web/templates/group/new.html.eex" />
         <option value="$PROJECT_DIR$/lib/blow_casher/casher/group.ex" />
         <option value="$PROJECT_DIR$/assets/css/app.css" />
-        <option value="$PROJECT_DIR$/lib/blow_casher_web/templates/group/form.html.eex" />
         <option value="$PROJECT_DIR$/lib/blow_casher_web/controllers/group_controller.ex" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/bbb51d95-66e0-446e-bf01-ec1938ae2a99/console_17.sql" />
         <option value="$PROJECT_DIR$/lib/blow_casher/casher/casher.ex" />
-        <option value="$PROJECT_DIR$/lib/blow_casher_web/templates/layout/header.html.eex" />
-        <option value="$PROJECT_DIR$/lib/blow_casher_web/templates/item/index.html.eex" />
         <option value="$PROJECT_DIR$/lib/blow_casher/casher/item.ex" />
         <option value="$PROJECT_DIR$/lib/blow_casher_web/controllers/item_controller.ex" />
         <option value="$PROJECT_DIR$/lib/blow_casher_web/templates/item/form.html.eex" />
         <option value="$PROJECT_DIR$/lib/blow_casher_web/templates/group/show.html.eex" />
         <option value="$PROJECT_DIR$/lib/blow_casher_web/router.ex" />
         <option value="$PROJECT_DIR$/lib/blow_casher_web/controllers/page_controller.ex" />
-        <option value="$PROJECT_DIR$/lib/blow_casher_web/templates/index/index.html.eex" />
-        <option value="$PROJECT_DIR$/lib/blow_casher_web/templates/layout/sidemenu.html.eex" />
         <option value="$PROJECT_DIR$/lib/blow_casher_web/endpoint.ex" />
         <option value="$PROJECT_DIR$/lib/blow_casher_web/templates/page/index.html.eex" />
+        <option value="$PROJECT_DIR$/lib/blow_casher_web/templates/group/form.html.eex" />
+        <option value="$PROJECT_DIR$/lib/blow_casher_web/templates/item/index.html.eex" />
+        <option value="$PROJECT_DIR$/lib/blow_casher_web/templates/index/index.html.eex" />
+        <option value="$PROJECT_DIR$/lib/blow_casher_web/templates/layout/header.html.eex" />
+        <option value="$PROJECT_DIR$/lib/blow_casher_web/templates/layout/sidemenu.html.eex" />
       </list>
     </option>
   </component>
@@ -203,7 +223,15 @@
               <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="blow_casher_web" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BlowCasher" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BlowCasher" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="blow_casher_web" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -378,12 +406,12 @@
       <workItem from="1518532932642" duration="2559000" />
       <workItem from="1518617991626" duration="3751000" />
       <workItem from="1518706364469" duration="1530000" />
-      <workItem from="1518748433530" duration="4991000" />
+      <workItem from="1518748433530" duration="6126000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="212480000" />
+    <option name="totallyTimeSpent" value="213615000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -405,9 +433,9 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22031474" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41501975" sideWeight="0.48855507" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41501975" sideWeight="0.48855507" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21080369" sideWeight="0.48569384" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21080369" sideWeight="0.48569384" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24678111" sideWeight="0.22370617" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39262187" sideWeight="0.49427754" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -601,24 +629,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/templates/layout/header.html.eex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/templates/item/show.html.eex">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="59" lean-forward="false" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/templates/item/index.html.eex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="34" column="27" lean-forward="true" selection-start-line="34" selection-start-column="27" selection-end-line="34" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -662,13 +676,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="79" lean-forward="false" selection-start-line="12" selection-start-column="79" selection-end-line="12" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/templates/group/form.html.eex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="73" lean-forward="false" selection-start-line="2" selection-start-column="52" selection-end-line="2" selection-end-column="73" />
         </state>
       </provider>
     </entry>
@@ -728,14 +735,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/templates/layout/sidemenu.html.eex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="28" lean-forward="false" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/endpoint.ex">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -757,18 +756,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/templates/index/index.html.eex">
+    <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/templates/item/index.html.eex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+        <state relative-caret-position="121">
+          <caret line="17" column="35" lean-forward="false" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/templates/group/form.html.eex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/templates/page/index.html.eex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="185" column="0" lean-forward="false" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
+        <state relative-caret-position="120">
+          <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/templates/index/index.html.eex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="12" lean-forward="false" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/templates/layout/header.html.eex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="16" lean-forward="false" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/templates/layout/sidemenu.html.eex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
           <folding />
         </state>
       </provider>

@@ -4,7 +4,7 @@
             <h3><%= @group.group_name %></h3>
         </li>
         <li data-icon="grid">
-            <%= link "簡易電卓", to: page_path(@conn, :index, @crypto_id) %>
+            <%= link "簡易レジ", to: page_path(@conn, :index, @crypto_id) %>
         </li>
         <li data-icon="bullets">
             <%= link "商品一覧", to: item_path(@conn, :index, @crypto_id) %>
@@ -13,7 +13,7 @@
             <%= link "商品登録", to: item_path(@conn, :new, @crypto_id) %>
         </li>
         <li data-icon="info">
-            <%= link "集計", to: sales_path(@conn, :index, @crypto_id) %>
+            <%= link "売上集計", to: sales_path(@conn, :index, @crypto_id) %>
         </li>
         <li data-icon="home">
             <%= link "イベントホーム", to: group_path(@conn, :show, @crypto_id) %>

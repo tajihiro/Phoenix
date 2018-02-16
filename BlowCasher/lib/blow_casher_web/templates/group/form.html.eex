@@ -6,7 +6,7 @@
 
 
   <div class="form-group">
-    <%= submit "新規作成", class: "btn btn-primary", data: [icon: "plus"] %>
+    <%= submit "作成", class: "btn btn-primary", data: [icon: "plus"] %>
     <%= link "ホーム", to: index_path(@conn, :index), data: [role: "button", icon: "home"] %>
 
   </div>

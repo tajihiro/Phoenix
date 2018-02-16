@@ -4,7 +4,7 @@
 
 <!-- Main -->
 <div role="main">
-    <h2>簡易レジ(Blowcasher)</h2>
+    <h2>簡易レジ(BlowCasher)</h2>
     <div data-role="collapsible" data-collapsed="false" data-theme="a" data-content-theme="a">
         <h3>はじめに</h3>
         <p>このサービスは、誰でも無料で利用できる簡易レジです。</p>
@@ -12,10 +12,17 @@
     <div data-role="collapsible" data-theme="a" data-content-theme="a">
         <h3>使用方法</h3>
         <p>1. イベントを作成します。</p>
+        <p>2. 商品と金額を登録します。</p>
+        <p>3. 簡易レジを利用します。</p>
+        <p>4. 集計で売上が見れます。</p>
     </div>
     <div data-role="collapsible" data-theme="a" data-content-theme="a">
         <h3>注意事項</h3>
-        <p>このサービスを利用することによる損害に関しては、一切の責任は負いません。</p>
+        <p>作成したイベントのIDは忘れないようにしてください。</p>
+        <p>イベントのIDやURLを部外者へ知らせると不正に使用される場合もあります。</p>
+        <p>作成したイベントは、登録後1ヶ月で削除されます。</p>
+        <p>当サービスはベータ版です。不具合は随時修正する予定です。</p>
+        <p>このサービスを利用することによって生じた損害に関しては一切の責任は負いません。</p>
     </div>
 
     <div class="ui-grid-a">

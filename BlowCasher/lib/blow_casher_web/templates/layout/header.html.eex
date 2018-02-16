@@ -3,6 +3,6 @@
         <h1><%= @group.group_name %></h1>
         <a href="#left-menu" data-icon="bars" data-iconpos="notext">Menu</a>
     <% else %>
-        <h1>BlowCasher</h1>
+        <h1>簡易レジ(BlowCasher)</h1>
     <% end %>
 </div>
