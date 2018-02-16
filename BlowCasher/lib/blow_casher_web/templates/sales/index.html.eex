@@ -20,8 +20,20 @@
         <%= sales.unit %> 個
       </div>
       <div class="ui-block-c" align="right">
-        <%= sales.amount %> 円
+        <%= Number.Delimit.number_to_delimited(sales.amount, precision: 0) %> 円
       </div>
     </div>
   </li>
   <% end %>
+  <li>
+    <div class="ui-grid-b">
+      <div class="ui-block-a">
+      </div>
+      <div class="ui-block-b" align="right">
+      </div>
+      <div class="ui-block-c" align="right">
+        <%= Number.Delimit.number_to_delimited(@total, precision: 0) %> 円
+      </div>
+    </div>
+  </li>
+  </li>

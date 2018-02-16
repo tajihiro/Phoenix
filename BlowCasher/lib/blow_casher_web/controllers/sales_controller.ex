@@ -9,7 +9,12 @@ defmodule BlowCasherWeb.SalesController do
     # Group取得
     group = BlowCasher.Repo.get_by!(Group, crypto_id: crypto_id)
     sales = Casher.list_sales_group_by_item_id(crypto_id)
-    render(conn, "index.html", sales: sales, crypto_id: crypto_id, group: group)
+    # 合計金額取得
+    total =
+      Casher.get_total_price(crypto_id)
+        |> Map.get(:total) || 0
+
+    render(conn, "index.html", sales: sales, crypto_id: crypto_id, group: group, total: total)
   end
 
   def new(conn, _params) do

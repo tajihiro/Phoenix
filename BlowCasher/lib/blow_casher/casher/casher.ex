@@ -324,6 +324,14 @@ defmodule BlowCasher.Casher do
                        price: i.price })
   end
 
+  def get_total_price(crypto_id) do
+    Repo.one(from s in "sales",
+             left_join: i in "items",
+                    on: i.id == s.item_id,
+                 where: i.crypto_id == ^crypto_id,
+                select: %{total: sum(s.amount)})
+  end
+
   @doc """
   Gets a single sales.
 
