@@ -15,11 +15,11 @@
         <li data-icon="info">
             <%= link "集計", to: sales_path(@conn, :index, @crypto_id) %>
         </li>
-        <li data-icon="action">
-            <%= link "イベント作成", to: group_path(@conn, :new) %>
-        </li>
         <li data-icon="home">
-            <%= link "ホーム", to: index_path(@conn, :index) %>
+            <%= link "イベントホーム", to: group_path(@conn, :show, @crypto_id) %>
+        </li>
+        <li data-icon="action">
+            <%= link "新規イベント", to: group_path(@conn, :new) %>
         </li>
         <li data-icon="delete">
             <a href="#" data-rel="close" >閉じる</a>

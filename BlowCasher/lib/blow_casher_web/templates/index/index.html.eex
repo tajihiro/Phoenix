@@ -4,14 +4,14 @@
 
 <!-- Main -->
 <div role="main">
-    <h2>簡易電卓(Blowcasher)</h2>
+    <h2>簡易レジ(Blowcasher)</h2>
     <div data-role="collapsible" data-collapsed="false" data-theme="a" data-content-theme="a">
         <h3>はじめに</h3>
         <p>このサービスは、誰でも無料で利用できる簡易レジです。</p>
     </div>
     <div data-role="collapsible" data-theme="a" data-content-theme="a">
         <h3>使用方法</h3>
-        <p>イベントを作成します。</p>
+        <p>1. イベントを作成します。</p>
     </div>
     <div data-role="collapsible" data-theme="a" data-content-theme="a">
         <h3>注意事項</h3>

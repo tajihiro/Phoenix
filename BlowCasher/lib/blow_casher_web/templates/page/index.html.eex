@@ -105,30 +105,13 @@
         });
         //確定ボタン
         $('#btnEnt').click(function () {
-            if($('#amount').val() != 0){
-                $('#hiddenCommitBtn').click();
-                var item_name = $('[name=item_id] option:selected');
-                var item_id = $('[name=item_id]').val();
-                var unit = $('#unit').val();
-                var price = $('#price').val();
-                var amount = $('#amount').val();
-                //ポップアップ表示
-                $('#popupDialog h1').html(item_name);
-                $('#popupDialog #content').html(price + '円 × ' + unit + '個 = ' + amount + '円');
-                //値設定
-                $('#commitFrm #hidden_price').val(price);
-                $('#commitFrm #hidden_unit').val(unit);
-                $('#commitFrm #hidden_amount').val(amount);
-                $('#commitFrm #hidden_item_id').val(item_id);
-            }
+            setPopup(1);
         });
         //訂正ボタン
         $('#btnAlt').click(function () {
-            //$('#hiddenModifyBtn').click();
-            // this.form.action = '/sales'
-            // this.form.method = 'POST'
-            // this.form.submit();
+            setPopup(-1);
         });
+
         //ダイアログOKボタン
         $('#btnCommit').click(function () {
             $('#commitFrm #hidden_memo').val($("#memo").val());
@@ -136,12 +119,6 @@
             setTimeout(function(){
                 $('#commitFrm').submit();
             }, 300);
-            // frm = $('#commitFrm');
-            // frm.submit();
-        });
-        //ダイアログCancelボタン
-        $('#btnCancel').click(function () {
-            console.log("Cancel!!");
         });
         //計算ボタン
         $('#btn01').click(function () {
@@ -174,6 +151,25 @@
         $('#btn10').click(function () {
             calcDisplay(10);
         });
+        //計算共通ロジック
+        function setPopup(mode){
+            if($('#amount').val() != 0){
+                $('#hiddenCommitBtn').click();
+                var item_name = $('[name=item_id] option:selected').text();
+                var item_id = $('[name=item_id]').val();
+                var unit = $('#unit').val();
+                var price = $('#price').val();
+                var amount = $('#amount').val();
+                //ポップアップ表示
+                $('#popupDialog h1').html(item_name);
+                $('#popupDialog #content').html(price + '円 × ' + unit * mode + '個 = ' + amount * mode + '円');
+                //値設定
+                $('#commitFrm #hidden_price').val(price);
+                $('#commitFrm #hidden_unit').val(unit * mode);
+                $('#commitFrm #hidden_amount').val(amount * mode);
+                $('#commitFrm #hidden_item_id').val(item_id);
+            }
+        }
 
         //算出結果表示
         function calcDisplay(unit) {
