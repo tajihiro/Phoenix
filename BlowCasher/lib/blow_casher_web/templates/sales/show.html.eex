@@ -8,5 +8,268 @@
 
 <!-- Main -->
 <div role="main">
-  <h2>時間帯別集計</h2>
+  <h2>時間帯別集計 </h2>
+  <h3><%= @sales_hours["item_name"] %></h3>
+  <ul data-role="listview">
+    <li>
+      <div class="ui-grid-a">
+        <div class="ui-block-a">
+          7:00〜7:30
+        </div>
+        <div class="ui-block-b" align="right">
+          <%= Number.Delimit.number_to_delimited(Decimal.to_integer(@sales_hours["h0700"]), precision: 0) %> 個
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="ui-grid-a">
+        <div class="ui-block-a">
+          7:30〜8:00
+        </div>
+        <div class="ui-block-b" align="right">
+          <%= Number.Delimit.number_to_delimited(Decimal.to_integer(@sales_hours["h0730"]), precision: 0) %> 個
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="ui-grid-a">
+        <div class="ui-block-a">
+          8:00〜8:30
+        </div>
+        <div class="ui-block-b" align="right">
+          <%= Number.Delimit.number_to_delimited(Decimal.to_integer(@sales_hours["h0800"]), precision: 0) %> 個
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="ui-grid-a">
+        <div class="ui-block-a">
+          8:30〜9:00
+        </div>
+        <div class="ui-block-b" align="right">
+          <%= Number.Delimit.number_to_delimited(Decimal.to_integer(@sales_hours["h0830"]), precision: 0) %> 個
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="ui-grid-a">
+        <div class="ui-block-a">
+          9:00〜9:30
+        </div>
+        <div class="ui-block-b" align="right">
+          <%= Number.Delimit.number_to_delimited(Decimal.to_integer(@sales_hours["h0900"]), precision: 0) %> 個
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="ui-grid-a">
+        <div class="ui-block-a">
+          9:30〜10:00
+        </div>
+        <div class="ui-block-b" align="right">
+          <%= Number.Delimit.number_to_delimited(Decimal.to_integer(@sales_hours["h0930"]), precision: 0) %> 個
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="ui-grid-a">
+        <div class="ui-block-a">
+          10:00〜10:30
+        </div>
+        <div class="ui-block-b" align="right">
+          <%= Number.Delimit.number_to_delimited(Decimal.to_integer(@sales_hours["h1000"]), precision: 0) %> 個
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="ui-grid-a">
+        <div class="ui-block-a">
+          10:30〜11:00
+        </div>
+        <div class="ui-block-b" align="right">
+          <%= Number.Delimit.number_to_delimited(Decimal.to_integer(@sales_hours["h1030"]), precision: 0) %> 個
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="ui-grid-a">
+        <div class="ui-block-a">
+          11:00〜11:30
+        </div>
+        <div class="ui-block-b" align="right">
+          <%= Number.Delimit.number_to_delimited(Decimal.to_integer(@sales_hours["h1100"]), precision: 0) %> 個
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="ui-grid-a">
+        <div class="ui-block-a">
+          11:30〜12:00
+        </div>
+        <div class="ui-block-b" align="right">
+          <%= Number.Delimit.number_to_delimited(Decimal.to_integer(@sales_hours["h1130"]), precision: 0) %> 個
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="ui-grid-a">
+        <div class="ui-block-a">
+          12:00〜12:30
+        </div>
+        <div class="ui-block-b" align="right">
+          <%= Number.Delimit.number_to_delimited(Decimal.to_integer(@sales_hours["h1200"]), precision: 0) %> 個
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="ui-grid-a">
+        <div class="ui-block-a">
+          12:30〜13:00
+        </div>
+        <div class="ui-block-b" align="right">
+          <%= Number.Delimit.number_to_delimited(Decimal.to_integer(@sales_hours["h1230"]), precision: 0) %> 個
+        </div>
+      </div>
+    </li>
+  <li>
+    <div class="ui-grid-a">
+      <div class="ui-block-a">
+        13:00〜13:30
+      </div>
+      <div class="ui-block-b" align="right">
+        <%= Number.Delimit.number_to_delimited(Decimal.to_integer(@sales_hours["h1300"]), precision: 0) %> 個
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="ui-grid-a">
+      <div class="ui-block-a">
+        13:30〜14:00
+      </div>
+      <div class="ui-block-b" align="right">
+        <%= Number.Delimit.number_to_delimited(Decimal.to_integer(@sales_hours["h1330"]), precision: 0) %> 個
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="ui-grid-a">
+      <div class="ui-block-a">
+        14:00〜14:30
+      </div>
+      <div class="ui-block-b" align="right">
+        <%= Number.Delimit.number_to_delimited(Decimal.to_integer(@sales_hours["h1400"]), precision: 0) %> 個
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="ui-grid-a">
+      <div class="ui-block-a">
+        14:30〜15:00
+      </div>
+      <div class="ui-block-b" align="right">
+        <%= Number.Delimit.number_to_delimited(Decimal.to_integer(@sales_hours["h1430"]), precision: 0) %> 個
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="ui-grid-a">
+      <div class="ui-block-a">
+        15:00〜15:30
+      </div>
+      <div class="ui-block-b" align="right">
+        <%= Number.Delimit.number_to_delimited(Decimal.to_integer(@sales_hours["h1500"]), precision: 0) %> 個
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="ui-grid-a">
+      <div class="ui-block-a">
+        15:30〜16:00
+      </div>
+      <div class="ui-block-b" align="right">
+        <%= Number.Delimit.number_to_delimited(Decimal.to_integer(@sales_hours["h1530"]), precision: 0) %> 個
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="ui-grid-a">
+      <div class="ui-block-a">
+        16:00〜16:30
+      </div>
+      <div class="ui-block-b" align="right">
+        <%= Number.Delimit.number_to_delimited(Decimal.to_integer(@sales_hours["h1600"]), precision: 0) %> 個
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="ui-grid-a">
+      <div class="ui-block-a">
+        16:30〜17:00
+      </div>
+      <div class="ui-block-b" align="right">
+        <%= Number.Delimit.number_to_delimited(Decimal.to_integer(@sales_hours["h1630"]), precision: 0) %> 個
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="ui-grid-a">
+      <div class="ui-block-a">
+        17:00〜17:30
+      </div>
+      <div class="ui-block-b" align="right">
+        <%= Number.Delimit.number_to_delimited(Decimal.to_integer(@sales_hours["h1700"]), precision: 0) %> 個
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="ui-grid-a">
+      <div class="ui-block-a">
+        17:30〜18:00
+      </div>
+      <div class="ui-block-b" align="right">
+        <%= Number.Delimit.number_to_delimited(Decimal.to_integer(@sales_hours["h1730"]), precision: 0) %> 個
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="ui-grid-a">
+      <div class="ui-block-a">
+        18:00〜18:30
+      </div>
+      <div class="ui-block-b" align="right">
+        <%= Number.Delimit.number_to_delimited(Decimal.to_integer(@sales_hours["h1800"]), precision: 0) %> 個
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="ui-grid-a">
+      <div class="ui-block-a">
+        18:30〜19:00
+      </div>
+      <div class="ui-block-b" align="right">
+        <%= Number.Delimit.number_to_delimited(Decimal.to_integer(@sales_hours["h1830"]), precision: 0) %> 個
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="ui-grid-a">
+      <div class="ui-block-a">
+        19:00〜19:30
+      </div>
+      <div class="ui-block-b" align="right">
+        <%= Number.Delimit.number_to_delimited(Decimal.to_integer(@sales_hours["h1900"]), precision: 0) %> 個
+      </div>
+    </div>
+  </li>
+  <li>
+    <div class="ui-grid-a">
+      <div class="ui-block-a">
+        19:30〜20:00
+      </div>
+      <div class="ui-block-b" align="right">
+        <%= Number.Delimit.number_to_delimited(Decimal.to_integer(@sales_hours["h1930"]), precision: 0) %> 個
+      </div>
+    </div>
+  </li>
+  <ul>
 </div>

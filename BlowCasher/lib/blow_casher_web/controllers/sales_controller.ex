@@ -36,9 +36,14 @@ defmodule BlowCasherWeb.SalesController do
   def show(conn, %{"crypto_id" => crypto_id,  "item_id" => item_id}) do
     # Group取得
     group = BlowCasher.Repo.get_by!(Group, crypto_id: crypto_id)
+
     # 時間帯Sales集計
-    result = Casher.get_sales_hours(item_id)
-    render(conn, "show.html", crypto_id: crypto_id, group: group)
+    {:ok, result} = Casher.get_sales_hours(item_id)
+    columns = result.columns
+    rows = result.rows
+    sales_hours = Enum.zip(columns, hd(rows)) |> Enum.into(%{})
+
+    render(conn, "show.html", crypto_id: crypto_id, group: group, sales_hours: sales_hours)
   end
 
   def edit(conn, %{"id" => id}) do
