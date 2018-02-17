@@ -335,7 +335,7 @@ defmodule BlowCasher.Casher do
   def get_sales_hours(item_id) do
     query =
       """
-      select s.item_id, i.item_name,
+      select S.item_id, I.item_name,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 0000 and date_format(S.inserted_at, '%H%i') < 0030)
              then S.unit
              else 0 end) as h0000,
