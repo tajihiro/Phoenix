@@ -9,7 +9,7 @@
 <div role="main">
 <h2>商品一覧</h2>
 
-<ul data-role="listview">
+<ul data-role="listview" data-inset="true">
     <%= for item <- @items do %>
     <li data-icon="edit">
         <%= link to: item_path(@conn, :edit, @crypto_id, item.id) do %>

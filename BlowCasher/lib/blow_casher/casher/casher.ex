@@ -338,148 +338,148 @@ defmodule BlowCasher.Casher do
       select S.item_id, I.item_name,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 0000 and date_format(S.inserted_at, '%H%i') < 0030)
              then S.unit
-             else 0 end) as h0000,
+             else 0 end) as h0900,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 0030 and date_format(S.inserted_at, '%H%i') < 0100)
              then S.unit
-               else 0 end) as h0030,
+               else 0 end) as h0930,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 0100 and date_format(S.inserted_at, '%H%i') < 0130)
              then S.unit
-               else 0 end) as h0100,
+               else 0 end) as h1000,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 0130 and date_format(S.inserted_at, '%H%i') < 0200)
              then S.unit
-               else 0 end) as h0130,
+               else 0 end) as h1030,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 0200 and date_format(S.inserted_at, '%H%i') < 0230)
              then S.unit
-               else 0 end) as h0200,
+               else 0 end) as h1100,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 0230 and date_format(S.inserted_at, '%H%i') < 0300)
              then S.unit
-               else 0 end) as h0230,
+               else 0 end) as h1130,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 0300 and date_format(S.inserted_at, '%H%i') < 0330)
              then S.unit
-               else 0 end) as h0300,
+               else 0 end) as h1200,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 0330 and date_format(S.inserted_at, '%H%i') < 0400)
              then S.unit
-               else 0 end) as h0330,
+               else 0 end) as h1230,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 0400 and date_format(S.inserted_at, '%H%i') < 0430)
              then S.unit
-               else 0 end) as h0400,
+               else 0 end) as h1300,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 0430 and date_format(S.inserted_at, '%H%i') < 0500)
              then S.unit
-               else 0 end) as h0430,
+               else 0 end) as h1330,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 0500 and date_format(S.inserted_at, '%H%i') < 0530)
              then S.unit
-               else 0 end) as h0500,
+               else 0 end) as h1400,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 0530 and date_format(S.inserted_at, '%H%i') < 0600)
              then S.unit
-               else 0 end) as h0530,
+               else 0 end) as h1430,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 0600 and date_format(S.inserted_at, '%H%i') < 0630)
              then S.unit
-               else 0 end) as h0600,
+               else 0 end) as h1500,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 0630 and date_format(S.inserted_at, '%H%i') < 0700)
              then S.unit
-               else 0 end) as h0630,
+               else 0 end) as h1530,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 0700 and date_format(S.inserted_at, '%H%i') < 0730)
              then S.unit
-               else 0 end) as h0700,
+               else 0 end) as h1600,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 0730 and date_format(S.inserted_at, '%H%i') < 0800)
              then S.unit
-               else 0 end) as h0730,
+               else 0 end) as h1630,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 0800 and date_format(S.inserted_at, '%H%i') < 0830)
              then S.unit
-               else 0 end) as h0800,
+               else 0 end) as h1700,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 0830 and date_format(S.inserted_at, '%H%i') < 0900)
              then S.unit
-               else 0 end) as h0830,
+               else 0 end) as h1730,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 0900 and date_format(S.inserted_at, '%H%i') < 0930)
              then S.unit
-               else 0 end) as h0900,
+               else 0 end) as h1800,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 0930 and date_format(S.inserted_at, '%H%i') < 1000)
              then S.unit
-               else 0 end) as h0930,
+               else 0 end) as h1830,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 1000 and date_format(S.inserted_at, '%H%i') < 1030)
              then S.unit
-               else 0 end) as h1000,
+               else 0 end) as h1900,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 1030 and date_format(S.inserted_at, '%H%i') < 1100)
              then S.unit
-               else 0 end) as h1030,
+               else 0 end) as h1930,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 1100 and date_format(S.inserted_at, '%H%i') < 1130)
              then S.unit
-               else 0 end) as h1100,
+               else 0 end) as h2000,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 1130 and date_format(S.inserted_at, '%H%i') < 1200)
              then S.unit
-               else 0 end) as h1130,
+               else 0 end) as h2030,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 1200 and date_format(S.inserted_at, '%H%i') < 1230)
              then S.unit
-               else 0 end) as h1200,
+               else 0 end) as h2100,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 1230 and date_format(S.inserted_at, '%H%i') < 1300)
              then S.unit
-               else 0 end) as h1230,
+               else 0 end) as h2130,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 1300 and date_format(S.inserted_at, '%H%i') < 1330)
              then S.unit
-               else 0 end) as h1300,
+               else 0 end) as h2200,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 1330 and date_format(S.inserted_at, '%H%i') < 1400)
              then S.unit
-               else 0 end) as h1330,
+               else 0 end) as h2230,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 1400 and date_format(S.inserted_at, '%H%i') < 1430)
              then S.unit
-               else 0 end) as h1400,
+               else 0 end) as h2300,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 1430 and date_format(S.inserted_at, '%H%i') < 1500)
              then S.unit
-               else 0 end) as h1430,
+               else 0 end) as h2330,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 1500 and date_format(S.inserted_at, '%H%i') < 1530)
              then S.unit
-               else 0 end) as h1500,
+               else 0 end) as h0000,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 1530 and date_format(S.inserted_at, '%H%i') < 1600)
              then S.unit
-               else 0 end) as h1530,
+               else 0 end) as h0030,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 1600 and date_format(S.inserted_at, '%H%i') < 1630)
              then S.unit
-               else 0 end) as h1600,
+               else 0 end) as h0100,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 1630 and date_format(S.inserted_at, '%H%i') < 1700)
              then S.unit
-               else 0 end) as h1630,
+               else 0 end) as h0130,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 1700 and date_format(S.inserted_at, '%H%i') < 1730)
              then S.unit
-               else 0 end) as h1700,
+               else 0 end) as h0200,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 1730 and date_format(S.inserted_at, '%H%i') < 1800)
              then S.unit
-               else 0 end) as h1730,
+               else 0 end) as h0230,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 1800 and date_format(S.inserted_at, '%H%i') < 1830)
              then S.unit
-               else 0 end) as h1800,
+               else 0 end) as h0300,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 1830 and date_format(S.inserted_at, '%H%i') < 1900)
              then S.unit
-               else 0 end) as h1830,
+               else 0 end) as h0330,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 1900 and date_format(S.inserted_at, '%H%i') < 1930)
              then S.unit
-               else 0 end) as h1900,
+               else 0 end) as h0400,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 1930 and date_format(S.inserted_at, '%H%i') < 2000)
              then S.unit
-               else 0 end) as h1930,
+               else 0 end) as h0430,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 2000 and date_format(S.inserted_at, '%H%i') < 2030)
              then S.unit
-               else 0 end) as h2000,
+               else 0 end) as h0500,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 2030 and date_format(S.inserted_at, '%H%i') < 2100)
              then S.unit
-               else 0 end) as h2030,
+               else 0 end) as h0530,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 2100 and date_format(S.inserted_at, '%H%i') < 2130)
              then S.unit
-               else 0 end) as h2100,
+               else 0 end) as h0600,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 2130 and date_format(S.inserted_at, '%H%i') < 2200)
              then S.unit
-               else 0 end) as h2130,
+               else 0 end) as h0630,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 2200 and date_format(S.inserted_at, '%H%i') < 2230)
              then S.unit
-               else 0 end) as h2200,
+               else 0 end) as h0700,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 2230 and date_format(S.inserted_at, '%H%i') < 2300)
              then S.unit
-               else 0 end) as h2230,
+               else 0 end) as h0730,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 2300 and date_format(S.inserted_at, '%H%i') < 2330)
              then S.unit
-               else 0 end) as h2300,
+               else 0 end) as h0800,
            sum(case when (date_format(S.inserted_at, '%H%i') >= 2330 and date_format(S.inserted_at, '%H%i') < 2400)
              then S.unit
-               else 0 end) as h2330
+               else 0 end) as h0830
        from sales S
       inner join items I
          on I.id = S.item_id

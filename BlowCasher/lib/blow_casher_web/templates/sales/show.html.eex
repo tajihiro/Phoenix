@@ -10,7 +10,7 @@
 <div role="main">
   <h2>時間帯別集計 </h2>
   <h3><%= @sales_hours["item_name"] %></h3>
-  <ul data-role="listview">
+  <ul data-role="listview" data-inset="true">
     <li>
       <div class="ui-grid-a">
         <div class="ui-block-a">

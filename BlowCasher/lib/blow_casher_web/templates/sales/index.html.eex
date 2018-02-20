@@ -9,7 +9,7 @@
 <!-- Main -->
 <div role="main">
 <h2>集計結果</h2>
-<ul data-role="listview">
+<ul data-role="listview" data-inset="true">
   <%= for sales <- @sales do %>
   <li data-icon="clock">
     <%= link to: sales_path(@conn, :show, @crypto_id, sales.item_id) do %>

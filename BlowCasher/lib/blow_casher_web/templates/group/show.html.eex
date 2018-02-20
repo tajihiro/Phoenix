@@ -10,7 +10,7 @@
 <div role="main">
     <h2>イベント</h2>
 
-    <ul data-role="listview">
+    <ul data-role="listview" data-inset="true">
         <li data-icon="edit">
             <div class="ui-grid-a">
                 <div class="ui-block-a">
