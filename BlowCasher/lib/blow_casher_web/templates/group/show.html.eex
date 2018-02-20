@@ -20,8 +20,11 @@
         </li>
         <li data-icon="edit">
             <div class="ui-grid-a">
+                <div class="ui-block-a" align="right">
+                    <input id="event_url" value="http://www.whoocus.com:4000/event/<%= @group.crypto_id %>">
+                </div>
                 <div class="ui-block-b" align="right">
-                    http://www.whoocus.com:4000/event/<%= @group.crypto_id %>
+                    <a href="" data-role="button" data-icon="location" data-iconpos="notext" class="copy_btn" data-clipboard-target="#event_url">URLコピー</a>
                 </div>
             </div>
         </li>
@@ -36,3 +39,8 @@
                     data: [ ajax: "false", role: "button"] %>
     <% end %>
 </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
+<script>
+    var clipboard = new Clipboard('.copy_btn');
+</script>

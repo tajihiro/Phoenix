@@ -49,70 +49,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="sales" pinned="false" current-in-tab="false">
-        <entry file="das://table:/cead958e/bbb51d95-66e0-446e-bf01-ec1938ae2a99/blowcasher_db.sales">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="casher.ex" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/blow_casher/casher/casher.ex">
+      <file leaf-file-name="group.ex" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/blow_casher/casher/group.ex">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="394" column="33" lean-forward="false" selection-start-line="394" selection-start-column="33" selection-end-line="394" selection-end-column="33" />
+            <state relative-caret-position="270">
+              <caret line="18" column="63" lean-forward="false" selection-start-line="18" selection-start-column="63" selection-end-line="18" selection-end-column="89" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.html.eex" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/templates/sales/show.html.eex">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.eex" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/templates/item/index.html.eex">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="11" column="25" lean-forward="false" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show.html.eex" pinned="false" current-in-tab="false">
+      <file leaf-file-name="show.html.eex" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/templates/group/show.html.eex">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="12" column="46" lean-forward="false" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.eex" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/templates/sales/index.html.eex">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="11" column="42" lean-forward="false" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sidemenu.html.eex" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/templates/layout/sidemenu.html.eex">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="28" lean-forward="false" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
+            <state relative-caret-position="307">
+              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -216,9 +167,9 @@
         <option value="$PROJECT_DIR$/lib/blow_casher/casher/casher.ex" />
         <option value="$PROJECT_DIR$/lib/blow_casher_web/templates/sales/show.html.eex" />
         <option value="$PROJECT_DIR$/lib/blow_casher_web/templates/item/index.html.eex" />
-        <option value="$PROJECT_DIR$/lib/blow_casher_web/templates/group/show.html.eex" />
         <option value="$PROJECT_DIR$/lib/blow_casher_web/templates/sales/index.html.eex" />
         <option value="$PROJECT_DIR$/lib/blow_casher_web/templates/layout/sidemenu.html.eex" />
+        <option value="$PROJECT_DIR$/lib/blow_casher_web/templates/group/show.html.eex" />
       </list>
     </option>
   </component>
@@ -273,14 +224,29 @@
               <item name="BlowCasher" type="b2602c69:ProjectViewProjectNode" />
               <item name="BlowCasher" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="blow_casher" type="462c0819:PsiDirectoryNode" />
-              <item name="casher" type="462c0819:PsiDirectoryNode" />
+              <item name="blow_casher_web" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BlowCasher" type="b2602c69:ProjectViewProjectNode" />
               <item name="BlowCasher" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="blow_casher_web" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BlowCasher" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BlowCasher" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="blow_casher_web" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BlowCasher" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BlowCasher" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="blow_casher_web" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="group" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -459,12 +425,12 @@
       <workItem from="1518748433530" duration="29156000" />
       <workItem from="1518827393583" duration="16141000" />
       <workItem from="1518878512620" duration="3101000" />
-      <workItem from="1519097717514" duration="2868000" />
+      <workItem from="1519097717514" duration="5468000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="258755000" />
+    <option name="totallyTimeSpent" value="261355000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -482,8 +448,8 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938075" sideWeight="0.49713877" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25559947" sideWeight="0.5143061" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41501975" sideWeight="0.48855507" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28722003" sideWeight="0.48569384" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41501975" sideWeight="0.48855507" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28722003" sideWeight="0.48569384" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5704875" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17811158" sideWeight="0.7762938" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
@@ -607,13 +573,6 @@
         <state relative-caret-position="60">
           <caret line="4" column="41" lean-forward="false" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/blow_casher/casher/group.ex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="63" lean-forward="false" selection-start-line="18" selection-start-column="63" selection-end-line="18" selection-end-column="89" />
         </state>
       </provider>
     </entry>
@@ -850,26 +809,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/templates/group/show.html.eex">
+    <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/templates/layout/sidemenu.html.eex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="12" column="46" lean-forward="false" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+        <state relative-caret-position="15">
+          <caret line="1" column="28" lean-forward="false" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/templates/sales/index.html.eex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
+        <state relative-caret-position="165">
           <caret line="11" column="42" lean-forward="false" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/templates/layout/sidemenu.html.eex">
+    <entry file="file://$PROJECT_DIR$/lib/blow_casher/casher/group.ex">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="28" lean-forward="false" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
+        <state relative-caret-position="270">
+          <caret line="18" column="63" lean-forward="false" selection-start-line="18" selection-start-column="63" selection-end-line="18" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/blow_casher_web/templates/group/show.html.eex">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
         </state>
       </provider>
