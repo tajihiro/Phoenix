@@ -39,8 +39,6 @@
                     data: [ ajax: "false", role: "button"] %>
     <% end %>
 </div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js"></script>
 <script>
     var clipboard = new Clipboard('.copy_btn');
 </script>
