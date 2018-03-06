@@ -1,0 +1,12 @@
+<table>
+    <%= for result <- @result do %>
+<tr>
+    <td><%= result["id"] %></td>
+    <td><%= result["last_name"] %></td>
+    <td><%= result["first_name"] %></td>
+    <td><%= result["email"] %></td>
+    <td><%= Timex.to_datetime(result["inserted_at"])%></td>
+    <td><%= Timex.to_datetime(result["updated_at"])%></td>
+</tr>
+    <% end %>
+</table>
