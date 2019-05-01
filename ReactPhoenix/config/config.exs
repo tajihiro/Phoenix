@@ -10,7 +10,7 @@ use Mix.Config
 # Configures the endpoint
 config :react_phoenix, ReactPhoenixWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "bvn6QuLiJfECs5e16OU7HzAORBrJ98Vfu9Ad1FPq/pmwNkNN2F0KIVvA46zVL30Y",
+  secret_key_base: "jmA3/Lp3QImgQk7sHep1Shzx75hvcDt1ynnYt1Llw7gugyUWj3Zb4aMHwQf9m1rm",
   render_errors: [view: ReactPhoenixWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: ReactPhoenix.PubSub, adapter: Phoenix.PubSub.PG2]
 

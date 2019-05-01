@@ -40,7 +40,7 @@ defmodule ReactPhoenixWeb.Endpoint do
   plug Plug.Session,
     store: :cookie,
     key: "_react_phoenix_key",
-    signing_salt: "PnoMgkhe"
+    signing_salt: "hoFUURHG"
 
   plug ReactPhoenixWeb.Router
 end
