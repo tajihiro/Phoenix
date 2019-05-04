@@ -16,32 +16,43 @@ import "phoenix_html"
 // Local files can be imported directly using relative paths, for example:
 // import socket from "./socket"
 
-import React, {Component} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import TodoInput from './components/TodoInput';
-import TodoList from './components/TodoList';
+import {createStore, combineReducers} from 'redux';
+import {Provider} from 'react-redux';
 
-class App extends Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            tasks: [
-                {title: 'Todo01', id: 0},
-                {title: 'Todo02', id: 1},
-                {title: 'Todo03', id: 2},
-                {title: 'Todo04', id: 3}
-            ]
-        }
-    }
+import App from './components/App'
 
-    render() {
-        return(
-            <div>
-              こんにちは。React App Component!!!
-              <TodoInput name="初期パラメータ"/>
-              <TodoList tasks={this.state.tasks} />
-            </div>
-        );
+let init_value ={
+    counter: 0,
+    message: 'COUNTER'
+}
+
+//Reducer
+function counter(state = init_value, action){
+    switch (action.type) {
+        case 'INCREMENT':
+            return {
+                counter: state.counter + 1,
+                message: '増加'
+            };
+        case 'DECREMENT':
+            return {
+                counter: state.counter - 1,
+                message: '減少'
+            };
+        default:
+            return state;
     }
 }
-ReactDOM.render(<App />, document.getElementById('root'));
+
+//Store
+let store = createStore(counter);
+
+//Rendering
+ReactDOM.render(
+    <Provider store={store}>
+        <App />
+    </ Provider >,
+    document.getElementById('root')
+);
