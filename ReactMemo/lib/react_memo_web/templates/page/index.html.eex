@@ -1,0 +1,6 @@
+<section class="row">
+  <article class="column">
+    <h2>React</h2>
+    <div id="root" >React Memo App</div>
+  </article>
+</section>
