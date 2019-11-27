@@ -7,10 +7,13 @@
 # General application configuration
 use Mix.Config
 
+config :react_phoenix,
+  ecto_repos: [ReactPhoenix.Repo]
+
 # Configures the endpoint
 config :react_phoenix, ReactPhoenixWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "jmA3/Lp3QImgQk7sHep1Shzx75hvcDt1ynnYt1Llw7gugyUWj3Zb4aMHwQf9m1rm",
+  secret_key_base: "aMBOPphLyV3t6pFYZuPq2yFSJBK7mw3nrw1tuCuCaB3KZNGlrC/NOBbmxR3QVv9B",
   render_errors: [view: ReactPhoenixWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: ReactPhoenix.PubSub, adapter: Phoenix.PubSub.PG2]
 

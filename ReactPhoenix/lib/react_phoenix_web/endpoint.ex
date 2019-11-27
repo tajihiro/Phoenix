@@ -24,7 +24,7 @@ defmodule ReactPhoenixWeb.Endpoint do
   end
 
   plug Plug.RequestId
-  plug Plug.Logger
+  plug Plug.Telemetry, event_prefix: [:phoenix, :endpoint]
 
   plug Plug.Parsers,
     parsers: [:urlencoded, :multipart, :json],
@@ -40,7 +40,7 @@ defmodule ReactPhoenixWeb.Endpoint do
   plug Plug.Session,
     store: :cookie,
     key: "_react_phoenix_key",
-    signing_salt: "hoFUURHG"
+    signing_salt: "KxKSzNgx"
 
   plug ReactPhoenixWeb.Router
 end
