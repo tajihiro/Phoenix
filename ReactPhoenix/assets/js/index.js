@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {createStore, combineReducers} from 'redux';
 import {Provider} from 'react-redux';
-import Main from './Main'
+import App from './App'
 
 let state_value = {
     counter : 0,
@@ -10,14 +10,23 @@ let state_value = {
 }
 
 function counter(state = state_value, action){
-    return state;
+    switch (action.type) {
+        case 'CLICK':
+            return {
+                counter: state.counter + 1,
+                message: "INCREMENT"
+            };
+        default:
+            return state;
+    }
 }
 
 let store = createStore(counter);
 
 ReactDOM.render(
     <Provider store={store} >
-        <Main/>
+        <App/>
     </Provider>,
     document.getElementById('root')
 );
+
