@@ -81,7 +81,7 @@ export function findMemo(text){
 
 export function deleteMemo(num){
     return{
-        type: 'FIND',
+        type: 'DELETE',
         index: num
     }
 }

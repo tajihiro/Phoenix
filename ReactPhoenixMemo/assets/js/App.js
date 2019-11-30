@@ -3,12 +3,12 @@ import {connect} from 'react-redux';
 import Memo from './Memo';
 import AddForm from './AddForm'
 import FindForm from "./FindForm";
+import DeleteForm from "./DeleteForm";
 
 class App extends Component {
     constructor(props){
         super(props);
     }
-
     render() {
         return(
             <div>
@@ -19,7 +19,7 @@ class App extends Component {
                     <tbody>
                     <tr>
                         <td><FindForm/></td>
-                        <td>DeleteForm</td>
+                        <td><DeleteForm/></td>
                     </tr>
                     </tbody>
                 </table>
