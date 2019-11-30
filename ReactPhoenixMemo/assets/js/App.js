@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import Memo from './Memo';
 import AddForm from './AddForm'
+import FindForm from "./FindForm";
 
 class App extends Component {
     constructor(props){
@@ -17,7 +18,7 @@ class App extends Component {
                 <table>
                     <tbody>
                     <tr>
-                        <td>FindForm</td>
+                        <td><FindForm/></td>
                         <td>DeleteForm</td>
                     </tr>
                     </tbody>
