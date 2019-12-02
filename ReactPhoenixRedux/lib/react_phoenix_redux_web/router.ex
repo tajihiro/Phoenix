@@ -17,6 +17,7 @@ defmodule ReactPhoenixReduxWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/Page2", PageController, :index
   end
 
   # Other scopes may use custom stacks.

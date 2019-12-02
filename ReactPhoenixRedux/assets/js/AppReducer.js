@@ -1,4 +1,4 @@
-import {createStore} from "redux";
+import {createStore, combineReducers, applyMiddleware} from "redux";
 
 const initData = {
     message: 'こんにちは。Reduxの勉強をしています。'

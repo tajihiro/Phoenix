@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {changeMessage} from "./AppReducer";
 
+import {Link} from 'react-router-dom';
+
 class App extends Component{
     constructor(props){
         super(props);
@@ -33,6 +35,12 @@ class App extends Component{
                 <div>{this.state.message}</div>
                 <input type="text" value={this.state.message} onChange={this.doChange}/>
                 <input type="button" onClick={this.doClick} value="OK"/>
+                <div>
+                    <Link to={{
+                            pathname: '/page2'
+                    }
+                    }>Page 2</Link>
+                </div>
             </div>
         );
     }
