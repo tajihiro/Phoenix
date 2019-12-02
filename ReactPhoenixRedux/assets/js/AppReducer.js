@@ -6,13 +6,20 @@ const initData = {
 
 export function appReducer(state = initData, action) {
     switch (action.type) {
-        case 'INIT':
+        case 'CHANGE':
             return {
-                message: "INIT"
+                message: action.message
             }
         default:
             return state;
     }
 }
+
+// export function changeMessage(message) {
+//     return{
+//         type: 'CHANGE',
+//         message: message
+//     }
+// }
 
 export default createStore(appReducer);
