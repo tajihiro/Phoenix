@@ -36,10 +36,10 @@ class App extends Component{
                 <input type="text" value={this.state.message} onChange={this.doChange}/>
                 <input type="button" onClick={this.doClick} value="OK"/>
                 <div>
-                    <Link to={{
-                            pathname: '/page2'
-                    }
-                    }>Page 2</Link>
+                    <Link to={{pathname: '/page2'}}>Page 2</Link>
+                </div>
+                <div>
+                    <Link to={{pathname: '/page3'}}>Page 3</Link>
                 </div>
             </div>
         );
