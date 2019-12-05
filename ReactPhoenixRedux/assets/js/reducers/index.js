@@ -1,18 +1,8 @@
 import { combineReducers } from "redux";
 import { connectRouter } from "connected-react-router";
 
-const initData = {
-    data: []
-}
+import {sampleReducer} from "./sampleReducer";
 
-function sampleReducer(state = initData, action){
-    switch (action.type) {
-        case '':
-            return state;
-        default:
-            return state;
-    }
-}
 
 const rootReducer = (history) => combineReducers({
     router: connectRouter(history), //Router
