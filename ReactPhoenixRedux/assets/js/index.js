@@ -9,7 +9,7 @@ import App from "./App";
 import Page01 from "./components/Page01";
 import Page02 from "./components/Page02";
 
-const store = configureStore(/* provide initial state if any */)
+const store = configureStore();
 
 ReactDOM.render(
     <Provider store={store}>
