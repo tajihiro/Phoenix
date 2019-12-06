@@ -40,7 +40,6 @@ class Page02 extends Component{
     }
 
     render() {
-        console.log('Render : ' + this.state)
         if (this.state.hasError) {
             return <p>error</p>;
         }

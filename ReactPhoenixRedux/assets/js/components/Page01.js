@@ -33,7 +33,7 @@ class Page01 extends Component{
     }
 
     render() {
-        console.log('Render : ' + this.state)
+        console.log(this.state.comments);
         if (this.state.hasError) {
             return <p>error</p>;
         }
