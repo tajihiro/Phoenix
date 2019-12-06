@@ -17,6 +17,9 @@ defmodule ReactPhoenixReduxWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+
+    resources "/members", MemberController, except: [:new, :edit]
+
   end
 
   # Other scopes may use custom stacks.
