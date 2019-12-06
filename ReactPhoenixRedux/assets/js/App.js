@@ -12,10 +12,12 @@ class App extends Component{
             <div>
                 <h3>App</h3>
                 <ul>
+                    <li><Link to={{pathname: '/page0'}}>Page 0</Link></li>
                     <li><Link to={{pathname: '/page1'}}>Page 1</Link></li>
                     <li><Link to={{pathname: '/page2'}}>Page 2</Link></li>
                     <li><Link to={{pathname: '/page3'}}>Page 3</Link></li>
                     <li><Link to={{pathname: '/page4'}}>Page 4</Link></li>
+                    <li><Link to={{pathname: '/page5'}}>Page 5</Link></li>
                 </ul>
             </div>
         );
