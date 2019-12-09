@@ -1,14 +1,21 @@
 const initData = {
-    mode: 'input'
+    disp: 'input',
+    member: ''
 }
 
 export function page04Reducer(state = initData, action){
+    console.log(action.type)
     switch (action.type) {
         case 'INPUT':
-            return {mode: 'input'};
+            return {
+                disp: 'input'
+            };
         case 'CONFIRM':
-            return {mode: 'confirm'};
+            return{
+                disp: 'confirm',
+                member: action.params
+            };
         default:
-            return state;
+            return {disp: 'input'};
     }
 }
