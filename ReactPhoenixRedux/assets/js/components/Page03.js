@@ -14,7 +14,7 @@ class Page03 extends Component{
     }
 
     componentDidMount() {
-        this.fetchData('/members');
+        this.fetchData('/api/members');
     }
 
     fetchData(url){

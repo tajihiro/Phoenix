@@ -5,25 +5,24 @@ import {connect} from "react-redux";
 
 function ConfirmForm(props) {
     const { register, handleSubmit, watch, errors } = useForm()
-    const onSubmit = data => { console.log(data) }
+    const onSubmit = data => {
+        console.log('COMPLEATE');
+        props.dispatch({type: 'COMPLEATE'});
+    }
 
     // console.log(watch('example')) // watch input value by passing the name of it
 
     return (
         <div>
-            <form >
+            <form onSubmit={handleSubmit(onSubmit)}>
                 <label>Last Name:</label>
                 { props.page04.member.last_name }
-                <input type="hidden" name="last_name"/>
                 <label>First Name:</label>
                 { props.page04.member.first_name }
-                <input type="hidden" name="first_name"/>
                 <label>Email:</label>
                 { props.page04.member.email }
-                <input type="hidden" name="email"/>
                 <label>Password:</label>
                 { props.page04.member.passwd }
-                <input type="hidden" name="passwd"/>
                 <br/>
                 <input type="submit" value="更新"/>
             </form>

@@ -15,15 +15,12 @@ defmodule ReactPhoenixReduxWeb.Router do
 
   scope "/", ReactPhoenixReduxWeb do
     pipe_through :browser
-
     get "/", PageController, :index
-
-    resources "/members", MemberController, except: [:new, :edit]
-
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", ReactPhoenixReduxWeb do
-  #   pipe_through :api
-  # end
+   scope "/api", ReactPhoenixReduxWeb do
+     pipe_through :api
+     resources "/members", MemberController, except: [:new, :edit]
+   end
 end
