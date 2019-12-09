@@ -6,7 +6,6 @@ const initData = {
 }
 
 export function page04Reducer(state = initData, action){
-    console.log(action.type)
     switch (action.type) {
         case 'INPUT':
             return {
