@@ -12,6 +12,7 @@ import Page02 from "./components/Page02";
 import Page03 from "./components/Page03";
 import Page04 from "./components/Page04";
 import Page05 from "./components/Page05";
+import Page06 from "./components/Page06";
 
 const store = configureStore();
 
@@ -26,6 +27,7 @@ ReactDOM.render(
                 <Route exact path="/page3" component={Page03}/>
                 <Route exact path="/page4" component={Page04}/>
                 <Route exact path="/page5" component={Page05}/>
+                <Route exact path="/page6" component={Page06}/>
             </Switch>
         </ConnectedRouter>
     </Provider>,

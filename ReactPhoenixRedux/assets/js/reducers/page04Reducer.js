@@ -29,10 +29,10 @@ export function page04Reducer(state = initData, action){
 }
 
 function register(state, action) {
-    var last_name = state.member.last_name;
-    var first_name = state.member.first_name;
-    var email = state.member.email;
-    var passwd = state.member.passwd;
+    let last_name = state.member.last_name;
+    let first_name = state.member.first_name;
+    let email = state.member.email;
+    let passwd = state.member.passwd;
 
     axios.post('/api/members', { member: {"last_name":last_name,"first_name":first_name,"email":email,"passwd":passwd}})
         .then(function (response) {

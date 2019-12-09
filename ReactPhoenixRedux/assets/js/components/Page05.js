@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import InputForm from "./inputForm";
 import ConfirmForm  from "./comfirmForm";
 import Page06 from "./Page06";
+import Page03 from "./Page03";
 
 class Page05 extends Component {
     constructor(props){
@@ -21,7 +22,7 @@ class Page05 extends Component {
             case 'confirm':
                 return (<ConfirmForm />);
             case 'compleate':
-                return (<Page06 />);
+                return (<Page03 />);
             default:
                 return (<InputForm />);
         }
