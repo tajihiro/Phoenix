@@ -17,4 +17,12 @@ defmodule ReactPhoenixReduxWeb.MemberView do
       email: member.email,
       passwd: member.passwd}
   end
+
+  def render("login.json", %{member: member}) do
+    %{id: member.id,
+      last_name: member.last_name,
+      first_name: member.first_name,
+      email: member.email,
+      passwd: member.passwd}
+  end
 end

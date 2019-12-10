@@ -15,7 +15,7 @@ class Page05 extends Component {
     }
 
     render() {
-        console.log('Page05#this.props.disp: ' + this.props.page04.disp);
+        console.log('Page05#this.props.page04.disp: ' + this.props.page04.disp);
         switch (this.props.page04.disp) {
             case 'input':
                 return (<InputForm />);

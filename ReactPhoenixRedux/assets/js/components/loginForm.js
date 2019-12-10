@@ -2,12 +2,14 @@ import React  from 'react'
 import { connect } from "react-redux";
 import useForm from 'react-hook-form'
 import {Link} from "react-router-dom";
+import { login } from "../actions/loginAction";
 
 function LoginForm(props) {
     const { register, handleSubmit, watch, errors } = useForm();
     const onSubmit = data => {
-        console.log(data);
-        props.dispatch({type: 'LOGIN', params: data});
+        let email = data.email
+        let passwd = data.passwd;
+        login(props, email, passwd);
     };
 
     return (

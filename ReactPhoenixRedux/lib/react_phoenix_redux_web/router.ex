@@ -22,5 +22,6 @@ defmodule ReactPhoenixReduxWeb.Router do
    scope "/api", ReactPhoenixReduxWeb do
      pipe_through :api
      resources "/members", MemberController, except: [:new, :edit]
+     get "/member/login/:email/:passwd", MemberController, :login
    end
 end

@@ -40,4 +40,10 @@ defmodule ReactPhoenixReduxWeb.MemberController do
       send_resp(conn, :no_content, "")
     end
   end
+
+  def login(conn, %{"email" => email, "passwd" => passwd}) do
+    member = Redux.login!(email, passwd)
+    render(conn, "login.json", member: member)
+  end
+
 end

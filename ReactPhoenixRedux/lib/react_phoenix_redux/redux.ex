@@ -101,4 +101,11 @@ defmodule ReactPhoenixRedux.Redux do
   def change_member(%Member{} = member) do
     Member.changeset(member, %{})
   end
+
+
+  def login!(email, passwd) do
+    Repo.get_by(Member, email: email, passwd: passwd)
+#    query = from(m in Member, where: (m.email == ^email) and (m.passwd == ^passwd))
+#    Repo.all(query)
+  end
 end

@@ -7,7 +7,11 @@ const socket = new Socket("/socket", {params: {token: window.userToken}});
 socket.connect();
 const channel = socket.channel("member:lobby", {});
 channel.on('new_message', state => {
-    console.log("Broad Casted!!!" + state.body);
+    dataReceive(state);
+    // this.setState({
+    //     data: []
+    // });
+    // this.props.dispatch({type: 'BROAD_CASTED'})
 });
 
 
@@ -38,7 +42,13 @@ class Page06 extends Component{
             // });
         }
     }
-    
+
+    dataReceive(state){
+        console.log("Broad Casted!!!" + state.body);
+
+
+    }
+
     render() {
         return (
             <div>
