@@ -16,7 +16,7 @@ module.exports = (env, options) => ({
     './js/index.js': glob.sync('./vendor/**/*.js').concat(['./js/index.js'])
   },
   output: {
-    filename: 'index.js',
+    filename: 'saga.js',
     path: path.resolve(__dirname, '../priv/static/js')
   },
   module: {
