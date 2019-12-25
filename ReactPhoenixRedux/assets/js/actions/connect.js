@@ -1,23 +1,23 @@
 import axios from 'axios';
 
-export function getServerList(){
+export function getServerList(props){
     axios.get('/api/members')
         .then(function (response) {
             // handle success
-            let data = response.data;
-            let members = data.data;
+            let members = response.data.data;
             console.log(members);
             let action = {
-                type: 'AUTHENTICATED',
-                member_id: 0,
-                members: members,
+                type: 'GET_MEMBERS',
+                member_id: 22,
+                members: members
             };
-            // props.dispatch(action);
+            props.dispatch(action);
         })
         .catch(function (error) {
             // handle error
             console.log(error);
             return {
+                type: 'GET_MEMBERS_ERROR',
                 authenticated: false
             };
         })
