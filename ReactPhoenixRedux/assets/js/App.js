@@ -21,7 +21,8 @@ class App extends Component{
                     <li><Link to={{pathname: '/page6'}}>Page 6 (Websocket)</Link></li>
                     <li><Link to={{pathname: '/page7'}}>Page 7 (Websocket Refactored)</Link></li>
                     <li><Link to={{pathname: '/page8'}}>Page 8 (Login)</Link></li>
-                    <li><Link to={{pathname: '/page10'}}>Page 10 (Redux Sage)</Link></li>
+                    <li><Link to={{pathname: '/page10'}}>Page 10 (Redux Saga Load Data)</Link></li>
+                    <li><Link to={{pathname: '/page11'}}>Page 11 (Redux Saga)</Link></li>
                 </ul>
             </div>
         );

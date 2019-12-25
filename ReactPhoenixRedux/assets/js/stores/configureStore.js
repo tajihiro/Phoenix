@@ -19,7 +19,7 @@ export default function configureStore() {
             ) // Middle Wares
         )
     );
-    // sagaMiddleware.run(rootSaga);
+    sagaMiddleware.run(helloSaga);
     return store;
 }
 
