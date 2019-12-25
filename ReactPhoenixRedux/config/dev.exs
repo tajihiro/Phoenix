@@ -3,7 +3,7 @@ use Mix.Config
 # Configure your database
 config :react_phoenix_redux, ReactPhoenixRedux.Repo,
   username: "sample",
-  password: "sample",
+  password: "Pia191216!!!",
   database: "sample_db",
   hostname: "localhost",
   show_sensitive_data_on_connection_error: true,

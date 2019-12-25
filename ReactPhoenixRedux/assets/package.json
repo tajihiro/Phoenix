@@ -6,9 +6,11 @@
     "watch": "webpack --mode development --watch"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.7.0",
     "@babel/preset-react": "^7.7.4",
     "axios": "^0.19.0",
     "connected-react-router": "^6.6.1",
+    "core-js": "^3.6.0",
     "exit": "^0.1.2",
     "history": "^4.10.1",
     "phoenix": "file:../deps/phoenix",
