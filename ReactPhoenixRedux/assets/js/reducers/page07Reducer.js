@@ -5,7 +5,6 @@ const initData = {
 }
 
 export function page07Reducer(state = initData, action){
-    console.log(action.type)
     switch (action.type) {
         case 'INIT_SOCKET':
             return initSocket(state, action);

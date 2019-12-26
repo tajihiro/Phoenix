@@ -6,6 +6,7 @@ const initData = {
 }
 
 export function page10Reducer(state = initData, action){
+    console.log("10:" + action.type)
     switch (action.type) {
         case 'GET_TEAMS':
             return {

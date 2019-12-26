@@ -12,7 +12,8 @@ class Page11 extends Component{
         this.doCall = this.doCall.bind(this);
     }
 
-    doCall(){
+    doCall(e){
+        e.preventDefault();
         console.log("DO CALL!!");
         this.props.dispatch({type: 'FETCH_SAGA_START'});
     }
@@ -30,4 +31,4 @@ class Page11 extends Component{
     }
 }
 
-export default connect()(Page11);
+export default connect((state)=>state)(Page11);

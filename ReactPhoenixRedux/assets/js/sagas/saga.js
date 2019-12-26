@@ -20,7 +20,7 @@ function* sagaFetch() {
     while (true){
         console.log("Loop Start!!");
         yield take('FETCH_SAGA_START');
-        console.log("Now Called saga03!!");
+        console.log("saga03!! 呼ばれました。");
     }
 }
 
