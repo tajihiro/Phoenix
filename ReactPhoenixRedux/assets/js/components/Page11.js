@@ -30,5 +30,4 @@ class Page11 extends Component{
         );
     }
 }
-
-export default connect((state)=>state)(Page11);
+export default connect((state) =>state)(Page11);
