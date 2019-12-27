@@ -15,14 +15,14 @@ class Page11 extends Component{
     doCall(e){
         e.preventDefault();
         console.log("DO CALL!!");
-        this.props.dispatch({type: 'FETCH_SAGA_START'});
+        this.props.dispatch({type: 'FETCH_TEAMS'});
     }
 
     render() {
         return (
             <div>
                 <div>Page 11</div>
-                <button onClick={this.doCall}>Call Saga 03</ button>
+                <button onClick={this.doCall}>GET SERVER DATA</ button>
                 <div>
                 <Link to={"/"}>戻る</Link>
                 </div>
