@@ -1,0 +1,13 @@
+<h1>Show Prefecture</h1>
+
+<ul>
+
+  <li>
+    <strong>Prefecture name:</strong>
+    <%= @prefecture.prefecture_name %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.prefecture_path(@conn, :edit, @prefecture) %></span>
+<span><%= link "Back", to: Routes.prefecture_path(@conn, :index) %></span>

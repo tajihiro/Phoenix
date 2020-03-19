@@ -1,0 +1,13 @@
+<h1>Show Team</h1>
+
+<ul>
+
+  <li>
+    <strong>Team name:</strong>
+    <%= @team.team_name %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.team_path(@conn, :edit, @team) %></span>
+<span><%= link "Back", to: Routes.team_path(@conn, :index) %></span>
