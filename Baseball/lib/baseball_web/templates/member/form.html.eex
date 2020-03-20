@@ -21,6 +21,10 @@
   <%= text_input f, :password_digest %>
   <%= error_tag f, :password_digest %>
 
+  <%= label f, :prefecture_id %>
+  <%= select f, :prefecture_id, Enum.map(@prefectures, &{&1.prefecture_name, &1.id}) ,  class: "control-label" %>
+  <%= error_tag f, :prefecture_id %>
+
   <div>
     <%= submit "Save" %>
   </div>

@@ -6,6 +6,7 @@ defmodule Baseball.Scoresheet do
   import Ecto.Query, warn: false
   alias Baseball.Repo
 
+  alias Baseball.Scoresheet.Prefecture
   alias Baseball.Scoresheet.Member
 
   @doc """
@@ -19,7 +20,14 @@ defmodule Baseball.Scoresheet do
   """
   def list_members do
     Repo.all(Member)
+      |> Repo.preload(:prefecture)
   end
+
+  def list_prefectures do
+    Repo.all(Prefecture)
+  end
+
+
 
   @doc """
   Gets a single member.
@@ -35,7 +43,10 @@ defmodule Baseball.Scoresheet do
       ** (Ecto.NoResultsError)
 
   """
-  def get_member!(id), do: Repo.get!(Member, id)
+  def get_member!(id) do
+    Repo.get!(Member, id)
+     |> Repo.preload(:prefecture)
+  end
 
   @doc """
   Creates a member.

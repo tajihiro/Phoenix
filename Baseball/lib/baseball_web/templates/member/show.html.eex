@@ -22,6 +22,11 @@
     <%= @member.password_digest %>
   </li>
 
+  <li>
+    <strong>Prefecture:</strong>
+    <%= @member.prefecture.prefecture_name %>
+  </li>
+
 </ul>
 
 <span><%= link "Edit", to: Routes.member_path(@conn, :edit, @member) %></span>

@@ -16,7 +16,11 @@ defmodule BaseballWeb.Router do
   scope "/", BaseballWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    get "/", MemberController, :index
+
+    resources "/members", MemberController
+    resources "/teams", TeamController
+
   end
 
   # Other scopes may use custom stacks.

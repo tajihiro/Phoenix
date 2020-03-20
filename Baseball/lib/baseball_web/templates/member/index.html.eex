@@ -7,6 +7,7 @@
       <th>First name</th>
       <th>Email</th>
       <th>Password digest</th>
+      <th>Prefecture</th>
 
       <th></th>
     </tr>
@@ -18,6 +19,7 @@
       <td><%= member.first_name %></td>
       <td><%= member.email %></td>
       <td><%= member.password_digest %></td>
+      <td><%= member.prefecture_id %> / <%= member.prefecture.prefecture_name %></td>
 
       <td>
         <span><%= link "Show", to: Routes.member_path(@conn, :show, member) %></span>
