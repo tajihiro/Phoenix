@@ -13,9 +13,10 @@ config :baseball,
 # Configures the endpoint
 config :baseball, BaseballWeb.Endpoint,
   url: [host: "localhost"],
-  secret_key_base: "DrlWFQORCJcr1WJ2m0bMB3D485tzMnTq6Y/GM2SFc73B6rl3IAr1GbKzcy8bXzDX",
+  secret_key_base: "Uu7SvZuS/VKFgt2hMEyYKy6pOwgiCX5GUqw2rsbdHoUeCQYgYjm82ntAB2+4GUAU",
   render_errors: [view: BaseballWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: Baseball.PubSub, adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: Baseball.PubSub, adapter: Phoenix.PubSub.PG2],
+  live_view: [signing_salt: "tSGulvbg"]
 
 # Configures Elixir's Logger
 config :logger, :console,

@@ -1,21 +1,21 @@
 defmodule BaseballWeb.TeamController do
   use BaseballWeb, :controller
 
-  alias Baseball.Scoresheets
-  alias Baseball.Scoresheets.Team
+  alias Baseball.Scoresheet
+  alias Baseball.Scoresheet.Team
 
   def index(conn, _params) do
-    teams = Scoresheets.list_teams()
+    teams = Scoresheet.list_teams()
     render(conn, "index.html", teams: teams)
   end
 
   def new(conn, _params) do
-    changeset = Scoresheets.change_team(%Team{})
+    changeset = Scoresheet.change_team(%Team{})
     render(conn, "new.html", changeset: changeset)
   end
 
   def create(conn, %{"team" => team_params}) do
-    case Scoresheets.create_team(team_params) do
+    case Scoresheet.create_team(team_params) do
       {:ok, team} ->
         conn
         |> put_flash(:info, "Team created successfully.")
@@ -27,20 +27,20 @@ defmodule BaseballWeb.TeamController do
   end
 
   def show(conn, %{"id" => id}) do
-    team = Scoresheets.get_team!(id)
+    team = Scoresheet.get_team!(id)
     render(conn, "show.html", team: team)
   end
 
   def edit(conn, %{"id" => id}) do
-    team = Scoresheets.get_team!(id)
-    changeset = Scoresheets.change_team(team)
+    team = Scoresheet.get_team!(id)
+    changeset = Scoresheet.change_team(team)
     render(conn, "edit.html", team: team, changeset: changeset)
   end
 
   def update(conn, %{"id" => id, "team" => team_params}) do
-    team = Scoresheets.get_team!(id)
+    team = Scoresheet.get_team!(id)
 
-    case Scoresheets.update_team(team, team_params) do
+    case Scoresheet.update_team(team, team_params) do
       {:ok, team} ->
         conn
         |> put_flash(:info, "Team updated successfully.")
@@ -52,8 +52,8 @@ defmodule BaseballWeb.TeamController do
   end
 
   def delete(conn, %{"id" => id}) do
-    team = Scoresheets.get_team!(id)
-    {:ok, _team} = Scoresheets.delete_team(team)
+    team = Scoresheet.get_team!(id)
+    {:ok, _team} = Scoresheet.delete_team(team)
 
     conn
     |> put_flash(:info, "Team deleted successfully.")

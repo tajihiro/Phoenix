@@ -1,14 +1,14 @@
 defmodule BaseballWeb.MemberControllerTest do
   use BaseballWeb.ConnCase
 
-  alias Baseball.Scoresheets
+  alias Baseball.Scoresheet
 
-  @create_attrs %{first_name: "some first_name", last_name: "some last_name"}
-  @update_attrs %{first_name: "some updated first_name", last_name: "some updated last_name"}
-  @invalid_attrs %{first_name: nil, last_name: nil}
+  @create_attrs %{email: "some email", first_name: "some first_name", last_name: "some last_name", password_digest: "some password_digest"}
+  @update_attrs %{email: "some updated email", first_name: "some updated first_name", last_name: "some updated last_name", password_digest: "some updated password_digest"}
+  @invalid_attrs %{email: nil, first_name: nil, last_name: nil, password_digest: nil}
 
   def fixture(:member) do
-    {:ok, member} = Scoresheets.create_member(@create_attrs)
+    {:ok, member} = Scoresheet.create_member(@create_attrs)
     member
   end
 
@@ -60,7 +60,7 @@ defmodule BaseballWeb.MemberControllerTest do
       assert redirected_to(conn) == Routes.member_path(conn, :show, member)
 
       conn = get(conn, Routes.member_path(conn, :show, member))
-      assert html_response(conn, 200) =~ "some updated first_name"
+      assert html_response(conn, 200) =~ "some updated email"
     end
 
     test "renders errors when data is invalid", %{conn: conn, member: member} do

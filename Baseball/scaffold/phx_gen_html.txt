@@ -1,0 +1,3 @@
+mix phx.gen.schema Scoresheet.Prefecture prefectures prefecture_name:string
+mix phx.gen.html Scoresheet Member members last_name:string first_name:string email:string password_digest:string prefecture_id:references:prefectures
+mix phx.gen.html Scoresheet Team teams team_name:string prefecture_id:references:prefectures

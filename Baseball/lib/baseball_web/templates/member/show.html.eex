@@ -12,6 +12,16 @@
     <%= @member.first_name %>
   </li>
 
+  <li>
+    <strong>Email:</strong>
+    <%= @member.email %>
+  </li>
+
+  <li>
+    <strong>Password digest:</strong>
+    <%= @member.password_digest %>
+  </li>
+
 </ul>
 
 <span><%= link "Edit", to: Routes.member_path(@conn, :edit, @member) %></span>

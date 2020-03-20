@@ -1,3 +1,0 @@
-mix phx.gen.html Scoresheets Member members last_name:string, first_name:string
-mix phx.gen.html Scoresheets Prefecture prefectures prefecture_name:string
-mix phx.gen.schema Scoresheets Team teams steam_name:string, prefectures:prefectures

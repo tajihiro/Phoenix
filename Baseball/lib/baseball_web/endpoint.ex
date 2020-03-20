@@ -1,6 +1,15 @@
 defmodule BaseballWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :baseball
 
+  # The session will be stored in the cookie and signed,
+  # this means its contents can be read but not tampered with.
+  # Set :encryption_salt if you would also like to encrypt it.
+  @session_options [
+    store: :cookie,
+    key: "_baseball_key",
+    signing_salt: "IljzVeD4"
+  ]
+
   socket "/socket", BaseballWeb.UserSocket,
     websocket: true,
     longpoll: false
@@ -33,14 +42,6 @@ defmodule BaseballWeb.Endpoint do
 
   plug Plug.MethodOverride
   plug Plug.Head
-
-  # The session will be stored in the cookie and signed,
-  # this means its contents can be read but not tampered with.
-  # Set :encryption_salt if you would also like to encrypt it.
-  plug Plug.Session,
-    store: :cookie,
-    key: "_baseball_key",
-    signing_salt: "/t26mdw9"
-
+  plug Plug.Session, @session_options
   plug BaseballWeb.Router
 end

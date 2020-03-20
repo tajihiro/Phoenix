@@ -1,14 +1,14 @@
 defmodule BaseballWeb.TeamControllerTest do
   use BaseballWeb.ConnCase
 
-  alias Baseball.Scoresheets
+  alias Baseball.Scoresheet
 
   @create_attrs %{team_name: "some team_name"}
   @update_attrs %{team_name: "some updated team_name"}
   @invalid_attrs %{team_name: nil}
 
   def fixture(:team) do
-    {:ok, team} = Scoresheets.create_team(@create_attrs)
+    {:ok, team} = Scoresheet.create_team(@create_attrs)
     team
   end
 
