@@ -1,6 +1,8 @@
 defmodule BaseballWeb.MemberController do
   use BaseballWeb, :controller
 
+  plug :list_prefectures when action in [:new, :edit]
+
   alias Baseball.Scoresheet
   alias Baseball.Scoresheet.Member
 
@@ -59,4 +61,10 @@ defmodule BaseballWeb.MemberController do
     |> put_flash(:info, "Member deleted successfully.")
     |> redirect(to: Routes.member_path(conn, :index))
   end
+
+  defp list_prefectures(conn, _) do
+    prefectures = Scoresheet.list_prefectures()
+    conn = assign(conn, :prefectures, prefectures)
+  end
+
 end
