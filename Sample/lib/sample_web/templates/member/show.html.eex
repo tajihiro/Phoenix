@@ -1,0 +1,33 @@
+<h1>Show Member</h1>
+
+<ul>
+
+  <li>
+    <strong>Last name:</strong>
+    <%= @member.last_name %>
+  </li>
+
+  <li>
+    <strong>First name:</strong>
+    <%= @member.first_name %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @member.email %>
+  </li>
+
+  <li>
+    <strong>Passwd:</strong>
+    <%= @member.passwd %>
+  </li>
+
+  <li>
+    <strong>Prefecture:</strong>
+    <%= @member.prefecture.prefecture_name %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.member_path(@conn, :edit, @member) %></span>
+<span><%= link "Back", to: Routes.member_path(@conn, :index) %></span>
