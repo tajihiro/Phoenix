@@ -5,8 +5,6 @@ defmodule Sample.Account.Prefecture do
   schema "prefectures" do
     field :prefecture_name, :string
 
-    has_many :members, Sample.Account.Member
-
     timestamps()
   end
 

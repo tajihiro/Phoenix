@@ -32,7 +32,10 @@ defmodule SampleWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", SampleWeb do
-  #   pipe_through :api
-  # end
+   scope "/api", SampleWeb do
+     pipe_through :api
+
+     get "/prefectures", PrefectureController, :index
+
+   end
 end

@@ -206,4 +206,100 @@ defmodule Sample.Account do
   def change_team(%Team{} = team) do
     Team.changeset(team, %{})
   end
+
+  alias Sample.Account.Prefecture
+
+  @doc """
+  Returns the list of prefectures.
+
+  ## Examples
+
+      iex> list_prefectures()
+      [%Prefecture{}, ...]
+
+  """
+  def list_prefectures do
+    Repo.all(Prefecture)
+  end
+
+  @doc """
+  Gets a single prefecture.
+
+  Raises `Ecto.NoResultsError` if the Prefecture does not exist.
+
+  ## Examples
+
+      iex> get_prefecture!(123)
+      %Prefecture{}
+
+      iex> get_prefecture!(456)
+      ** (Ecto.NoResultsError)
+
+  """
+  def get_prefecture!(id), do: Repo.get!(Prefecture, id)
+
+  @doc """
+  Creates a prefecture.
+
+  ## Examples
+
+      iex> create_prefecture(%{field: value})
+      {:ok, %Prefecture{}}
+
+      iex> create_prefecture(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def create_prefecture(attrs \\ %{}) do
+    %Prefecture{}
+    |> Prefecture.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
+  Updates a prefecture.
+
+  ## Examples
+
+      iex> update_prefecture(prefecture, %{field: new_value})
+      {:ok, %Prefecture{}}
+
+      iex> update_prefecture(prefecture, %{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def update_prefecture(%Prefecture{} = prefecture, attrs) do
+    prefecture
+    |> Prefecture.changeset(attrs)
+    |> Repo.update()
+  end
+
+  @doc """
+  Deletes a prefecture.
+
+  ## Examples
+
+      iex> delete_prefecture(prefecture)
+      {:ok, %Prefecture{}}
+
+      iex> delete_prefecture(prefecture)
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def delete_prefecture(%Prefecture{} = prefecture) do
+    Repo.delete(prefecture)
+  end
+
+  @doc """
+  Returns an `%Ecto.Changeset{}` for tracking prefecture changes.
+
+  ## Examples
+
+      iex> change_prefecture(prefecture)
+      %Ecto.Changeset{source: %Prefecture{}}
+
+  """
+  def change_prefecture(%Prefecture{} = prefecture) do
+    Prefecture.changeset(prefecture, %{})
+  end
 end

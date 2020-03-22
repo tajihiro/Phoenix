@@ -126,4 +126,63 @@ defmodule Sample.AccountTest do
       assert %Ecto.Changeset{} = Account.change_team(team)
     end
   end
+
+  describe "prefectures" do
+    alias Sample.Account.Prefecture
+
+    @valid_attrs %{prefecture_name: "some prefecture_name"}
+    @update_attrs %{prefecture_name: "some updated prefecture_name"}
+    @invalid_attrs %{prefecture_name: nil}
+
+    def prefecture_fixture(attrs \\ %{}) do
+      {:ok, prefecture} =
+        attrs
+        |> Enum.into(@valid_attrs)
+        |> Account.create_prefecture()
+
+      prefecture
+    end
+
+    test "list_prefectures/0 returns all prefectures" do
+      prefecture = prefecture_fixture()
+      assert Account.list_prefectures() == [prefecture]
+    end
+
+    test "get_prefecture!/1 returns the prefecture with given id" do
+      prefecture = prefecture_fixture()
+      assert Account.get_prefecture!(prefecture.id) == prefecture
+    end
+
+    test "create_prefecture/1 with valid data creates a prefecture" do
+      assert {:ok, %Prefecture{} = prefecture} = Account.create_prefecture(@valid_attrs)
+      assert prefecture.prefecture_name == "some prefecture_name"
+    end
+
+    test "create_prefecture/1 with invalid data returns error changeset" do
+      assert {:error, %Ecto.Changeset{}} = Account.create_prefecture(@invalid_attrs)
+    end
+
+    test "update_prefecture/2 with valid data updates the prefecture" do
+      prefecture = prefecture_fixture()
+      assert {:ok, %Prefecture{} = prefecture} = Account.update_prefecture(prefecture, @update_attrs)
+      assert prefecture.prefecture_name == "some updated prefecture_name"
+    end
+
+    test "update_prefecture/2 with invalid data returns error changeset" do
+      prefecture = prefecture_fixture()
+      assert {:error, %Ecto.Changeset{}} = Account.update_prefecture(prefecture, @invalid_attrs)
+      assert prefecture == Account.get_prefecture!(prefecture.id)
+    end
+
+    test "delete_prefecture/1 deletes the prefecture" do
+      prefecture = prefecture_fixture()
+      assert {:ok, %Prefecture{}} = Account.delete_prefecture(prefecture)
+      assert_raise Ecto.NoResultsError, fn -> Account.get_prefecture!(prefecture.id) end
+    end
+
+    test "change_prefecture/1 returns a prefecture changeset" do
+      prefecture = prefecture_fixture()
+      assert %Ecto.Changeset{} = Account.change_prefecture(prefecture)
+    end
+  end
 end

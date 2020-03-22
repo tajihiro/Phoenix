@@ -1,3 +1,4 @@
 mix phx.gen.schema Account.Prefecture prefectures prefecture_name:string
-mix phx.gen.html Account Member members last_name:string first_name:string email:string passwd:string prefecture_id:references:prefectures -web Admin
-mix phx.gen.html Account Team teams team_name:string prefecture_id:references:prefectures -web Admin
+mix phx.gen.html Account Member members last_name:string first_name:string email:string passwd:string prefecture_id:references:prefectures
+mix phx.gen.html Account Team teams team_name:string prefecture_id:references:prefectures
+mix phx.gen.json Account Prefecture prefectures prefecture_name:string
