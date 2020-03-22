@@ -1,7 +1,7 @@
 defmodule SampleWeb.MemberController do
   use SampleWeb, :controller
 
-  plug :list_prefectures when action in [:new, :edit]
+  plug :list_prefectures when action in [:new, :create, :edit]
 
   alias Sample.Account
   alias Sample.Account.Member
