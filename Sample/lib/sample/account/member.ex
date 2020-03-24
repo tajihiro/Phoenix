@@ -8,6 +8,7 @@ defmodule Sample.Account.Member do
     field :last_name, :string
     field :passwd, :string
 #    field :prefecture_id, :id
+    field :sex, :integer
 
     belongs_to :prefecture, Sample.Account.Prefecture
 
