@@ -27,6 +27,11 @@
     <%= @member.prefecture.prefecture_name %>
   </li>
 
+  <li>
+    <strong>Sex:</strong>
+    <%= @member.sex %>
+  </li>
+
 </ul>
 
 <span><%= link "Edit", to: Routes.member_path(@conn, :edit, @member) %></span>

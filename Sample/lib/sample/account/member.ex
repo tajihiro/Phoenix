@@ -18,9 +18,9 @@ defmodule Sample.Account.Member do
   @doc false
   def changeset(member, attrs) do
     member
-    |> cast(attrs, [:last_name, :first_name, :email, :passwd, :prefecture_id])
+    |> cast(attrs, [:last_name, :first_name, :email, :passwd, :prefecture_id, :sex])
     |> validate_required([:last_name], [message: "last_name は必須です。"])
     |> validate_required([:first_name], [message: "first_name は必須です。"])
-    |> validate_required([:email, :passwd, :prefecture_id])
+    |> validate_required([:email, :passwd, :prefecture_id, :sex])
   end
 end
