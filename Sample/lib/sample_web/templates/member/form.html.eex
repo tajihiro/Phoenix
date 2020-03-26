@@ -26,10 +26,11 @@
   <%= select f, :prefecture_id, Enum.map(@prefectures, &{&1.prefecture_name, &1.id}), class: "control-label" %>
   <%= error_tag f, :prefecture_id %>
 
-  <%= label f, :sex %>
-  <%= radio_button f, :sex, 1 %> <%= @sex[0] %>
-  <%= radio_button f, :sex, 2 %> <%= @sex[1] %>
-  <%= error_tag f, :sex %>
+  <%= label f, :gender_id %>
+  <%= radio_button f, :gender_id, 1, checked: true %> 男性
+  <%= radio_button f, :gender_id, 2 %> 女性
+  <%= radio_button f, :gender_id, 0 %> その他
+  <%= error_tag f, :gender_id %>
 
   <div>
     <%= submit "Save" %>

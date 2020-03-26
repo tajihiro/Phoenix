@@ -2,7 +2,7 @@ defmodule SampleWeb.MemberController do
   use SampleWeb, :controller
 
   plug :list_prefectures when action in [:new, :create, :edit]
-  plug :list_sex when action in  [:new, :create, :edit]
+  plug :list_genders when action in  [:new, :create, :edit]
 
   alias Sample.Account
   alias Sample.Account.Member
@@ -68,8 +68,8 @@ defmodule SampleWeb.MemberController do
     conn = assign(conn, :prefectures, prefectures)
   end
 
-  defp list_sex(conn, _) do
-    sex = %{male: 1, famale: 2}
-    conn = assign(conn, :sex, sex)
+  defp list_genders(conn, _) do
+    genders = %{male: 1, famale: 2, unknown: 0}
+    conn = assign(conn, :genders, genders)
   end
 end

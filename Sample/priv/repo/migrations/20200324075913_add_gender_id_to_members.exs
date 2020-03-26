@@ -3,7 +3,7 @@ defmodule Sample.Repo.Migrations.AddSexToMembers do
 
   def change do
     alter table(:members) do
-      add :sex, :integer
+      add :gender_id, :integer
     end
   end
 end
