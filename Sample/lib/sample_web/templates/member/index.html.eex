@@ -21,7 +21,9 @@
       <td><%= member.email %></td>
       <td><%= member.passwd %></td>
       <td><%= member.prefecture.prefecture_name %></td>
-      <td><%= member.gender_id %></td>
+      <td>
+        <%= @genders[member.gender_id] %>
+      </td>
 
       <td>
         <span><%= link "Show", to: Routes.member_path(@conn, :show, member) %></span>

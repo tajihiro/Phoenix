@@ -29,7 +29,7 @@
 
   <li>
     <strong>Gender:</strong>
-    <%= @member.gender_id %>
+    <%= @genders[@member.gender_id] %>
   </li>
 
 </ul>
