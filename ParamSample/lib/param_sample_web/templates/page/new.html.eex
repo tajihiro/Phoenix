@@ -1,0 +1,18 @@
+<%= form_tag Routes.page_path(@conn, :create) do %>
+  MEMBER ID:<input type="text" name="member_id" size="4" %>
+  <br>
+  GOAL:<br>
+  <input type="text" name="goal[]" >
+  <input type="text" name="goal[]" >
+  <input type="text" name="goal[]" >
+  <br>
+  ASSIST:<br>
+  <input type="text" name="assist[]" >
+  <input type="text" name="assist[]" >
+  <br>
+  MVP:<br>
+  <input type="checkbox" name="mvp_flg[]" value="0" >
+  <input type="checkbox" name="mvp_flg[]" value="1" >
+  <input type="checkbox" name="mvp_flg[]" value="2" >
+  <%= submit "OK" %>
+<% end %>

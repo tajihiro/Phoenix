@@ -1,0 +1,2 @@
+mix phx.gen.schema Scoresheet.Game games member_id:integer goal:integer assist:integer mvp_flg:integer
+
