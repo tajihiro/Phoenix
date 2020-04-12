@@ -1,2 +1,3 @@
-mix phx.gen.schema Scoresheet.Game games member_id:integer goal:integer assist:integer mvp_flg:integer
+mix phx.gen.html Sample Member members member_name:string
+mix phx.gen.schema Sample.Game games member_id:string goal:integer assist:integer mvp_flg:integer
 

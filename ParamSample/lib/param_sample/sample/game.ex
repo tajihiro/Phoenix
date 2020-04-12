@@ -1,11 +1,11 @@
-defmodule ParamSample.Scoresheet.Game do
+defmodule ParamSample.Sample.Game do
   use Ecto.Schema
   import Ecto.Changeset
 
   schema "games" do
     field :assist, :integer
     field :goal, :integer
-    field :member_id, :integer
+    field :member_id, :string
     field :mvp_flg, :integer
 
     timestamps()

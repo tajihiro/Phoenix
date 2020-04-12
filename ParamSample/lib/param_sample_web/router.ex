@@ -17,7 +17,7 @@ defmodule ParamSampleWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :new
-    post "/create", PageController, :create
+    post "/create/", PageController, :create
   end
 
   # Other scopes may use custom stacks.

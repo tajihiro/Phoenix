@@ -3,7 +3,7 @@ defmodule ParamSample.Repo.Migrations.CreateGames do
 
   def change do
     create table(:games) do
-      add :member_id, :integer
+      add :member_id, :string
       add :goal, :integer
       add :assist, :integer
       add :mvp_flg, :integer
