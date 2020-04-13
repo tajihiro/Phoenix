@@ -105,11 +105,16 @@ defmodule ParamSample.Sample do
 
 
   def create_game(attrs \\ %{}) do
+    mvp_member_id = hd(attrs["mvp_flg"])
+
     points =
       Enum.zip([attrs["member_id"], attrs["goal"], attrs["assist"]])
         |> Enum.map(fn({m, g, a}) -> {m, empty_to_zero(g), empty_to_zero(a)} end)
-        |> Enum.map(fn({m, g, a}) -> %{member_id: m, goal: g, assist: a} end)
-    Repo.insert_all(Game, points, timestamps: true)
+        |> Enum.map(fn({m, g, a}) -> %{member_id: m, goal: g, assist: a, mvp_flg: 0} end)
+        |> Enum.map(fn(target) -> put_mvp_flg(mvp_member_id, target) end)
+
+    IO.inspect(points)
+    Repo.insert_all(Game, points)
 
 #    %Game{}
 #    |> Game.changeset(attrs)
@@ -118,5 +123,13 @@ defmodule ParamSample.Sample do
 
   defp empty_to_zero("") do 0 end
   defp empty_to_zero(str) do String.to_integer(str) end
+
+  defp put_mvp_flg(mvp_member_id, map) do
+    target_member_id = Map.get(map, :member_id)
+    case target_member_id do
+      ^mvp_member_id -> Map.put(map, :mvp_flg, 1)
+      _ -> Map.put(map, :mvp_flg, 0)
+    end
+  end
 
 end
