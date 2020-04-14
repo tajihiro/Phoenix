@@ -5,6 +5,7 @@ defmodule ParamSample.Sample do
 
   import Ecto.Query, warn: false
   alias ParamSample.Repo
+  alias Ecto.Multi
 
   alias ParamSample.Sample.Member
   alias ParamSample.Sample.Game
@@ -114,7 +115,12 @@ defmodule ParamSample.Sample do
         |> Enum.map(fn(target) -> put_mvp_flg(mvp_member_id, target) end)
 
     IO.inspect(points)
-    Repo.insert_all(Game, points)
+
+    Multi.new()
+      |> Multi.insert_all(:insert_all, Game, points)
+      |> Repo.transaction()
+
+#    Repo.insert_all(Game, points)
 
 #    %Game{}
 #    |> Game.changeset(attrs)
