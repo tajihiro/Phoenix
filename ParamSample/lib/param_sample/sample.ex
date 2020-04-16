@@ -112,7 +112,9 @@ defmodule ParamSample.Sample do
       Enum.zip([attrs["member_id"], attrs["goal"], attrs["assist"]])
         |> Enum.map(fn({m, g, a}) -> {m, empty_to_zero(g), empty_to_zero(a)} end)
         |> Enum.map(fn({m, g, a}) -> %{member_id: m, goal: g, assist: a, mvp_flg: 0} end)
+        |> Enum.filter(fn(map) -> empty_member(map) end)
         |> Enum.map(fn(target) -> put_mvp_flg(mvp_member_id, target) end)
+#        |> Enum.filter(fn(%{m, g, a}) -> v != "" end)
 
     IO.inspect(points)
 
@@ -135,6 +137,14 @@ defmodule ParamSample.Sample do
     case target_member_id do
       ^mvp_member_id -> Map.put(map, :mvp_flg, 1)
       _ -> Map.put(map, :mvp_flg, 0)
+    end
+  end
+
+  defp empty_member(member) do
+    val = Map.fetch!(member, :member_id)
+    case val != "" do
+      true -> member
+      false -> false
     end
   end
 
