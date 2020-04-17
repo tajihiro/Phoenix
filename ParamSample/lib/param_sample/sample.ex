@@ -9,6 +9,7 @@ defmodule ParamSample.Sample do
 
   alias ParamSample.Sample.Member
   alias ParamSample.Sample.Game
+  alias ParamSample.Sample.Group
 
   @doc """
   Returns the list of members.
@@ -106,27 +107,29 @@ defmodule ParamSample.Sample do
 
 
   def create_game(attrs \\ %{}) do
-    mvp_member_id = hd(attrs["mvp_flg"])
 
+    group = %Group{group_name: "Blowfish"}
+
+    Multi.new()
+    |> Multi.insert(:insert, group)
+    |> Repo.transaction()
+    query = from g in Group, select: max(g.id)
+    group_id = Repo.one(query)
+
+    mvp_member_id = hd(attrs["mvp_flg"])
     points =
       Enum.zip([attrs["member_id"], attrs["goal"], attrs["assist"]])
         |> Enum.map(fn({m, g, a}) -> {m, empty_to_zero(g), empty_to_zero(a)} end)
-        |> Enum.map(fn({m, g, a}) -> %{member_id: m, goal: g, assist: a, mvp_flg: 0} end)
+        |> Enum.map(fn({m, g, a}) -> %{member_id: m, goal: g, assist: a, group_id: group_id, mvp_flg: 0} end)
         |> Enum.filter(fn(map) -> empty_member(map) end)
         |> Enum.map(fn(target) -> put_mvp_flg(mvp_member_id, target) end)
 #        |> Enum.filter(fn(%{m, g, a}) -> v != "" end)
 
     IO.inspect(points)
-
     Multi.new()
       |> Multi.insert_all(:insert_all, Game, points)
       |> Repo.transaction()
 
-#    Repo.insert_all(Game, points)
-
-#    %Game{}
-#    |> Game.changeset(attrs)
-#    |> Repo.insert()
   end
 
   defp empty_to_zero("") do 0 end

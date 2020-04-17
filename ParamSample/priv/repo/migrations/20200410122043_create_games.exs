@@ -7,6 +7,7 @@ defmodule ParamSample.Repo.Migrations.CreateGames do
       add :goal, :integer
       add :assist, :integer
       add :mvp_flg, :integer
+      add :group_id, :id
 
       timestamps()
     end

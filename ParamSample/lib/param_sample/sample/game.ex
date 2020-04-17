@@ -7,6 +7,7 @@ defmodule ParamSample.Sample.Game do
     field :goal, :integer
     field :member_id, :string
     field :mvp_flg, :integer
+    field :group_id, :id
 
     timestamps()
   end
