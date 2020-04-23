@@ -20,13 +20,10 @@ defmodule MultiSampleWeb.PageController do
     # Goal
     goals = params["goal"]
     assists = params["assist"]
-#    scores = Enum.zip([goals, assists])
+    scores = Enum.zip([goals, assists])
 
-#    score = %{goal: assist: mvp_flg: }
-
-
-IO.inspect(member_id)
-    Sample.create(member)
+IO.inspect(scores)
+    Sample.create_score(member, scores)
 
     render(conn, "new.html")
   end

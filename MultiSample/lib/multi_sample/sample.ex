@@ -15,10 +15,14 @@ defmodule MultiSample.Sample do
     Repo.all(Prefecture)
   end
 
-  def create(member) do
+
+  def create_score(member, scores) do
     Multi.new()
-    |> Multi.insert(:member, Member.changeset(%Member{}, member))
-    |> Repo.transaction()
+      |> Multi.insert(:member, Member.changeset(%Member{}, member))
+#      insert_all
+#      |> Multi.insert(:member_scores,
+#           fn(%Member{id: member_id}) -> MemberScore.changeset(%MemberScore{member_id: member_id}, scores) end )
+      |> Repo.transaction()
   end
 
 
