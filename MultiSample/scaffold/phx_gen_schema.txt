@@ -1,2 +1,3 @@
 mix phx.gen.schema Sample.Member members member_name:string
 mix phx.gen.schema Sample.MemberScore member_scores member_id:references:members goal:integer assist:integer mvp_flg:integer
+mix phx.gen.schema Sample.Prefecture prefectures prefecture_name:string

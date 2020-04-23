@@ -1,8 +1,11 @@
 <div class="container">
+<%= form_tag Routes.page_path(@conn, :create) do %>
+<input type="text" name="member_id" value="2">
+<input type="text" name="member_name" value="たじま">
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">Name</th>
+          <th scope="col">Score</th>
           <th scope="col">Goal</th>
           <th scope="col">Assist</th>
           <th scope="col">MVP</th>
@@ -10,27 +13,49 @@
       </thead>
       <tbody>
         <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
           <td>
-          <%= content_tag("select", name: "color") do %>
-          <%=   options_for_select(@mvp_flg, "green") %>
-          <% end %>
+            <input type="text" name="score_id" value="1">
+          </td>
+          <td>
+            <input type="text" name="goal[]" value="1">
+          </td>
+          <td>
+            <input type="text" name="assist[]" value="1">
+          </td>
+          <td>
+            <input type="text" name="mvp_flg[]" value="">
           </td>
         </tr>
         <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
+          <td>
+            <input type="text" name="score_id" value="2">
+          </td>
+          <td>
+            <input type="text" name="goal[]" value="0">
+          </td>
+          <td>
+            <input type="text" name="assist[]" value="1">
+          </td>
+          <td>
+            <input type="text" name="mvp_flg[]" value="">
+          </td>
         </tr>
         <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
+          <td>
+            <input type="text" name="score_id" value="3">
+          </td>
+          <td>
+            <input type="text" name="goal[]" value="0">
+          </td>
+          <td>
+            <input type="text" name="assist[]" value="2">
+          </td>
+          <td>
+            <input type="text" name="mvp_flg[]" value="1">
+          </td>
         </tr>
       </tbody>
     </table>
+    <%= submit "登録", class: "btn btn-lg btn-primary btn-block" %>
+  <% end %>
 </div>
