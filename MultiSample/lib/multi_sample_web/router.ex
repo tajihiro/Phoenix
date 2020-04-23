@@ -16,7 +16,7 @@ defmodule MultiSampleWeb.Router do
   scope "/", MultiSampleWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    get "/", PageController, :new
   end
 
   # Other scopes may use custom stacks.
