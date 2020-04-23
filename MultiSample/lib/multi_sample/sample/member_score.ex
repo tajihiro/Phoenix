@@ -14,7 +14,7 @@ defmodule MultiSample.Sample.MemberScore do
   @doc false
   def changeset(member_score, attrs) do
     member_score
-    |> cast(attrs, [:goal, :assist, :mvp_flg])
+    |> cast(attrs, [:goal, :assist, :mvp_flg, :member_id])
     |> validate_required([:goal, :assist, :mvp_flg])
   end
 end
